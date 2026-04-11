@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core HR Software: Employee Records, Org Charts & Document Management | Wana.Work</title>
+    <meta name="description" content="Wana.Work Core HR solution provides employee database, organization charts, document management, and complete people data management for enterprise HCM.">
+    <meta name="keywords" content="core HR software, employee database, org chart software, HRIS system, people management platform, employee records">
+    <meta name="author" content="Wana.Work">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Core HR Software: Employee Records, Org Charts & Document Management | Wana.Work">
+    <meta property="og:description" content="Your single source of truth for people data. Complete Core HR solution with employee records, org charts, document management, and real-time reporting.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wana.work/platform/core-hr">
+    <meta property="og:image" content="https://wana.work/og-core-hr.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Core HR Software | Wana.Work">
+    <meta name="twitter:description" content="Your single source of truth for people data">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://wana.work/platform/core-hr">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Wana.Work Core HR",
+        "description": "Enterprise-grade Core HR and People Management platform with employee records, org charts, and document management",
+        "url": "https://wana.work/platform/core-hr",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1E1B4B;
+            line-height: 1.6;
+            background: #FFFFFF;
+            letter-spacing: -0.02em;
+        }
+
+        /* Color Variables */
+        :root {
+            --color-coral: #FF6B4A;
+            --color-indigo: #6366F1;
+            --color-indigo-deep: #4F46E5;
+            --color-indigo-light: #EEF2FF;
+            --color-indigo-midnight: #1E1B4B;
+            --color-purple: #A855F7;
+            --color-coral-pale: #FFF1EE;
+            --color-slate: #64748B;
+            --color-green: #10B981;
+            --color-amber: #F59E0B;
+            --color-red: #EF4444;
+            --gradient-main: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+            padding: 0 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-indigo-midnight);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-indigo);
+        }
+
+        .nav-links a.active {
+            color: var(--color-indigo-deep);
+            font-weight: 600;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-signin {
+            padding: 0.6rem 1.2rem;
+            border: 1px solid #E2E8F0;
+            background: transparent;
+            color: var(--color-indigo-midnight);
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .btn-signin:hover {
+            background: #F8FAFC;
+            border-color: var(--color-indigo);
+        }
+
+        .btn-primary {
+            padding: 0.6rem 1.5rem;
+            background: var(--gradient-main);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 107, 74, 0.3);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 90px auto 0;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: var(--color-slate);
+        }
+
+        .breadcrumb a {
+            color: var(--color-indigo);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--color-indigo-midnight);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--color-slate);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            padding: 0.7rem 2rem;
+            background: transparent;
+            color: var(--color-indigo);
+            border: 2px solid var(--color-indigo);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-indigo-light);
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding-top: 3rem;
+            border-top: 1px solid #E2E8F0;
+        }
+
+        .stat-item {
+            padding: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--color-slate);
+            font-weight: 500;
+        }
+
+        /* Feature Sections */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            border-top: 1px solid #E2E8F0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--color-indigo-midnight);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-slate);
+            margin-bottom: 3rem;
+            max-width: 600px;
+        }
+
+        .section-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .section-layout.reverse {
+            direction: rtl;
+        }
+
+        .section-layout.reverse > * {
+            direction: ltr;
+        }
+
+        .section-content h3 {
+            font-size: 1.8rem;
+            color: var(--color-indigo-midnight);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .section-content p {
+            font-size: 1.05rem;
+            color: var(--color-slate);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .feature-list li {
+            padding: 0.8rem 0 0.8rem 2.5rem;
+            position: relative;
+            font-size: 1rem;
+            color: var(--color-indigo-midnight);
+            line-height: 1.6;
+        }
+
+        .feature-list li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: var(--color-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .feature-list li:before {
+            background: var(--color-green);
+            content: '✓';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .visual-container {
+            background: linear-gradient(135deg, var(--color-indigo-light), #F0F4FF);
+            border-radius: 20px;
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .visual-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.2), transparent);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, 20px); }
+        }
+
+        /* Employee Record Card */
+        .employee-card {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            z-index: 10;
+        }
+
+        .employee-header {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .employee-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--gradient-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .employee-info h4 {
+            font-size: 1.3rem;
+            color: var(--color-indigo-midnight);
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .employee-info p {
+            color: var(--color-slate);
+            font-size: 0.95rem;
+        }
+
+        .employee-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .field-group {
+            border-left: 3px solid var(--color-indigo);
+            padding-left: 1rem;
+        }
+
+        .field-label {
+            font-size: 0.85rem;
+            color: var(--color-slate);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        .field-value {
+            font-size: 1rem;
+            color: var(--color-indigo-midnight);
+            font-weight: 500;
+        }
+
+        /* Org Chart */
+        .org-chart {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+            box-shadow: var(--shadow-md);
+        }
+
+        .chart-level {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .chart-level:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            bottom: -1.5rem;
+            left: 50%;
+            width: 2px;
+            height: 1.5rem;
+            background: var(--color-indigo);
+            transform: translateX(-50%);
+        }
+
+        .chart-node {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-indigo-light), #F0F4FF);
+            border: 2px solid var(--color-indigo);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.5rem;
+            min-width: 120px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--color-indigo-midnight);
+            position: relative;
+        }
+
+        .chart-node.ceo {
+            background: var(--color-indigo-light);
+            border-color: var(--color-indigo-deep);
+            padding: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .chart-node.dept {
+            background: rgba(255, 107, 74, 0.08);
+            border-color: var(--color-coral);
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .comparison-table thead {
+            background: var(--color-indigo-light);
+        }
+
+        .comparison-table th {
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 700;
+            color: var(--color-indigo-midnight);
+            border-bottom: 2px solid var(--color-indigo);
+        }
+
+        .comparison-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid #E2E8F0;
+            color: var(--color-indigo-midnight);
+            font-size: 0.95rem;
+        }
+
+        .comparison-table tr:hover {
+            background: #F8FAFC;
+        }
+
+        .feature-check {
+            color: var(--color-green);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .feature-times {
+            color: #CBD5E1;
+            font-weight: 400;
+        }
+
+        /* Data Model Diagram */
+        .data-model {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .model-node {
+            background: linear-gradient(135deg, var(--color-indigo-light), #F0F4FF);
+            border: 2px solid var(--color-indigo);
+            border-radius: 12px;
+            padding: 1.5rem;
+            min-width: 140px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            box-shadow: var(--shadow-md);
+        }
+
+        .model-node h4 {
+            color: var(--color-indigo-midnight);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .model-node p {
+            color: var(--color-slate);
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .model-arrow {
+            width: 40px;
+            height: 2px;
+            background: var(--color-indigo);
+            position: relative;
+        }
+
+        .model-arrow::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid var(--color-indigo);
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+        }
+
+        /* Schedule Grid */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .schedule-day {
+            text-align: center;
+            font-weight: 600;
+            color: var(--color-slate);
+            font-size: 0.85rem;
+            padding: 0.5rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid #E2E8F0;
+            grid-column: span 1;
+        }
+
+        .schedule-cell {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+            transition: transform 0.2s;
+        }
+
+        .schedule-cell:hover {
+            transform: scale(1.05);
+        }
+
+        .schedule-office {
+            background: var(--color-indigo);
+        }
+
+        .schedule-home {
+            background: var(--color-green);
+        }
+
+        .schedule-holiday {
+            background: var(--color-amber);
+        }
+
+        .schedule-sick {
+            background: var(--color-red);
+        }
+
+        .schedule-empty {
+            background: #F1F5F9;
+            color: var(--color-slate);
+        }
+
+        /* CTA Block */
+        .cta-block {
+            max-width: 1000px;
+            margin: 5rem auto;
+            padding: 4rem;
+            background: var(--gradient-main);
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-block h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-block p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-block-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-light {
+            padding: 0.8rem 2rem;
+            background: white;
+            color: var(--color-indigo-deep);
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+
+        .btn-light:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline-light {
+            padding: 0.8rem 2rem;
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-indigo-midnight);
+            color: #CBD5E1;
+            padding: 4rem 2rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h4 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column a {
+            color: #CBD5E1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-divider {
+            border-top: 1px solid rgba(203, 213, 225, 0.2);
+            margin: 2rem 0;
+            padding-top: 2rem;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #94A3B8;
+            font-size: 0.85rem;
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+
+            .section-layout,
+            .section-layout.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+
+            .section-layout.reverse > * {
+                direction: ltr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0;
+            }
+
+            .nav-logo {
+                font-size: 1.2rem;
+            }
+
+            .btn-signin {
+                display: none;
+            }
+
+            .nav-buttons {
+                gap: 0.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .section-layout {
+                gap: 2rem;
+            }
+
+            .visual-container {
+                min-height: 300px;
+                padding: 1.5rem;
+            }
+
+            .employee-fields {
+                grid-template-columns: 1fr;
+            }
+
+            .schedule-grid {
+                grid-template-columns: repeat(7, 1fr);
+                gap: 0.3rem;
+                padding: 1rem;
+            }
+
+            .data-model {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .model-arrow {
+                width: 2px;
+                height: 40px;
+                transform: rotate(90deg);
+                margin: 0.5rem 0;
+            }
+
+            .comparison-table {
+                font-size: 0.85rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 1rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .cta-block {
+                padding: 2rem;
+                margin: 3rem auto;
+            }
+
+            .cta-block h2 {
+                font-size: 1.5rem;
+            }
+
+            .cta-block p {
+                font-size: 1rem;
+            }
+
+            .cta-block-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Wana.Work</a>
+            <ul class="nav-links">
+                <li><a href="/platform" class="active">Platform</a></li>
+                <li><a href="/solutions">Solutions</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/open-source">Open Source</a></li>
+                <li><a href="/resources">Resources</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn-signin">Sign In</button>
+                <button class="btn-primary">Start Free</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="/">Home</a> / <a href="/platform">Platform</a> / <span>Core HR</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero reveal">
+        <h1>Your single source of truth for people data.</h1>
+        <p class="hero-subtitle">Comprehensive Core HR solution with employee records, organization charts, document management, and real-time insights all in one unified platform.</p>
+        <div class="hero-cta">
+            <button class="btn-primary">Start Free</button>
+            <button class="btn-secondary">Book Demo</button>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-number">13+</div>
+                <div class="stat-label">HR Modules</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Complete HRIS</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">Real-time</div>
+                <div class="stat-label">Org Charts</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employee Records Section -->
+    <section class="section reveal">
+        <h2 class="section-title">Employee Records & Data Management</h2>
+        <p class="section-subtitle">Centralized employee database with custom fields, employment history, and complete people analytics.</p>
+        <div class="section-layout">
+            <div class="section-content">
+                <h3>Complete Employee Profiles</h3>
+                <p>Store and manage all employee information in a single, secure location. From basic demographics to complex employment history, Wana.Work keeps your data organized and accessible.</p>
+                <ul class="feature-list">
+                    <li>Unlimited custom fields and data types</li>
+                    <li>Full employment history tracking</li>
+                    <li>Document and file attachments</li>
+                    <li>Real-time data validation</li>
+                    <li>Audit trails and change history</li>
+                    <li>Multi-language support</li>
+                </ul>
+            </div>
+            <div class="visual-container">
+                <div class="employee-card">
+                    <div class="employee-header">
+                        <div class="employee-avatar">AJ</div>
+                        <div class="employee-info">
+                            <h4>Alex Johnson</h4>
+                            <p>Senior Product Manager</p>
+                            <p style="color: var(--color-indigo); margin-top: 0.3rem;">Engineering</p>
+                        </div>
+                    </div>
+                    <div class="employee-fields">
+                        <div class="field-group">
+                            <div class="field-label">Employee ID</div>
+                            <div class="field-value">EMP-2024-001</div>
+                        </div>
+                        <div class="field-group">
+                            <div class="field-label">Start Date</div>
+                            <div class="field-value">Jan 15, 2022</div>
+                        </div>
+                        <div class="field-group">
+                            <div class="field-label">Employment Type</div>
+                            <div class="field-value">Full-time</div>
+                        </div>
+                        <div class="field-group">
+                            <div class="field-label">Reports To</div>
+                            <div class="field-value">VP Engineering</div>
+                        </div>
+                        <div class="field-group">
+                            <div class="field-label">Location</div>
+                            <div class="field-value">San Francisco, CA</div>
+                        </div>
+                        <div class="field-group">
+                            <div class="field-label">Salary Band</div>
+                            <div class="field-value">Level 4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organization Structure Section -->
+    <section class="section reveal">
+        <h2 class="section-title">Organization Charts & Structure</h2>
+        <p class="section-subtitle">Visualize your organizational hierarchy with interactive charts that automatically update in real-time.</p>
+        <div class="section-layout reverse">
+            <div class="section-content">
+                <h3>Dynamic Org Charts</h3>
+                <p>Build comprehensive organizational structures that scale with your business. Automatically generate org charts from your employee data and keep them current without manual updates.</p>
+                <ul class="feature-list">
+                    <li>Auto-generated hierarchy from position data</li>
+                    <li>Multiple chart visualization options</li>
+                    <li>Department and team grouping</li>
+                    <li>Role and responsibility matrices</li>
+                    <li>Span of control analytics</li>
+                    <li>Succession planning insights</li>
+                </ul>
+            </div>
+            <div class="visual-container">
+                <div class="org-chart">
+                    <div class="chart-level">
+                        <div class="chart-node ceo">CEO</div>
+                    </div>
+                    <div class="chart-level">
+                        <div class="chart-node dept">VP Engineering</div>
+                        <div class="chart-node dept">VP Sales</div>
+                        <div class="chart-node dept">VP Operations</div>
+                    </div>
+                    <div class="chart-level">
+                        <div class="chart-node">Product Lead</div>
+                        <div class="chart-node">Engineering Mgr</div>
+                        <div class="chart-node">Sales Mgr</div>
+                        <div class="chart-node">HR Manager</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Position Management Section -->
+    <section class="section reveal">
+        <h2 class="section-title">Position & Role Management</h2>
+        <p class="section-subtitle">Define positions, map competencies, and manage role hierarchies with precision.</p>
+        <div class="section-layout">
+            <div class="section-content">
+                <h3>Flexible Position Structures</h3>
+                <p>Move beyond just employee titles. Create comprehensive position definitions with required competencies, salary grades, reporting relationships, and more. Build the organizational framework that supports your business strategy.</p>
+                <ul class="feature-list">
+                    <li>Position templates and definitions</li>
+                    <li>Competency mapping and requirements</li>
+                    <li>Salary grade associations</li>
+                    <li>Job family grouping</li>
+                    <li>Required skills and certifications</li>
+                    <li>Benchmark data integration</li>
+                </ul>
+            </div>
+            <div class="visual-container">
+                <div style="position: relative; z-index: 10; width: 100%; padding: 2rem; background: white; border-radius: 12px; box-shadow: var(--shadow-md);">
+                    <div style="margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #E2E8F0;">
+                        <h4 style="color: var(--color-indigo-midnight); font-weight: 600; margin-bottom: 0.3rem;">Senior Product Manager</h4>
+                        <p style="color: var(--color-slate); font-size: 0.9rem;">Engineering Department</p>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div>
+                            <p style="color: var(--color-slate); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">Salary Grade</p>
+                            <p style="color: var(--color-indigo-midnight); font-weight: 500;">Level 4: 120K-150K</p>
+                        </div>
+                        <div>
+                            <p style="color: var(--color-slate); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">Reports To</p>
+                            <p style="color: var(--color-indigo-midnight); font-weight: 500;">VP Engineering</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p style="color: var(--color-slate); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 0.8rem;">Required Competencies</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="display: inline-block; background: var(--color-indigo-light); color: var(--color-indigo-deep); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">Product Strategy</span>
+                            <span style="display: inline-block; background: var(--color-indigo-light); color: var(--color-indigo-deep); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">Data Analysis</span>
+                            <span style="display: inline-block; background: var(--color-indigo-light); color: var(--color-indigo-deep); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">Leadership</span>
+                            <span style="display: inline-block; background: var(--color-indigo-light); color: var(--color-indigo-deep); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">Communication</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Document Management Section -->
+    <section class="section reveal">
+        <h2 class="section-title">Document Management & Compliance</h2>
+        <p class="section-subtitle">Store, version, and manage all employee documents with granular access controls and audit trails.</p>
+        <div class="section-layout reverse">
+            <div class="section-content">
+                <h3>Secure Document Storage</h3>
+                <p>Keep all employee documents organized and compliant. From offer letters to certifications, manage every document with version control, access permissions, and complete audit trails for regulatory compliance.</p>
+                <ul class="feature-list">
+                    <li>Multi-format document support</li>
+                    <li>Automatic version control</li>
+                    <li>Role-based access permissions</li>
+                    <li>Document expiration tracking</li>
+                    <li>Compliance audit trails</li>
+                    <li>Template library for standardization</li>
+                </ul>
+            </div>
+            <div class="visual-container">
+                <div style="position: relative; z-index: 10; width: 100%; background: white; border-radius: 12px; padding: 2rem; box-shadow: var(--shadow-md);">
+                    <h4 style="color: var(--color-indigo-midnight); font-weight: 600; margin-bottom: 1.5rem;">Employee Documents</h4>
+                    <div style="space: 1rem;">
+                        <div style="display: flex; align-items: center; padding: 0.8rem; border-bottom: 1px solid #E2E8F0; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: var(--color-coral-pale); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--color-coral); font-weight: 700;">PDF</div>
+                                <div>
+                                    <p style="color: var(--color-indigo-midnight); font-weight: 500; font-size: 0.95rem;">offer_letter_2024.pdf</p>
+                                    <p style="color: var(--color-slate); font-size: 0.85rem;">v2 - Updated Jan 15</p>
+                                </div>
+                            </div>
+                            <span style="background: var(--color-green); color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">ACTIVE</span>
+                        </div>
+                        <div style="display: flex; align-items: center; padding: 0.8rem; border-bottom: 1px solid #E2E8F0; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: #E0E7FF; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--color-indigo); font-weight: 700;">DOCX</div>
+                                <div>
+                                    <p style="color: var(--color-indigo-midnight); font-weight: 500; font-size: 0.95rem;">employee_handbook.docx</p>
+                                    <p style="color: var(--color-slate); font-size: 0.85rem;">v1 - Expires Dec 31</p>
+                                </div>
+                            </div>
+                            <span style="background: var(--color-amber); color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">REVIEW</span>
+                        </div>
+                        <div style="display: flex; align-items: center; padding: 0.8rem; border-bottom: 1px solid #E2E8F0; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: #F0FDF4; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--color-green); font-weight: 700;">IMG</div>
+                                <div>
+                                    <p style="color: var(--color-indigo-midnight); font-weight: 500; font-size: 0.95rem;">id_verification.jpg</p>
+                                    <p style="color: var(--color-slate); font-size: 0.85rem;">v1 - Verified</p>
+                                </div>
+                            </div>
+                            <span style="background: #94A3B8; color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">ARCHIVED</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Schedules Section -->
+    <section class="section reveal">
+        <h2 class="section-title">Work Schedules & Delegation</h2>
+        <p class="section-subtitle">Manage schedules, track work locations, and handle delegation with an intuitive calendar interface.</p>
+        <div class="section-layout">
+            <div class="section-content">
+                <h3>Schedule Management & Flexibility</h3>
+                <p>Support hybrid and flexible work models with comprehensive scheduling tools. Track office days, remote work, holidays, and time off all in one place with real-time visibility across your organization.</p>
+                <ul class="feature-list">
+                    <li>Color-coded schedule types</li>
+                    <li>Hybrid work tracking</li>
+                    <li>Holiday and PTO management</li>
+                    <li>Manager delegation controls</li>
+                    <li>Team schedule visibility</li>
+                    <li>Compliance reporting</li>
+                </ul>
+            </div>
+            <div class="visual-container">
+                <div style="position: relative; z-index: 10; width: 100%;">
+                    <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow-md);">
+                        <h4 style="color: var(--color-indigo-midnight); font-weight: 600; margin-bottom: 1rem; font-size: 0.95rem;">April 2024 Schedule</h4>
+                        <div class="schedule-grid">
+                            <div class="schedule-day">Mon</div>
+                            <div class="schedule-day">Tue</div>
+                            <div class="schedule-day">Wed</div>
+                            <div class="schedule-day">Thu</div>
+                            <div class="schedule-day">Fri</div>
+                            <div class="schedule-day">Sat</div>
+                            <div class="schedule-day">Sun</div>
+
+                            <div class="schedule-cell schedule-office">Off</div>
+                            <div class="schedule-cell schedule-office">Off</div>
+                            <div class="schedule-cell schedule-office">Off</div>
+                            <div class="schedule-cell schedule-office">Off</div>
+                            <div class="schedule-cell schedule-office">Off</div>
+                            <div class="schedule-cell schedule-empty">-</div>
+                            <div class="schedule-cell schedule-empty">-</div>
+
+                            <div class="schedule-cell schedule-office">Office</div>
+                            <div class="schedule-cell schedule-home">Home</div>
+                            <div class="schedule-cell schedule-office">Office</div>
+                            <div class="schedule-cell schedule-home">Home</div>
+                            <div class="schedule-cell schedule-office">Office</div>
+                            <div class="schedule-cell schedule-empty">-</div>
+                            <div class="schedule-cell schedule-empty">-</div>
+
+                            <div class="schedule-cell schedule-office">Office</div>
+                            <div class="schedule-cell schedule-office">Office</div>
+                            <div class="schedule-cell schedule-holiday">Holiday</div>
+                            <div class="schedule-cell schedule-home">Home</div>
+                            <div class="schedule-cell schedule-office">Office</div>
+                            <div class="schedule-cell schedule-empty">-</div>
+                            <div class="schedule-cell schedule-empty">-</div>
+
+                            <div class="schedule-cell schedule-office">Office</div>
+                            <div class="schedule-cell schedule-sick">Sick</div>
+                            <div class="schedule-cell schedule-office">Office</div>
+                            <div class="schedule-cell schedule-home">Home</div>
+                            <div class="schedule-cell schedule-office">Office</div>
+                            <div class="schedule-cell schedule-empty">-</div>
+                            <div class="schedule-cell schedule-empty">-</div>
+                        </div>
+                        <div style="display: flex; gap: 1.5rem; margin-top: 1rem; flex-wrap: wrap; padding-top: 1rem; border-top: 1px solid #E2E8F0;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
+                                <div style="width: 16px; height: 16px; background: var(--color-indigo); border-radius: 3px;"></div>
+                                <span style="color: var(--color-indigo-midnight);">Office</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
+                                <div style="width: 16px; height: 16px; background: var(--color-green); border-radius: 3px;"></div>
+                                <span style="color: var(--color-indigo-midnight);">Remote</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
+                                <div style="width: 16px; height: 16px; background: var(--color-amber); border-radius: 3px;"></div>
+                                <span style="color: var(--color-indigo-midnight);">Holiday</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
+                                <div style="width: 16px; height: 16px; background: var(--color-red); border-radius: 3px;"></div>
+                                <span style="color: var(--color-indigo-midnight);">Sick Leave</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Model Section -->
+    <section class="section reveal">
+        <h2 class="section-title">Integrated Data Model</h2>
+        <p class="section-subtitle">A unified data architecture connecting all Core HR components for seamless data flow.</p>
+        <div class="data-model">
+            <div class="model-node">
+                <h4>Employee</h4>
+                <p>Personal data, employment history, documents</p>
+            </div>
+            <div class="model-arrow"></div>
+            <div class="model-node">
+                <h4>Position</h4>
+                <p>Role definition, grade, competencies</p>
+            </div>
+            <div class="model-arrow"></div>
+            <div class="model-node">
+                <h4>Organization</h4>
+                <p>Structure, hierarchy, departments</p>
+            </div>
+            <div class="model-arrow"></div>
+            <div class="model-node">
+                <h4>Competencies</h4>
+                <p>Skills, certifications, levels</p>
+            </div>
+        </div>
+        <p style="text-align: center; color: var(--color-slate); margin-top: 2rem; font-size: 1rem;">All modules share a common data foundation, eliminating silos and ensuring data consistency across your entire HR system.</p>
+    </section>
+
+    <!-- Comparison Table Section -->
+    <section class="section reveal">
+        <h2 class="section-title">How Wana.Work Compares</h2>
+        <p class="section-subtitle">Enterprise-grade features at a fraction of the cost.</p>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Wana.Work Core HR</th>
+                    <th>BambooHR</th>
+                    <th>Workday Core</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Employee Database</td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Org Charts</td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Document Management</td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Position Management</td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-times">Limited</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Competency Mapping</td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-times">No</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Work Schedules</td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-times">Limited</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Custom Fields (Unlimited)</td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-times">Limited</span></td>
+                </tr>
+                <tr>
+                    <td>API Access</td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Open Source</td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-times">No</span></td>
+                    <td><span class="feature-times">No</span></td>
+                </tr>
+                <tr>
+                    <td>Starting Price</td>
+                    <td><span class="feature-check">Free</span></td>
+                    <td>$4/user/month</td>
+                    <td>Custom</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- CTA Block -->
+    <div class="cta-block reveal">
+        <h2>Ready to transform your HR operations?</h2>
+        <p>Join hundreds of organizations using Wana.Work to manage their people data with confidence.</p>
+        <div class="cta-block-buttons">
+            <button class="btn-light">Start Free Trial</button>
+            <button class="btn-outline-light">Book Demo</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="/platform">Platform</a></li>
+                        <li><a href="/solutions">Solutions</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="/roadmap">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Developers</h4>
+                    <ul>
+                        <li><a href="/docs">Documentation</a></li>
+                        <li><a href="/api">API Reference</a></li>
+                        <li><a href="/open-source">Open Source</a></li>
+                        <li><a href="/github">GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/resources">Knowledge Base</a></li>
+                        <li><a href="/webinars">Webinars</a></li>
+                        <li><a href="/templates">Templates</a></li>
+                        <li><a href="/support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="/security">Security</a></li>
+                        <li><a href="/compliance">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <span>&copy; 2024 Wana.Work. All rights reserved.</span>
+                <div>
+                    <a href="#" style="color: #CBD5E1; text-decoration: none; margin: 0 1rem;">Twitter</a>
+                    <a href="#" style="color: #CBD5E1; text-decoration: none; margin: 0 1rem;">LinkedIn</a>
+                    <a href="#" style="color: #CBD5E1; text-decoration: none; margin: 0 1rem;">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Button interactions
+        const startButtons = document.querySelectorAll('.btn-primary, .btn-light');
+        startButtons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.textContent.includes('Start')) {
+                    console.log('Start Free clicked');
+                }
+            });
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Fix nav bar on scroll
+        let lastScrollTop = 0;
+        const nav = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 100) {
+                nav.style.boxShadow = 'var(--shadow-md)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+    </script>
+</body>
+</html>

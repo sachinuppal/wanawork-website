@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HCM for Financial Services: Secure, Compliant HR Platform | Wana.Work</title>
+  <meta name="description" content="Enterprise security, compliance audit trails, and regulatory control for financial institutions. SOX, FINRA, GDPR ready. Self-hosted HR for financial services.">
+  <meta property="og:title" content="HCM for Financial Services | Wana.Work">
+  <meta property="og:description" content="Enterprise security meets modern HR. For financial institutions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wana.work/solutions/finance">
+  <meta property="og:image" content="https://wana.work/og-finance.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1E1B4B;
+      background: #FFFFFF;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.85);
+      border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+      padding: 0 2rem;
+    }
+
+    nav .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #64748B;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: #FF6B4A;
+    }
+
+    nav a.active {
+      color: #FF6B4A;
+    }
+
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #FF6B4A;
+      border-radius: 1px;
+    }
+
+    nav .cta-button {
+      background: linear-gradient(135deg, #FF6B4A, #A855F7);
+      color: white;
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    nav .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 107, 74, 0.3);
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 2rem 0;
+      margin-top: 70px;
+      font-size: 0.9rem;
+      color: #64748B;
+    }
+
+    .breadcrumb a {
+      color: #6366F1;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      color: #1E1B4B;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: #64748B;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 400;
+    }
+
+    .pain-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .pain-point {
+      background: #FFF1EE;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: left;
+      border: 1px solid rgba(255, 107, 74, 0.2);
+    }
+
+    .pain-point h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #E5533A;
+      margin-bottom: 0.5rem;
+    }
+
+    .pain-point p {
+      font-size: 0.95rem;
+      color: #64748B;
+      line-height: 1.5;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .hero-ctas button {
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hero-ctas .primary {
+      background: linear-gradient(135deg, #FF6B4A, #A855F7);
+      color: white;
+    }
+
+    .hero-ctas .primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(255, 107, 74, 0.3);
+    }
+
+    .hero-ctas .secondary {
+      background: transparent;
+      color: #FF6B4A;
+      border: 2px solid #FF6B4A;
+    }
+
+    .hero-ctas .secondary:hover {
+      background: #FFF1EE;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, #EEF2FF, #F3E8FF);
+      border-radius: 20px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FF6B4A, #A855F7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: #64748B;
+      margin-top: 0.5rem;
+    }
+
+    /* Challenge/Solution Grid */
+    .challenges {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: #1E1B4B;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: #64748B;
+      margin-bottom: 2rem;
+    }
+
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .challenge-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid #E0E7FF;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideUp 0.6s ease forwards;
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .challenge-card:hover {
+      box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
+      border-color: #FF6B4A;
+    }
+
+    .challenge-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #FF8F6B, #A855F7);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .challenge-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: white;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .challenge-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1E1B4B;
+      margin-bottom: 0.5rem;
+    }
+
+    .challenge-card p {
+      color: #64748B;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .challenge-solution {
+      background: #EEF2FF;
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 3px solid #6366F1;
+      font-size: 0.9rem;
+      color: #4F46E5;
+      font-weight: 500;
+    }
+
+    /* Featured Modules */
+    .modules {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #FFF1EE, #F3E8FF);
+      border-radius: 20px;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .module-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 107, 74, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .module-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(255, 107, 74, 0.15);
+    }
+
+    .module-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #FF6B4A;
+      margin-bottom: 0.5rem;
+    }
+
+    .module-card p {
+      font-size: 0.9rem;
+      color: #64748B;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .module-link {
+      color: #6366F1;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .module-link:hover {
+      gap: 0.8rem;
+    }
+
+    .module-link::after {
+      content: '→';
+      transition: all 0.3s ease;
+    }
+
+    /* Compliance Callout */
+    .compliance {
+      max-width: 1280px;
+      margin: 4rem auto 0;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, #1E1B4B, #4F46E5);
+      border-radius: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .compliance h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .compliance p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+    }
+
+    .compliance-badges {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* Use Case */
+    .usecase {
+      max-width: 1280px;
+      margin: 4rem auto;
+      padding: 3rem 2rem;
+    }
+
+    .usecase-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .usecase-text h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      color: #1E1B4B;
+    }
+
+    .usecase-text p {
+      font-size: 1rem;
+      color: #64748B;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .usecase-highlight {
+      background: linear-gradient(135deg, #FFF1EE, #F3E8FF);
+      padding: 1.5rem;
+      border-left: 4px solid #FF6B4A;
+      border-radius: 8px;
+      font-style: italic;
+      color: #4F46E5;
+      margin: 1.5rem 0;
+    }
+
+    .usecase-visual {
+      background: linear-gradient(135deg, #EEF2FF, #F3E8FF);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748B;
+    }
+
+    /* Industry Stats */
+    .industry-stats {
+      max-width: 1280px;
+      margin: 4rem auto;
+      padding: 3rem 2rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item {
+      background: linear-gradient(135deg, #FFF1EE, #F3E8FF);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid rgba(255, 107, 74, 0.2);
+    }
+
+    .stat-item-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FF6B4A, #A855F7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-item-label {
+      font-size: 0.95rem;
+      color: #64748B;
+      font-weight: 600;
+    }
+
+    /* CTA Block */
+    .cta-block {
+      background: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+      padding: 4rem 2rem;
+      text-align: center;
+      margin: 4rem 0 0;
+      color: white;
+    }
+
+    .cta-block h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .cta-block p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .cta-block button {
+      background: white;
+      color: #FF6B4A;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .cta-block button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      background: #1E1B4B;
+      color: white;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+    }
+
+    footer .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    footer h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 0.8rem;
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    footer .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .challenge-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .usecase-content {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav .container {
+        padding: 0 1rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .pain-points {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .challenge-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modules {
+        padding: 2rem 1rem;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .modules-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .compliance {
+        padding: 2rem 1rem;
+      }
+
+      .usecase {
+        padding: 2rem 1rem;
+      }
+
+      .usecase-content {
+        gap: 1.5rem;
+      }
+
+      .usecase-text h2 {
+        font-size: 1.5rem;
+      }
+
+      .industry-stats {
+        padding: 2rem 1rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-block h2 {
+        font-size: 1.8rem;
+      }
+
+      footer .container {
+        grid-template-columns: 1fr;
+      }
+
+      .breadcrumb {
+        padding: 1rem 1rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <div class="logo">Wana.Work</div>
+      <ul>
+        <li><a href="https://wana.work">Home</a></li>
+        <li><a href="https://wana.work/solutions" class="active">Solutions</a></li>
+        <li><a href="https://wana.work/features">Features</a></li>
+        <li><a href="https://wana.work/pricing">Pricing</a></li>
+        <li><a href="https://wana.work/contact">Contact</a></li>
+        <li><button class="cta-button">Get Started</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="https://wana.work">Home</a> / <a href="https://wana.work/solutions">Solutions</a> / Finance
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Enterprise security meets modern HR. For financial institutions.</h1>
+    <p class="hero-subtitle">Regulatory compliance, data sovereignty, and audit-ready HR operations built for banking and financial services.</p>
+
+    <div class="pain-points">
+      <div class="pain-point">
+        <h3>Regulatory Compliance</h3>
+        <p>Meet SOX, FINRA, GDPR, and data residency requirements with built-in compliance controls.</p>
+      </div>
+      <div class="pain-point">
+        <h3>Data Security and Access</h3>
+        <p>Role-based access controls, encryption, and activity logging for sensitive employee data.</p>
+      </div>
+      <div class="pain-point">
+        <h3>Licensed Professional Management</h3>
+        <p>Track financial licenses, credentials, and regulatory designations with automatic renewal alerts.</p>
+      </div>
+    </div>
+
+    <div class="hero-ctas">
+      <button class="primary">Start Free Trial</button>
+      <button class="secondary">Book a Demo</button>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-value">Self</div>
+        <div class="stat-label">Hosted Option</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">Audit Trail</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">SOX</div>
+        <div class="stat-label">Compliant</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenge/Solution Grid -->
+  <section class="challenges">
+    <h2 class="section-title">Financial Services Compliance Challenges</h2>
+    <p class="section-subtitle">Solutions designed for the strictest regulatory environments.</p>
+
+    <div class="challenge-grid">
+      <div class="challenge-card">
+        <div class="challenge-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"></path>
+            <polyline points="10 17 8 15 6 17"></polyline>
+          </svg>
+        </div>
+        <h3>SOX and FINRA Compliance</h3>
+        <p>Meet Sarbanes-Oxley and FINRA requirements with documented audit trails and access controls.</p>
+        <div class="challenge-solution">Documents module with complete audit logging and compliance documentation workflows</div>
+      </div>
+
+      <div class="challenge-card">
+        <div class="challenge-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+        <h3>Data Security and Access Control</h3>
+        <p>Restrict access to sensitive HR data based on role, department, and regulatory requirement.</p>
+        <div class="challenge-solution">Administration module with granular role-based access controls and encryption</div>
+      </div>
+
+      <div class="challenge-card">
+        <div class="challenge-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11z"></path>
+          </svg>
+        </div>
+        <h3>Licensed Professional Tracking</h3>
+        <p>Manage Series 7, Series 63, CFA, and other financial licenses with compliance verification.</p>
+        <div class="challenge-solution">Certificates module with financial license tracking and mandatory renewal workflows</div>
+      </div>
+
+      <div class="challenge-card">
+        <div class="challenge-icon">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <h3>Audit Trail and Documentation</h3>
+        <p>Maintain complete activity logs, document approvals, and prepare for regulatory audits.</p>
+        <div class="challenge-solution">WorkFlows module with documented approval chains and audit trail preservation</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Modules -->
+  <section class="modules">
+    <div class="container" style="max-width: 1280px;">
+      <h2 class="section-title">Platform Features for Financial Services</h2>
+      <p class="section-subtitle">Core modules built for regulatory compliance and data security.</p>
+
+      <div class="modules-grid">
+        <div class="module-card">
+          <h3>Documents</h3>
+          <p>Secure document management with audit trails, encryption, and retention policies.</p>
+          <a href="https://wana.work/features/documents" class="module-link">Learn More</a>
+        </div>
+        <div class="module-card">
+          <h3>WorkFlows</h3>
+          <p>Compliance workflows with documented approvals and audit-ready process documentation.</p>
+          <a href="https://wana.work/features/workflows" class="module-link">Learn More</a>
+        </div>
+        <div class="module-card">
+          <h3>Certificates</h3>
+          <p>Track financial licenses and professional designations with compliance verification.</p>
+          <a href="https://wana.work/features/certificates" class="module-link">Learn More</a>
+        </div>
+        <div class="module-card">
+          <h3>Administration</h3>
+          <p>Role-based access controls, encryption, and data governance for sensitive information.</p>
+          <a href="https://wana.work/features/administration" class="module-link">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance Callout -->
+  <section class="compliance">
+    <h2>Built for Financial Services Regulations</h2>
+    <p>Wana.Work meets the strict compliance and security requirements of financial institutions.</p>
+    <div class="compliance-badges">
+      <div class="badge">SOX Compliant</div>
+      <div class="badge">FINRA Ready</div>
+      <div class="badge">GDPR Ready</div>
+      <div class="badge">Data Sovereignty</div>
+    </div>
+  </section>
+
+  <!-- Use Case -->
+  <section class="usecase">
+    <div class="usecase-content">
+      <div class="usecase-text">
+        <h2>A Day in the Life: Chief People Officer at Regional Bank</h2>
+        <p>Robert oversees HR operations for a regional bank with 400 employees across 15 branch locations.</p>
+        <p>His morning includes a compliance review where he checks on Series 7 and Series 63 license renewals. Wana.Work alerts him that 5 advisors need to renew within 60 days, and he initiates the renewal process immediately.</p>
+        <p>An auditor request comes in. Robert uses Wana.Work to pull complete activity logs showing every access to employee files, all approval decisions, and policy changes. Everything is documented and ready for the audit in minutes.</p>
+        <div class="usecase-highlight">"With self-hosted Wana.Work, we control every aspect of data security. Our compliance team loves the audit trails, and we passed our last SOX review without any findings."</div>
+        <p>By afternoon, Robert is configuring access controls to ensure HR staff can only see data they need for their specific roles. All changes are logged automatically.</p>
+      </div>
+      <div class="usecase-visual">
+        <svg viewBox="0 0 200 200" style="width: 150px; height: 150px; opacity: 0.3;">
+          <rect x="30" y="40" width="140" height="120" stroke="#FF6B4A" fill="none" stroke-width="2" rx="10"></rect>
+          <line x1="50" y1="60" x2="150" y2="60" stroke="#A855F7" stroke-width="2"></line>
+          <line x1="50" y1="80" x2="150" y2="80" stroke="#A855F7" stroke-width="2"></line>
+          <line x1="50" y1="100" x2="150" y2="100" stroke="#6366F1" stroke-width="2"></line>
+          <circle cx="170" cy="80" r="8" stroke="#FF6B4A" fill="none" stroke-width="2"></circle>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industry Stats -->
+  <section class="industry-stats">
+    <h2 class="section-title">Financial Services Compliance Landscape</h2>
+    <p class="section-subtitle">Critical regulatory and operational challenges in financial institutions.</p>
+
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-item-value">23</div>
+        <div class="stat-item-label">Compliance Frameworks to Track</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item-value">100%</div>
+        <div class="stat-item-label">License Verification Required</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item-value">7 years</div>
+        <div class="stat-item-label">Record Retention Required</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item-value">40+</div>
+        <div class="stat-item-label">Hours per Audit Cycle</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Block -->
+  <section class="cta-block">
+    <h2>Ready to Secure Your Financial HR Operations?</h2>
+    <p>Enterprise-grade compliance, data security, and audit readiness for financial institutions.</p>
+    <button>Start Your Free Trial Today</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="https://wana.work/features">Features</a></li>
+          <li><a href="https://wana.work/pricing">Pricing</a></li>
+          <li><a href="https://wana.work/security">Security</a></li>
+          <li><a href="https://wana.work/compliance">Compliance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="https://wana.work/solutions/healthcare">Healthcare</a></li>
+          <li><a href="https://wana.work/solutions/manufacturing">Manufacturing</a></li>
+          <li><a href="https://wana.work/solutions/technology">Technology</a></li>
+          <li><a href="https://wana.work/solutions/finance">Finance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://wana.work/about">About</a></li>
+          <li><a href="https://wana.work/blog">Blog</a></li>
+          <li><a href="https://wana.work/careers">Careers</a></li>
+          <li><a href="https://wana.work/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="https://wana.work/privacy">Privacy</a></li>
+          <li><a href="https://wana.work/terms">Terms</a></li>
+          <li><a href="https://wana.work/dpa">DPA</a></li>
+          <li><a href="https://wana.work/cookies">Cookies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="https://wana.work/docs">Documentation</a></li>
+          <li><a href="https://wana.work/api">API</a></li>
+          <li><a href="https://wana.work/integrations">Integrations</a></li>
+          <li><a href="https://wana.work/support">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Wana.Work. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.challenge-card, .module-card, .stat-item').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Wana.Work Financial Services HCM Solution",
+      "description": "Enterprise HR platform for financial institutions with SOX compliance, FINRA readiness, data security, and audit trails",
+      "applicationCategory": "BusinessApplication",
+      "url": "https://wana.work/solutions/finance",
+      "offers": {
+        "@type": "Offer",
+        "price": "Contact for pricing",
+        "priceCurrency": "USD"
+      }
+    }
+  </script>
+</body>
+</html>

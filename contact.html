@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Wana.Work: Sales, Support & Community</title>
+    <meta name="description" content="Get in touch with Wana.Work. Contact sales for enterprise inquiries, reach support for technical help, or join our open source community.">
+    <meta name="og:title" content="Contact Wana.Work: Sales, Support & Community">
+    <meta name="og:description" content="Get in touch with Wana.Work. Contact sales for enterprise inquiries, reach support for technical help, or join our open source community.">
+    <meta name="og:type" content="website">
+    <meta name="og:url" content="https://wana.work/contact">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Wana.Work: Sales, Support & Community">
+    <meta name="twitter:description" content="Get in touch with Wana.Work. Contact sales for enterprise inquiries, reach support for technical help, or join our open source community.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #1F2937;
+            background: #FFFFFF;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            background-clip: padding-box;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #6366F1;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #64748B;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #6366F1;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            margin-top: 5rem;
+            padding: 1.5rem 2rem;
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .breadcrumb a, .breadcrumb span {
+            font-size: 0.875rem;
+            color: #64748B;
+            text-decoration: none;
+        }
+
+        .breadcrumb a {
+            color: #6366F1;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 0.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: #F8F9FA;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #1E1B4B;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #64748B;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        /* Contact Options Grid */
+        .contact-options {
+            max-width: 1280px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .contact-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contact-card:hover {
+            border-color: #6366F1;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.1);
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1E1B4B;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            font-size: 0.9375rem;
+            color: #64748B;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .contact-email {
+            display: inline-block;
+            font-weight: 600;
+            color: #FF6B4A;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            font-size: 0.9375rem;
+        }
+
+        .contact-email:hover {
+            color: #E5533A;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            letter-spacing: -0.02em;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+            color: #FFFFFF;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #EEF2FF;
+            color: #6366F1;
+        }
+
+        .btn-secondary:hover {
+            background: #E0E7FF;
+        }
+
+        /* Contact Form */
+        .contact-form-section {
+            max-width: 600px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .form-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1E1B4B;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .form-subtitle {
+            font-size: 1rem;
+            color: #64748B;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            transition: all 0.2s;
+            background: #FFFFFF;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #6366F1;
+            box-shadow: 0 0 0 3px #EEF2FF;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .form-error {
+            color: #EF4444;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .form-group.error input,
+        .form-group.error textarea,
+        .form-group.error select {
+            border-color: #EF4444;
+        }
+
+        .form-group.error .form-error {
+            display: block;
+        }
+
+        .form-success {
+            background: #ECFDF5;
+            border: 1px solid #10B981;
+            color: #047857;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: none;
+            font-size: 0.9375rem;
+        }
+
+        .form-success.show {
+            display: block;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 0.875rem;
+            background: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+            color: #FFFFFF;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9375rem;
+        }
+
+        .btn-submit:hover:not(:disabled) {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .faq-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1E1B4B;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .faq-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            background: #FFFFFF;
+            cursor: pointer;
+            user-select: none;
+            font-weight: 600;
+            color: #1F2937;
+        }
+
+        .faq-question:hover {
+            background: #F9FAFB;
+        }
+
+        .faq-toggle {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6366F1;
+            transition: transform 0.2s;
+        }
+
+        .faq-item.open .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #F9FAFB;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding: 1.5rem;
+            color: #64748B;
+            line-height: 1.6;
+        }
+
+        /* Community Links */
+        .community-section {
+            max-width: 1280px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .community-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1E1B4B;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .community-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #1F2937;
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .community-link.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .community-link:hover {
+            border-color: #6366F1;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .community-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .community-name {
+            font-weight: 600;
+            font-size: 0.9375rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1E1B4B;
+            color: #E5E7EB;
+            margin-top: 4rem;
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            color: #FFFFFF;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 0.9375rem;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #D1D5DB;
+            text-decoration: none;
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+            transition: color 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: #6366F1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #9CA3AF;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .contact-options {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .breadcrumb {
+                padding: 1rem;
+                margin-top: 4rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 0.9375rem;
+            }
+
+            .contact-options {
+                padding: 0 1rem;
+            }
+
+            .contact-form-section {
+                padding: 0 1rem;
+            }
+
+            .form-title {
+                font-size: 1.5rem;
+            }
+
+            .faq-section {
+                padding: 0 1rem;
+            }
+
+            .faq-title {
+                font-size: 1.5rem;
+            }
+
+            .community-section {
+                padding: 0 1rem;
+            }
+
+            .community-title {
+                font-size: 1.5rem;
+            }
+
+            .community-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 1rem;
+            }
+
+            .community-link {
+                padding: 1.5rem 1rem;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Scroll reveal animation */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            animation: slideUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Wana.Work",
+        "url": "https://wana.work",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Sales",
+            "email": "sales@wana.work"
+        }
+    }
+    </script>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Wana.Work</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>Contact</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Let's talk.</h1>
+        <p>We're here to help with your questions about Wana.Work and our community.</p>
+    </section>
+
+    <!-- Contact Options -->
+    <section class="contact-options">
+        <div class="contact-card">
+            <h3>Sales Inquiries</h3>
+            <p>For enterprise pricing, custom deployments, and product demos.</p>
+            <a href="mailto:sales@wana.work" class="contact-email">sales@wana.work</a>
+            <a href="#" class="btn btn-primary">Book a Demo</a>
+        </div>
+        <div class="contact-card">
+            <h3>Technical Support</h3>
+            <p>For existing users needing help with implementation and troubleshooting.</p>
+            <a href="mailto:support@wana.work" class="contact-email">support@wana.work</a>
+            <a href="#" class="btn btn-secondary">Visit Help Center</a>
+        </div>
+        <div class="contact-card">
+            <h3>Community</h3>
+            <p>For open source contributors, feature requests, and community discussions.</p>
+            <a href="https://github.com/wanawork" class="contact-email">github.com/wanawork</a>
+            <a href="https://github.com/wanawork" class="btn btn-primary">Join on GitHub</a>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+        <h2 class="form-title">Send us a message</h2>
+        <p class="form-subtitle">Tell us a bit about your inquiry and we'll get back to you soon.</p>
+
+        <div class="form-success" id="successMessage">
+            Thank you for reaching out. We'll review your message and get back to you as soon as possible.
+        </div>
+
+        <form id="contactForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                    <div class="form-error">First name is required</div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                    <div class="form-error">Last name is required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Work Email</label>
+                <input type="email" id="email" name="email" required>
+                <div class="form-error">Please enter a valid email address</div>
+            </div>
+
+            <div class="form-group">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" name="company" required>
+                <div class="form-error">Company name is required</div>
+            </div>
+
+            <div class="form-group">
+                <label for="companySize">Company Size</label>
+                <select id="companySize" name="companySize" required>
+                    <option value="">Select company size</option>
+                    <option value="1-50">1 to 50 employees</option>
+                    <option value="51-200">51 to 200 employees</option>
+                    <option value="201-500">201 to 500 employees</option>
+                    <option value="501-2000">501 to 2000 employees</option>
+                    <option value="2000+">2000+ employees</option>
+                </select>
+                <div class="form-error">Please select a company size</div>
+            </div>
+
+            <div class="form-group">
+                <label for="inquiryType">Inquiry Type</label>
+                <select id="inquiryType" name="inquiryType" required>
+                    <option value="">Select inquiry type</option>
+                    <option value="sales">Sales</option>
+                    <option value="support">Support</option>
+                    <option value="partnership">Partnership</option>
+                    <option value="other">Other</option>
+                </select>
+                <div class="form-error">Please select an inquiry type</div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+                <div class="form-error">Message is required</div>
+            </div>
+
+            <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What are your typical response times?</span>
+                <div class="faq-toggle">&#9662;</div>
+            </div>
+            <div class="faq-answer">
+                <p>We aim to respond to all inquiries within 24 business hours. Sales inquiries are typically answered within 4 hours during business hours. Technical support response times vary based on your support plan, with priority support offering 1 hour response times.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How can I schedule a product demo?</span>
+                <div class="faq-toggle">&#9662;</div>
+            </div>
+            <div class="faq-answer">
+                <p>You can schedule a demo by clicking the "Book a Demo" button in the Sales Inquiries section above, or by emailing sales@wana.work directly. Our sales team will work with you to find a time that fits your schedule. Demos typically take 30 to 45 minutes and can be conducted over video call or in person if you're in our service area.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What are your technical support hours?</span>
+                <div class="faq-toggle">&#9662;</div>
+            </div>
+            <div class="faq-answer">
+                <p>Technical support is available Monday through Friday, 9 AM to 6 PM EST. Enterprise customers with premium support plans have access to 24/7 support with guaranteed response times. You can also visit our Help Center documentation at any time for self-service solutions.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Do you provide support for self-hosted deployments?</span>
+                <div class="faq-toggle">&#9662;</div>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, we offer support for self-hosted deployments. The level of support available depends on your enterprise plan. Contact our sales team for information about self-hosted support options, setup assistance, and custom deployment configurations.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What SLA terms do you offer for enterprise customers?</span>
+                <div class="faq-toggle">&#9662;</div>
+            </div>
+            <div class="faq-answer">
+                <p>Enterprise customers receive SLA guarantees including uptime commitments, incident response times, and priority support. We offer tiered SLA options ranging from standard to premium, with guarantees up to 99.99% uptime. Contact our sales team to discuss SLA options that match your business requirements.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How do I contribute to the open source project?</span>
+                <div class="faq-toggle">&#9662;</div>
+            </div>
+            <div class="faq-answer">
+                <p>We welcome contributions from the community. Visit our GitHub repository to see open issues and contribution guidelines. Start with the "good first issue" labels if you're new to the project. You can also join our community Discord to connect with other contributors and discuss feature ideas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Links -->
+    <section class="community-section">
+        <h2 class="community-title">Join Our Community</h2>
+        <div class="community-grid">
+            <a href="https://github.com/wanawork" class="community-link" target="_blank">
+                <div class="community-icon">&#x1F4A0;</div>
+                <div class="community-name">GitHub</div>
+            </a>
+            <a href="https://docs.wana.work" class="community-link" target="_blank">
+                <div class="community-icon">&#x1F4DA;</div>
+                <div class="community-name">Documentation</div>
+            </a>
+            <a href="#" class="community-link">
+                <div class="community-icon">&#x1F916;</div>
+                <div class="community-name">Discord</div>
+            </a>
+            <a href="https://blog.wana.work" class="community-link" target="_blank">
+                <div class="community-icon">&#x1F4F0;</div>
+                <div class="community-name">Blog</div>
+            </a>
+            <a href="https://changelog.wana.work" class="community-link" target="_blank">
+                <div class="community-icon">&#x1F680;</div>
+                <div class="community-name">Changelog</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Product</h3>
+                <a href="/features">Features</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/security">Security</a>
+                <a href="/enterprise">Enterprise</a>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <a href="/about">About</a>
+                <a href="/blog">Blog</a>
+                <a href="/careers">Careers</a>
+                <a href="/press">Press</a>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <a href="/docs">Documentation</a>
+                <a href="/community">Community</a>
+                <a href="/support">Support</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/security">Security</a>
+                <a href="/compliance">Compliance</a>
+            </div>
+            <div class="footer-column">
+                <h3>Social</h3>
+                <a href="https://twitter.com/wanawork" target="_blank">Twitter</a>
+                <a href="https://github.com/wanawork" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/company/wanawork" target="_blank">LinkedIn</a>
+                <a href="/rss">RSS</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Wana.Work. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe contact cards
+        document.querySelectorAll('.contact-card').forEach((card) => {
+            observer.observe(card);
+        });
+
+        // Observe FAQ items
+        document.querySelectorAll('.faq-item').forEach((item) => {
+            observer.observe(item);
+        });
+
+        // Observe community links
+        document.querySelectorAll('.community-link').forEach((link) => {
+            observer.observe(link);
+        });
+
+        // FAQ Accordion functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach((question) => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isOpen = faqItem.classList.contains('open');
+
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach((item) => {
+                    item.classList.remove('open');
+                });
+
+                // Toggle current item
+                if (!isOpen) {
+                    faqItem.classList.add('open');
+                }
+            });
+        });
+
+        // Form validation and submission
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Reset previous errors
+            document.querySelectorAll('.form-group').forEach((group) => {
+                group.classList.remove('error');
+            });
+
+            // Validate form
+            let isValid = true;
+            const formData = new FormData(contactForm);
+            const fields = {
+                firstName: { value: formData.get('firstName'), type: 'text' },
+                lastName: { value: formData.get('lastName'), type: 'text' },
+                email: { value: formData.get('email'), type: 'email' },
+                company: { value: formData.get('company'), type: 'text' },
+                companySize: { value: formData.get('companySize'), type: 'select' },
+                inquiryType: { value: formData.get('inquiryType'), type: 'select' },
+                message: { value: formData.get('message'), type: 'textarea' }
+            };
+
+            // Validate first name
+            if (!fields.firstName.value.trim()) {
+                document.getElementById('firstName').parentElement.classList.add('error');
+                isValid = false;
+            }
+
+            // Validate last name
+            if (!fields.lastName.value.trim()) {
+                document.getElementById('lastName').parentElement.classList.add('error');
+                isValid = false;
+            }
+
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!fields.email.value.trim() || !emailRegex.test(fields.email.value)) {
+                document.getElementById('email').parentElement.classList.add('error');
+                isValid = false;
+            }
+
+            // Validate company
+            if (!fields.company.value.trim()) {
+                document.getElementById('company').parentElement.classList.add('error');
+                isValid = false;
+            }
+
+            // Validate company size
+            if (!fields.companySize.value) {
+                document.getElementById('companySize').parentElement.classList.add('error');
+                isValid = false;
+            }
+
+            // Validate inquiry type
+            if (!fields.inquiryType.value) {
+                document.getElementById('inquiryType').parentElement.classList.add('error');
+                isValid = false;
+            }
+
+            // Validate message
+            if (!fields.message.value.trim()) {
+                document.getElementById('message').parentElement.classList.add('error');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Show success message
+                successMessage.classList.add('show');
+
+                // Reset form
+                contactForm.reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });
+
+        // Prevent form submission on Enter in text inputs
+        const formInputs = document.querySelectorAll('input[type="text"], textarea');
+        formInputs.forEach((input) => {
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && input.tagName !== 'TEXTAREA') {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

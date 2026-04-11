@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Workflow Automation & Business Process Engine | Wana.Work</title>
+    <meta name="description" content="Automate every HR process with zero code. Visual workflow builder, smart alerts, email templates, and scheduled automations.">
+    <meta name="keywords" content="HR workflow automation, business process engine, no-code HR automation, workflow builder">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="HR Workflow Automation & Business Process Engine | Wana.Work">
+    <meta property="og:description" content="Automate every HR process with zero code. Visual workflow builder, smart alerts, email templates, and scheduled automations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wana.work/platform/workflows">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Wana.Work Workflows",
+        "description": "HR Workflow Automation & Business Process Engine",
+        "url": "https://wana.work/platform/workflows",
+        "applicationCategory": "BusinessApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "Contact for pricing"
+        }
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1E1B4B;
+            background: #FFFFFF;
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            letter-spacing: -0.02em;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: clamp(2.25rem, 5vw, 3.75rem);
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: clamp(1.875rem, 4vw, 3rem);
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            backdrop-filter: blur(20px) saturate(180%);
+            background: rgba(255, 255, 255, 0.85);
+            border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+            padding: 0 2rem;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #64748B;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #FF6B4A;
+        }
+
+        .nav-links a.active {
+            color: #6366F1;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #6366F1;
+            border-radius: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            nav {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 1400px;
+            margin: 100px auto 0;
+            padding: 2rem 2rem 0;
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            color: #64748B;
+        }
+
+        .breadcrumb a {
+            color: #6366F1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: #FF6B4A;
+        }
+
+        .breadcrumb .separator {
+            color: #CBD5E1;
+        }
+
+        @media (max-width: 768px) {
+            .breadcrumb {
+                padding: 1.5rem 1rem 0;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            margin: 2rem 0 1.5rem;
+            color: #1E1B4B;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: #64748B;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            padding: 1.5rem;
+            background: #F3F0FF;
+            border-radius: 12px;
+            border: 1px solid #E9D5FF;
+        }
+
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF6B4A, #A855F7);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: #64748B;
+            font-weight: 500;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B4A, #A855F7);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(255, 107, 74, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #6366F1;
+            border: 2px solid #6366F1;
+        }
+
+        .btn-secondary:hover {
+            background: #EEF2FF;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Diagram */
+        .hero-diagram {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #FFF1EE, #F3E8FF);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 107, 74, 0.2);
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .workflow-flow {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .flow-node {
+            padding: 1rem 1.5rem;
+            background: white;
+            border: 2px solid #FF6B4A;
+            border-radius: 12px;
+            font-weight: 600;
+            color: #1E1B4B;
+            min-width: 120px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(255, 107, 74, 0.1);
+        }
+
+        .flow-node.condition {
+            border-color: #A855F7;
+        }
+
+        .flow-node.action {
+            border-color: #6366F1;
+        }
+
+        .flow-arrow {
+            font-size: 2rem;
+            color: #A855F7;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Content Sections */
+        .section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            color: #1E1B4B;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #64748B;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Feature Layout */
+        .feature-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+
+        .feature-layout.reverse {
+            direction: rtl;
+        }
+
+        .feature-layout.reverse > * {
+            direction: ltr;
+        }
+
+        .feature-content h3 {
+            color: #1E1B4B;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-content p {
+            color: #64748B;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: #64748B;
+        }
+
+        .feature-list svg {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            color: #10B981;
+        }
+
+        .feature-visual {
+            background: linear-gradient(135deg, #F3E8FF, #EEF2FF);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08);
+        }
+
+        .canvas-grid {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            width: 100%;
+            border: 2px dashed #CBD5E1;
+            position: relative;
+        }
+
+        .canvas-node {
+            padding: 1rem;
+            background: linear-gradient(135deg, #FF6B4A, #FF8F6B);
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .canvas-node.condition {
+            background: linear-gradient(135deg, #A855F7, #D946EF);
+        }
+
+        .canvas-node.action {
+            background: linear-gradient(135deg, #6366F1, #818CF8);
+        }
+
+        .canvas-connector {
+            width: 2px;
+            height: 1.5rem;
+            background: linear-gradient(to bottom, #A855F7, #6366F1);
+            margin: -0.75rem auto;
+        }
+
+        @media (max-width: 1024px) {
+            .feature-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .feature-layout.reverse {
+                direction: ltr;
+            }
+            .feature-visual {
+                min-height: 300px;
+            }
+        }
+
+        /* Template Grid */
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .template-card {
+            background: white;
+            border: 2px solid #F1F5F9;
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .template-card:hover {
+            border-color: #FF6B4A;
+            box-shadow: 0 16px 32px rgba(255, 107, 74, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .template-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #FFF1EE, #F3E8FF);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .template-card h4 {
+            color: #1E1B4B;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .template-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: #64748B;
+            margin-top: 1.5rem;
+        }
+
+        .template-badge {
+            display: inline-block;
+            background: #F1F5F9;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        /* Alerts Section */
+        .alert-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .alert-channels {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .alert-channel {
+            padding: 1.5rem;
+            background: white;
+            border: 2px solid #F1F5F9;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .alert-channel:hover {
+            border-color: #FF6B4A;
+            background: #FFF1EE;
+        }
+
+        .channel-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: 600;
+        }
+
+        .channel-email .channel-icon {
+            background: #FFF1EE;
+            color: #FF6B4A;
+        }
+
+        .channel-app .channel-icon {
+            background: #EEF2FF;
+            color: #6366F1;
+        }
+
+        .channel-sms .channel-icon {
+            background: #F3E8FF;
+            color: #A855F7;
+        }
+
+        .channel-info {
+            flex: 1;
+        }
+
+        .channel-info h4 {
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+
+        .channel-info p {
+            font-size: 0.85rem;
+            color: #64748B;
+        }
+
+        .alert-config {
+            background: white;
+            border: 2px dashed #CBD5E1;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .config-row {
+            margin-bottom: 1.5rem;
+        }
+
+        .config-label {
+            display: block;
+            font-weight: 600;
+            color: #1E1B4B;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .config-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        /* Email Template Section */
+        .email-layout {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .template-sidebar {
+            background: #F8FAFC;
+            border-radius: 12px;
+            padding: 1.5rem;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .template-item {
+            padding: 0.75rem;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #64748B;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .template-item:hover,
+        .template-item.active {
+            border-left-color: #FF6B4A;
+            background: #FFF1EE;
+            color: #1E1B4B;
+        }
+
+        .email-editor {
+            background: white;
+            border: 2px dashed #CBD5E1;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .email-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #E2E8F0;
+            margin-bottom: 1.5rem;
+        }
+
+        .email-subject {
+            font-weight: 600;
+            color: #1E1B4B;
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .toolbar-btn {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #E2E8F0;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .toolbar-btn:hover {
+            background: #F8FAFC;
+            border-color: #FF6B4A;
+        }
+
+        .email-content {
+            line-height: 1.6;
+            color: #1E1B4B;
+        }
+
+        .variable-tag {
+            display: inline-block;
+            background: #FFF1EE;
+            color: #FF6B4A;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-family: 'Monaco', monospace;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0 0.25rem;
+        }
+
+        @media (max-width: 1024px) {
+            .email-layout {
+                grid-template-columns: 1fr;
+            }
+            .template-sidebar {
+                max-height: none;
+            }
+        }
+
+        /* Scheduler Section */
+        .scheduler-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .schedule-config {
+            background: white;
+            border: 2px dashed #CBD5E1;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .schedule-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .option-btn {
+            padding: 0.75rem;
+            border: 2px solid #E2E8F0;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            color: #64748B;
+        }
+
+        .option-btn:hover,
+        .option-btn.active {
+            border-color: #FF6B4A;
+            background: #FFF1EE;
+            color: #FF6B4A;
+        }
+
+        .schedule-preview {
+            background: #F8FAFC;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .preview-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .preview-row:last-child {
+            border-bottom: none;
+        }
+
+        .preview-label {
+            color: #64748B;
+            font-weight: 500;
+        }
+
+        .preview-value {
+            color: #1E1B4B;
+            font-weight: 600;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #ECFDF5;
+            color: #10B981;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-badge.paused {
+            background: #FEF3C7;
+            color: #F59E0B;
+        }
+
+        /* Analytics Section */
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .metric-card {
+            background: white;
+            border: 2px solid #F1F5F9;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            border-color: #FF6B4A;
+            box-shadow: 0 16px 32px rgba(255, 107, 74, 0.1);
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FF6B4A, #A855F7);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 1rem 0;
+        }
+
+        .metric-title {
+            color: #1E1B4B;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-description {
+            color: #64748B;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Block */
+        .cta-block {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #FFF1EE, #F3E8FF);
+            border-radius: 28px;
+            border: 2px solid rgba(255, 107, 74, 0.1);
+            text-align: center;
+        }
+
+        .cta-block h2 {
+            color: #1E1B4B;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-block p {
+            font-size: 1.1rem;
+            color: #64748B;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: #1E1B4B;
+            color: white;
+            padding: 4rem 2rem 2rem;
+            margin-top: 6rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a {
+            color: #CBD5E1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #FF6B4A;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: #CBD5E1;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: #CBD5E1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #FF6B4A;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero h1 {
+                margin: 1.5rem 0 1rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section {
+                padding: 4rem 1.5rem;
+            }
+
+            .template-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .alert-visual {
+                grid-template-columns: 1fr;
+            }
+
+            .scheduler-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-block {
+                padding: 4rem 1.5rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .hero-diagram {
+                min-height: 250px;
+            }
+
+            .workflow-flow {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Wana.Work</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/platform" class="active">Platform</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span class="separator">/</span>
+        <a href="/platform">Platform</a>
+        <span class="separator">/</span>
+        <span>Workflows</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Automate every HR process. No code required.</h1>
+        <p class="hero-description">Build sophisticated HR workflows with our visual workflow designer. Set triggers, conditions, and actions without writing a single line of code.</p>
+
+        <!-- Hero Diagram -->
+        <div class="hero-diagram">
+            <div class="workflow-flow">
+                <div class="flow-node">Event Trigger</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node condition">Condition Check</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node action">Execute Actions</div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats">
+            <div class="stat-card">
+                <div class="stat-value">0</div>
+                <div class="stat-label">Code Required</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">∞</div>
+                <div class="stat-label">Workflows</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">24/7</div>
+                <div class="stat-label">Smart Triggers</div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="hero-cta">
+            <button class="btn btn-primary">Start Free Trial</button>
+            <button class="btn btn-secondary">View Demo</button>
+        </div>
+    </section>
+
+    <!-- Visual Workflow Designer Section -->
+    <section class="section reveal">
+        <div class="section-header">
+            <h2 class="section-title">Visual Workflow Designer</h2>
+            <p class="section-subtitle">Drag and drop to create powerful HR automations. Watch your logic come to life with visual flow representation.</p>
+        </div>
+
+        <div class="feature-layout">
+            <div class="feature-content">
+                <h3>Design Without Code</h3>
+                <p>Our intuitive workflow builder makes it simple to create complex automations. No technical skills required. Anyone can build enterprise-grade workflows.</p>
+                <ul class="feature-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Drag and drop node builder</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Real time visual feedback</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Unlimited trigger types</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Advanced condition logic</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="feature-visual">
+                <div class="canvas-grid">
+                    <div class="canvas-node">
+                        <span>Trigger: New Employee</span>
+                        <svg viewBox="0 0 24 24" width="20" fill="none" stroke="white" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <div class="canvas-connector"></div>
+                    <div class="canvas-node condition">
+                        <span>Department = Engineering</span>
+                        <svg viewBox="0 0 24 24" width="20" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 2l7.5 4.5v6.5c0 5-7.5 8.5-7.5 8.5s-7.5-3.5-7.5-8.5V6.5L12 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="canvas-connector"></div>
+                    <div class="canvas-node action">
+                        <span>Send Welcome Email</span>
+                        <svg viewBox="0 0 24 24" width="20" fill="none" stroke="white" stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                    </div>
+                    <div class="canvas-connector"></div>
+                    <div class="canvas-node action">
+                        <span>Create IT Ticket</span>
+                        <svg viewBox="0 0 24 24" width="20" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-built Templates Section -->
+    <section class="section reveal">
+        <div class="section-header">
+            <h2 class="section-title">Pre-built Workflow Templates</h2>
+            <p class="section-subtitle">Jump start your automation journey with proven templates designed for common HR use cases.</p>
+        </div>
+
+        <div class="template-grid">
+            <div class="template-card reveal">
+                <div class="template-icon">
+                    <svg viewBox="0 0 24 24" width="28" fill="none" stroke="#FF6B4A" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <h4>Onboarding Workflow</h4>
+                <p>Automate the complete onboarding process from offer acceptance through first day setup.</p>
+                <div class="template-meta">
+                    <span class="template-badge">6 Actions</span>
+                    <span class="template-badge">Employee</span>
+                </div>
+            </div>
+
+            <div class="template-card reveal">
+                <div class="template-icon">
+                    <svg viewBox="0 0 24 24" width="28" fill="none" stroke="#A855F7" stroke-width="2">
+                        <path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                    </svg>
+                </div>
+                <h4>Leave Approval</h4>
+                <p>Create multi-level approval workflows for time off requests with smart notifications.</p>
+                <div class="template-meta">
+                    <span class="template-badge">4 Actions</span>
+                    <span class="template-badge">Time Off</span>
+                </div>
+            </div>
+
+            <div class="template-card reveal">
+                <div class="template-icon">
+                    <svg viewBox="0 0 24 24" width="28" fill="none" stroke="#6366F1" stroke-width="2">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path><path d="M12.5 7H11v6l5.2 3.2.8-1.3-4.5-2.7z"></path>
+                    </svg>
+                </div>
+                <h4>Performance Review Cycle</h4>
+                <p>Manage entire performance review cycle with scheduled reminders and auto feedback collection.</p>
+                <div class="template-meta">
+                    <span class="template-badge">8 Actions</span>
+                    <span class="template-badge">Performance</span>
+                </div>
+            </div>
+
+            <div class="template-card reveal">
+                <div class="template-icon">
+                    <svg viewBox="0 0 24 24" width="28" fill="none" stroke="#F59E0B" stroke-width="2">
+                        <path d="M19 11a7 7 0 0 1-7 7m0 0a7 7 0 0 1-7-7m7 7v4m0 0H8m4 0h4"></path>
+                    </svg>
+                </div>
+                <h4>Probation Reminder</h4>
+                <p>Automatic alerts when probation periods are approaching completion with checklist templates.</p>
+                <div class="template-meta">
+                    <span class="template-badge">3 Actions</span>
+                    <span class="template-badge">Onboarding</span>
+                </div>
+            </div>
+
+            <div class="template-card reveal">
+                <div class="template-icon">
+                    <svg viewBox="0 0 24 24" width="28" fill="none" stroke="#10B981" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                </div>
+                <h4>Birthday Notifications</h4>
+                <p>Send personalized birthday greetings across teams with celebration reminders for managers.</p>
+                <div class="template-meta">
+                    <span class="template-badge">2 Actions</span>
+                    <span class="template-badge">Engagement</span>
+                </div>
+            </div>
+
+            <div class="template-card reveal">
+                <div class="template-icon">
+                    <svg viewBox="0 0 24 24" width="28" fill="none" stroke="#EF4444" stroke-width="2">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m3.5 6L10 14.5 8.5 13"></path>
+                    </svg>
+                </div>
+                <h4>Certificate Expiry Alert</h4>
+                <p>Monitor and alert on expiring certifications and licenses with automated renewal reminders.</p>
+                <div class="template-meta">
+                    <span class="template-badge">5 Actions</span>
+                    <span class="template-badge">Compliance</span>
+                </div>
+            </div>
+
+            <div class="template-card reveal">
+                <div class="template-icon">
+                    <svg viewBox="0 0 24 24" width="28" fill="none" stroke="#EC4899" stroke-width="2">
+                        <path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                    </svg>
+                </div>
+                <h4>Exit Interview Scheduling</h4>
+                <p>Automate scheduling of exit interviews and knowledge transfer activities for departing employees.</p>
+                <div class="template-meta">
+                    <span class="template-badge">5 Actions</span>
+                    <span class="template-badge">Offboarding</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alerts & Notifications Section -->
+    <section class="section reveal">
+        <div class="section-header">
+            <h2 class="section-title">Smart Alerts & Notifications</h2>
+            <p class="section-subtitle">Deliver timely notifications across multiple channels. Email, in-app messages, SMS, and more.</p>
+        </div>
+
+        <div class="feature-layout reverse">
+            <div class="feature-content">
+                <h3>Multi-Channel Delivery</h3>
+                <p>Send notifications through the channels your team uses most. Configure smart routing to reach the right people at the right time.</p>
+                <ul class="feature-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Email, SMS, and in-app messaging</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Conditional message routing</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Delivery tracking and analytics</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Dynamic content personalization</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="feature-visual">
+                <div style="width: 100%;">
+                    <div class="alert-channels">
+                        <div class="alert-channel">
+                            <div class="channel-icon channel-email">✉</div>
+                            <div class="channel-info">
+                                <h4>Email</h4>
+                                <p>Rich formatted emails with tracking</p>
+                            </div>
+                        </div>
+                        <div class="alert-channel">
+                            <div class="channel-icon channel-app">◉</div>
+                            <div class="channel-info">
+                                <h4>In App</h4>
+                                <p>Real time notifications in platform</p>
+                            </div>
+                        </div>
+                        <div class="alert-channel">
+                            <div class="channel-icon channel-sms">📱</div>
+                            <div class="channel-info">
+                                <h4>SMS</h4>
+                                <p>Short message service delivery</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Template Builder Section -->
+    <section class="section reveal">
+        <div class="section-header">
+            <h2 class="section-title">Email Template Builder</h2>
+            <p class="section-subtitle">Create beautiful, responsive emails with WYSIWYG editor. Use dynamic variables and maintain brand consistency.</p>
+        </div>
+
+        <div class="feature-layout">
+            <div class="feature-content">
+                <h3>Professional Email Design</h3>
+                <p>Build branded email templates without touching code. Drag and drop blocks, insert variables, and preview in real time.</p>
+                <ul class="feature-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>WYSIWYG email editor</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Dynamic variable insertion</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Template library management</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Mobile responsive design</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="feature-visual">
+                <div class="email-layout" style="width: 100%;">
+                    <div class="template-sidebar">
+                        <div class="template-item active">Welcome Email</div>
+                        <div class="template-item">Leave Approved</div>
+                        <div class="template-item">Review Reminder</div>
+                        <div class="template-item">Birthday Wish</div>
+                    </div>
+                    <div class="email-editor">
+                        <div class="email-header">
+                            <div class="email-subject">Subject: Welcome to <span class="variable-tag">{company_name}</span>, <span class="variable-tag">{employee_name}</span>!</div>
+                            <span style="color: #64748B; font-size: 0.9rem;">Draft</span>
+                        </div>
+                        <div class="toolbar">
+                            <button class="toolbar-btn">B</button>
+                            <button class="toolbar-btn">I</button>
+                            <button class="toolbar-btn">U</button>
+                            <button class="toolbar-btn">Link</button>
+                            <button class="toolbar-btn">Variable</button>
+                        </div>
+                        <div class="email-content">
+                            <p>Hi <span class="variable-tag">{employee_name}</span>,</p>
+                            <p>Welcome to the team! We are excited to have you joining us as a <span class="variable-tag">{job_title}</span> on <span class="variable-tag">{start_date}</span>.</p>
+                            <p>Your manager, <span class="variable-tag">{manager_name}</span>, will reach out shortly to schedule your first day orientation.</p>
+                            <p>Best regards,<br>HR Team</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scheduler Section -->
+    <section class="section reveal">
+        <div class="section-header">
+            <h2 class="section-title">Workflow Scheduler</h2>
+            <p class="section-subtitle">Schedule workflows to run on a recurring basis. Daily, weekly, monthly, or custom cron expressions.</p>
+        </div>
+
+        <div class="feature-layout reverse">
+            <div class="feature-content">
+                <h3>Flexible Scheduling</h3>
+                <p>Run workflows on your schedule. From simple daily reminders to complex monthly cycles. Full cron expression support for advanced users.</p>
+                <ul class="feature-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Pre set scheduling options</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Custom cron expressions</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Next run time preview</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Execution history tracking</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="feature-visual">
+                <div class="scheduler-grid" style="width: 100%; gap: 1.5rem;">
+                    <div class="schedule-config">
+                        <label class="config-label">Workflow Name</label>
+                        <input type="text" class="config-input" value="Monthly Payroll Reminder" readonly>
+
+                        <label class="config-label" style="margin-top: 1.5rem;">Schedule Frequency</label>
+                        <div class="schedule-options">
+                            <button class="option-btn">Daily</button>
+                            <button class="option-btn active">Weekly</button>
+                            <button class="option-btn">Monthly</button>
+                            <button class="option-btn">Custom</button>
+                        </div>
+
+                        <div class="schedule-preview">
+                            <div class="preview-row">
+                                <span class="preview-label">Frequency</span>
+                                <span class="preview-value">Every Monday</span>
+                            </div>
+                            <div class="preview-row">
+                                <span class="preview-label">Time</span>
+                                <span class="preview-value">09:00 AM UTC</span>
+                            </div>
+                            <div class="preview-row">
+                                <span class="preview-label">Last Run</span>
+                                <span class="preview-value">2 days ago</span>
+                            </div>
+                            <div class="preview-row">
+                                <span class="preview-label">Next Run</span>
+                                <span class="preview-value">Tomorrow, 09:00 AM</span>
+                            </div>
+                            <div class="preview-row" style="padding-top: 1rem; border-top: 2px solid #E2E8F0; margin-top: 1rem;">
+                                <span class="preview-label">Status</span>
+                                <span class="status-badge">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Section -->
+    <section class="section reveal">
+        <div class="section-header">
+            <h2 class="section-title">Automation Analytics</h2>
+            <p class="section-subtitle">Monitor your workflow performance and impact with comprehensive analytics and insights.</p>
+        </div>
+
+        <div class="analytics-grid">
+            <div class="metric-card reveal">
+                <svg viewBox="0 0 24 24" width="48" fill="none" stroke="#FF6B4A" stroke-width="2" style="margin: 0 auto; display: block;">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path><path d="M12.5 7H11v6l5.2 3.2.8-1.3-4.5-2.7z"></path>
+                </svg>
+                <div class="metric-number">1247</div>
+                <div class="metric-title">Workflows Triggered</div>
+                <div class="metric-description">Total workflow executions this month</div>
+            </div>
+
+            <div class="metric-card reveal">
+                <svg viewBox="0 0 24 24" width="48" fill="none" stroke="#A855F7" stroke-width="2" style="margin: 0 auto; display: block;">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path><polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <div class="metric-number">4892</div>
+                <div class="metric-title">Actions Completed</div>
+                <div class="metric-description">Total actions executed successfully</div>
+            </div>
+
+            <div class="metric-card reveal">
+                <svg viewBox="0 0 24 24" width="48" fill="none" stroke="#6366F1" stroke-width="2" style="margin: 0 auto; display: block;">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path><polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <div class="metric-number">156</div>
+                <div class="metric-title">Hours Saved</div>
+                <div class="metric-description">Estimated manual work time eliminated</div>
+            </div>
+
+            <div class="metric-card reveal">
+                <svg viewBox="0 0 24 24" width="48" fill="none" stroke="#10B981" stroke-width="2" style="margin: 0 auto; display: block;">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <div class="metric-number">99.8%</div>
+                <div class="metric-title">Success Rate</div>
+                <div class="metric-description">Workflows completing without errors</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Block -->
+    <section class="cta-block reveal">
+        <h2>Ready to automate your HR processes?</h2>
+        <p>Join hundreds of organizations using Wana.Work to streamline HR workflows and save thousands of hours annually.</p>
+        <div class="hero-cta">
+            <button class="btn btn-primary">Start Your Free Trial</button>
+            <button class="btn btn-secondary">Schedule a Demo</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="/platform/workflows">Workflows</a></li>
+                    <li><a href="/platform/analytics">Analytics</a></li>
+                    <li><a href="/platform/integrations">Integrations</a></li>
+                    <li><a href="/platform/api">API</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <li><a href="/press">Press Kit</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/docs">Documentation</a></li>
+                    <li><a href="/support">Support</a></li>
+                    <li><a href="/guides">Guides</a></li>
+                    <li><a href="/community">Community</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                    <li><a href="/security">Security</a></li>
+                    <li><a href="/compliance">Compliance</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://twitter.com/wanawork">Twitter</a></li>
+                    <li><a href="https://linkedin.com/company/wanawork">LinkedIn</a></li>
+                    <li><a href="https://github.com/wanawork">GitHub</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Wana.Work. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="/privacy">Privacy</a>
+                <a href="/terms">Terms</a>
+                <a href="/cookies">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all reveal elements
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll behavior for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // CTA Button click handlers
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const text = this.textContent;
+                if (text.includes('Trial') || text.includes('Demo')) {
+                    console.log('CTA clicked:', text);
+                    // In production, this would open a modal or redirect
+                }
+            });
+        });
+
+        // Template card interactions
+        document.querySelectorAll('.template-card').forEach(card => {
+            card.addEventListener('click', function() {
+                console.log('Template selected');
+            });
+        });
+
+        // Schedule option button interactions
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Template sidebar interactions
+        document.querySelectorAll('.template-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.template-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Alert channel interactions
+        document.querySelectorAll('.alert-channel').forEach(channel => {
+            channel.addEventListener('mouseenter', function() {
+                this.style.borderColor = '#FF6B4A';
+            });
+            channel.addEventListener('mouseleave', function() {
+                this.style.borderColor = '#F1F5F9';
+            });
+        });
+    </script>
+</body>
+</html>

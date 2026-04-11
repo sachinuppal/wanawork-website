@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Wana.Work: Our Mission to Transform HR | Open Source HCM</title>
+    <meta name="description" content="We believe HR software should be open, beautiful, and built for the people who use it. Learn about our mission to make work better for everyone.">
+    <meta name="theme-color" content="#6366F1">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Wana.Work: Our Mission to Transform HR">
+    <meta property="og:description" content="We believe HR software should be open, beautiful, and built for the people who use it. Learn about our mission to make work better for everyone.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://wana.work/og-about.jpg">
+    <meta property="og:url" content="https://wana.work/about">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Wana.Work: Our Mission to Transform HR">
+    <meta name="twitter:description" content="We believe HR software should be open, beautiful, and built for the people who use it. Learn about our mission to make work better for everyone.">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Wana.Work",
+        "url": "https://wana.work",
+        "logo": "https://wana.work/logo.svg",
+        "description": "Open source HR and Human Capital Management platform built for the people who use it",
+        "foundingDate": "2020",
+        "sameAs": [
+            "https://github.com/wanawork",
+            "https://twitter.com/wanawork"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "url": "https://wana.work/contact"
+        }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1F2937;
+            background-color: #FFFFFF;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Color Variables */
+        :root {
+            --coral: #FF6B4A;
+            --coral-light: #FF8F6B;
+            --coral-dark: #E5533A;
+            --coral-pale: #FFF1EE;
+            --indigo: #6366F1;
+            --indigo-deep: #4F46E5;
+            --indigo-light: #EEF2FF;
+            --indigo-midnight: #1E1B4B;
+            --purple: #A855F7;
+            --purple-light: #F3E8FF;
+            --slate: #64748B;
+            --green: #10B981;
+            --green-light: #ECFDF5;
+            --amber: #F59E0B;
+            --gradient: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #374151;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--coral);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 1280px;
+            margin: 5.5rem auto 0;
+            padding: 1.5rem 2rem;
+            font-size: 0.875rem;
+            color: var(--slate);
+        }
+
+        .breadcrumb a {
+            color: var(--indigo);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--coral);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--indigo-midnight);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 .gradient-text {
+            background: var(--gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #D1D5DB;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero-tagline {
+            font-size: 1rem;
+            color: var(--coral);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Mission Statement */
+        .mission {
+            padding: 6rem 2rem;
+            background: linear-gradient(to bottom, #FAFAFA, #FFFFFF);
+        }
+
+        .mission-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .mission-quote {
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--indigo-midnight);
+            margin-bottom: 2rem;
+            position: relative;
+            padding: 0 2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .mission-quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--coral);
+            position: absolute;
+            left: 0;
+            top: -0.5rem;
+        }
+
+        .mission-description {
+            font-size: 1.1rem;
+            color: #4B5563;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .mission-description strong {
+            color: var(--indigo);
+            font-weight: 600;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .timeline-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--indigo-midnight);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .timeline-header p {
+            font-size: 1.1rem;
+            color: var(--slate);
+        }
+
+        .timeline-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--coral), var(--indigo));
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 4rem;
+            display: flex;
+            opacity: 0;
+            animation: slideIn 0.6s ease forwards;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 0 2rem;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 1rem;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border: 3px solid var(--coral);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .timeline-item:nth-child(3n) .timeline-dot {
+            border-color: var(--indigo);
+        }
+
+        .timeline-item:nth-child(3n+2) .timeline-dot {
+            border-color: var(--purple);
+        }
+
+        .timeline-date {
+            font-size: 0.875rem;
+            color: var(--coral);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--indigo-midnight);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .timeline-description {
+            font-size: 0.95rem;
+            color: #6B7280;
+            line-height: 1.6;
+        }
+
+        /* Values Section */
+        .values {
+            padding: 6rem 2rem;
+            background: linear-gradient(to bottom, white, #F9FAFB);
+        }
+
+        .values-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .values-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--indigo-midnight);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .values-header p {
+            font-size: 1.1rem;
+            color: var(--slate);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            padding: 2rem;
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .value-card:nth-child(1) { animation-delay: 0.1s; }
+        .value-card:nth-child(2) { animation-delay: 0.2s; }
+        .value-card:nth-child(3) { animation-delay: 0.3s; }
+        .value-card:nth-child(4) { animation-delay: 0.4s; }
+        .value-card:nth-child(5) { animation-delay: 0.5s; }
+        .value-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .value-card:hover {
+            border-color: var(--coral);
+            box-shadow: 0 10px 30px rgba(255, 107, 74, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .value-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--indigo-midnight);
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .value-card p {
+            font-size: 0.95rem;
+            color: #6B7280;
+            line-height: 1.7;
+        }
+
+        .value-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--coral-pale);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 6rem 2rem;
+            background: var(--indigo-midnight);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .stats-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stats-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .stats-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: var(--gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #D1D5DB;
+            font-weight: 500;
+        }
+
+        /* Open Source Section */
+        .opensource {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--coral-pale) 0%, var(--purple-light) 100%);
+        }
+
+        .opensource-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .opensource-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--indigo-midnight);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .opensource-description {
+            font-size: 1.1rem;
+            color: #374151;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .opensource-badge {
+            display: inline-block;
+            background: var(--green-light);
+            color: var(--green);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .opensource-link {
+            display: inline-block;
+            background: var(--indigo);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .opensource-link:hover {
+            background: var(--indigo-deep);
+            transform: translateY(-2px);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--indigo-midnight);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            color: var(--slate);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 74, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--indigo);
+            border: 2px solid var(--indigo);
+        }
+
+        .btn-secondary:hover {
+            background: var(--indigo-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--indigo-midnight);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a {
+            color: #D1D5DB;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--coral);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: #9CA3AF;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .mission-quote {
+                font-size: 1.75rem;
+            }
+
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .timeline-container::before {
+                display: none;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+                align-items: center;
+                text-align: center;
+            }
+
+            .timeline-content {
+                width: 100%;
+                padding: 0;
+                text-align: center !important;
+            }
+
+            .timeline-dot {
+                position: relative;
+                left: auto;
+                top: auto;
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding: 3.5rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .mission {
+                padding: 3.5rem 1.5rem;
+            }
+
+            .mission-quote {
+                font-size: 1.5rem;
+            }
+
+            .timeline {
+                padding: 3.5rem 1.5rem;
+            }
+
+            .timeline-header h2 {
+                font-size: 2rem;
+            }
+
+            .values {
+                padding: 3.5rem 1.5rem;
+            }
+
+            .values-header h2 {
+                font-size: 2rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                padding: 3.5rem 1.5rem;
+            }
+
+            .stats-header h2 {
+                font-size: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .cta {
+                padding: 3.5rem 1.5rem;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="logo">Wana.Work</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/docs">Docs</a></li>
+                <li><a href="https://github.com/wanawork">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="/">Home</a> / <span>About</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tagline">Our Mission</div>
+            <h1>We believe <span class="gradient-text">work should be a place people actually want to be</span>.</h1>
+            <p class="hero-subtitle">Where people want to work.</p>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="mission reveal">
+        <div class="mission-content">
+            <p class="mission-quote">HR software has been built for decades around the needs of Fortune 500 companies and their budgets. We asked a different question: what if it was built for everyone?</p>
+            <p class="mission-description">Wana.Work exists to <strong>democratize enterprise HR software</strong> by making it open source, beautiful, and accessible to every organization regardless of size. We believe that every company, from startups to enterprises, deserves access to world class Human Capital Management tools. We believe HR software should be transparent, customizable, and truly belong to the people who use it every day.</p>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline">
+        <div class="timeline-header reveal">
+            <h2>Our Journey</h2>
+            <p>Key milestones in building where people want to work</p>
+        </div>
+        <div class="timeline-container">
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2020</div>
+                    <h3 class="timeline-title">Vision Conceived</h3>
+                    <p class="timeline-description">The open source HCM vision takes shape as founders recognize the need for better alternatives to proprietary enterprise software.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2021</div>
+                    <h3 class="timeline-title">Core Platform Development</h3>
+                    <p class="timeline-description">Building the foundation with modular architecture, APIs, and commitment to open source principles under AGPL v3.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2022</div>
+                    <h3 class="timeline-title">Public Launch</h3>
+                    <p class="timeline-description">First public release brings the open source HCM platform to developers and organizations worldwide.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2023</div>
+                    <h3 class="timeline-title">100 Modules Milestone</h3>
+                    <p class="timeline-description">Reaching 100 feature modules across recruitment, payroll, benefits, compliance, and more.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2024</div>
+                    <h3 class="timeline-title">Community Reaches 150+ Contributors</h3>
+                    <p class="timeline-description">A global community of developers, HR professionals, and enthusiasts collaborating on the future of HR software.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2025</div>
+                    <h3 class="timeline-title">Wana.Work Brand Launch</h3>
+                    <p class="timeline-description">Introducing Wana.Work as the unified brand for our mission to transform enterprise HR software.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values">
+        <div class="values-header reveal">
+            <h2>Our Core Values</h2>
+            <p>Guiding principles that shape everything we build</p>
+        </div>
+        <div class="values-grid">
+            <div class="value-card reveal">
+                <div class="value-icon">🔓</div>
+                <h3>Open by Default</h3>
+                <p>Transparency in our code and communication. Every decision, every line of code, and every roadmap item is visible and open to community input.</p>
+            </div>
+
+            <div class="value-card reveal">
+                <div class="value-icon">👥</div>
+                <h3>People First</h3>
+                <p>Every feature decision starts with the user. We listen to HR professionals, employees, and customers to understand their real needs and pain points.</p>
+            </div>
+
+            <div class="value-card reveal">
+                <div class="value-icon">💰</div>
+                <h3>Enterprise Without the Tax</h3>
+                <p>Powerful enterprise capabilities without the enterprise pricing. Affordable for small teams, scalable for large organizations, and fair for everyone in between.</p>
+            </div>
+
+            <div class="value-card reveal">
+                <div class="value-icon">🌍</div>
+                <h3>Community Driven</h3>
+                <p>Our roadmap is shaped by our contributors and users. Decisions about features, priorities, and direction come from the community that uses the platform every day.</p>
+            </div>
+
+            <div class="value-card reveal">
+                <div class="value-icon">✨</div>
+                <h3>Beautiful by Design</h3>
+                <p>HR software doesn't have to be ugly. We invest in design, user experience, and accessibility. Beautiful software is more usable and more enjoyable.</p>
+            </div>
+
+            <div class="value-card reveal">
+                <div class="value-icon">🔒</div>
+                <h3>Data Belongs to You</h3>
+                <p>Your data is your data. Full privacy, data sovereignty, and control. No vendor lock in, no hidden data collection, no surprises.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-content">
+            <div class="stats-header reveal">
+                <h2>By the Numbers</h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card reveal">
+                    <div class="stat-number" data-target="188">0</div>
+                    <div class="stat-label">Modules</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-number" data-target="22">0</div>
+                    <div class="stat-label">Feature Domains</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-number" data-target="190">0</div>
+                    <div class="stat-label">Database Tables</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-number" data-target="150">0</div>
+                    <div class="stat-label">Contributors</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-label" style="color: var(--amber); font-size: 1.1rem; font-weight: 700;">AGPL v3</div>
+                    <div class="stat-label">License Type</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-label" style="color: var(--green); font-size: 1.1rem; font-weight: 700;">100%</div>
+                    <div class="stat-label">Open Source</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Source Section -->
+    <section class="opensource reveal">
+        <div class="opensource-content">
+            <h2>Open Source at Our Core</h2>
+            <p class="opensource-description">
+                We believe that HR software should be open source. That means transparent development, community contributions, full customization, and the freedom to deploy anywhere. No vendor lock in. No hidden fees. Just powerful HR software that belongs to you.
+            </p>
+            <div class="opensource-badge">Fully Open Source and AGPL v3 Licensed</div>
+            <br>
+            <a href="https://github.com/wanawork" class="opensource-link">View on GitHub</a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta reveal">
+        <div class="cta-content">
+            <h2>Join us in building where people want to work</h2>
+            <p class="cta-description">
+                Whether you are looking for HR software for your organization, want to contribute to the open source project, or simply believe in our mission, we would love to have you join the community.
+            </p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Start Free Trial</a>
+                <a href="https://github.com/wanawork" class="btn btn-secondary">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Developers</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Contributing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press Kit</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">License</a></li>
+                        <li><a href="#">Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Forums</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Wana.Work. All rights reserved. Built with open source and open hearts.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all reveal elements
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animated number counters
+        const animateCounters = () => {
+            const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                        const target = parseInt(entry.target.dataset.target);
+                        const element = entry.target;
+                        let current = 0;
+
+                        const increment = target / 60;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                element.textContent = target + '+';
+                                element.classList.add('counted');
+                                clearInterval(timer);
+                                counterObserver.unobserve(element);
+                            } else {
+                                element.textContent = Math.floor(current) + '+';
+                            }
+                        }, 30);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            statNumbers.forEach(num => counterObserver.observe(num));
+        };
+
+        // Run counters when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', animateCounters);
+        } else {
+            animateCounters();
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

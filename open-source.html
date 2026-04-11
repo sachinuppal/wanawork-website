@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The only enterprise-grade HCM platform that's fully open source. Self-host on your infrastructure, customize every module, and own your data completely.">
+    <meta name="keywords" content="open source HCM, self-hosted HR software, open source HRIS, free HR management system">
+    <meta property="og:title" content="Open Source HCM: Self-Host, Customize & Own Your Data | Wana.Work">
+    <meta property="og:description" content="The only enterprise-grade HCM platform that's fully open source. Self-host on your infrastructure, customize every module, and own your data completely.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wana.work/open-source">
+    <meta property="og:image" content="https://wana.work/og-image-open-source.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>Open Source HCM: Self-Host, Customize & Own Your Data | Wana.Work</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --coral: #FF6B4A;
+            --coral-light: #FF8F6B;
+            --coral-dark: #E5533A;
+            --coral-pale: #FFF1EE;
+            --indigo: #6366F1;
+            --indigo-deep: #4F46E5;
+            --indigo-light: #EEF2FF;
+            --indigo-midnight: #1E1B4B;
+            --purple: #A855F7;
+            --purple-light: #F3E8FF;
+            --slate: #64748B;
+            --green: #10B981;
+            --green-light: #ECFDF5;
+            --amber: #F59E0B;
+            --gradient: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a202c;
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--slate);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--indigo);
+        }
+
+        .nav-links a.active {
+            color: var(--coral);
+            border-bottom: 2px solid var(--coral);
+            padding-bottom: 0.25rem;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .nav-cta a {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid var(--indigo);
+            color: var(--indigo);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta a:hover {
+            background: var(--indigo);
+            color: white;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 1400px;
+            margin: 6rem 2rem 2rem;
+            padding: 0;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            font-size: 0.875rem;
+            color: var(--slate);
+        }
+
+        .breadcrumb a {
+            color: var(--indigo);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--coral);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--indigo-midnight);
+            color: white;
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+        }
+
+        .stat {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--coral);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.875rem 1.75rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 107, 74, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Animated Orbs Background */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            filter: blur(40px);
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--coral);
+            top: -100px;
+            right: -100px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--purple);
+            bottom: -50px;
+            left: 10%;
+            animation: float 8s ease-in-out infinite 1s;
+        }
+
+        .orb-3 {
+            width: 350px;
+            height: 350px;
+            background: var(--indigo);
+            bottom: -100px;
+            right: 5%;
+            animation: float 7s ease-in-out infinite 0.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -30px); }
+        }
+
+        /* Why Open Source Section */
+        .why-section {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            color: var(--indigo-midnight);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--slate);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .manifesto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .manifesto-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .manifesto-card:hover {
+            border-color: var(--coral);
+            box-shadow: 0 10px 30px rgba(255, 107, 74, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .manifesto-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--coral), var(--purple));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .manifesto-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            color: var(--indigo-midnight);
+        }
+
+        .manifesto-text {
+            color: var(--slate);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .comparison {
+            background: var(--indigo-light);
+            border-radius: 8px;
+            padding: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .comparison-before {
+            color: var(--slate);
+            margin-bottom: 0.5rem;
+            text-decoration: line-through;
+        }
+
+        .comparison-arrow {
+            color: var(--coral);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .comparison-after {
+            color: var(--indigo);
+            font-weight: 600;
+        }
+
+        /* Architecture Section */
+        .architecture-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .architecture-diagram {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .architecture-layer {
+            background: white;
+            border-left: 4px solid var(--coral);
+            border-radius: 8px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .architecture-layer:nth-child(2) {
+            border-left-color: var(--purple);
+        }
+
+        .architecture-layer:nth-child(3) {
+            border-left-color: var(--indigo);
+        }
+
+        .architecture-layer:nth-child(4) {
+            border-left-color: var(--green);
+        }
+
+        .architecture-layer:nth-child(5) {
+            border-left-color: var(--amber);
+        }
+
+        .layer-name {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--slate);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .layer-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .tech-badge {
+            background: var(--indigo-light);
+            color: var(--indigo);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Docker Quickstart Section */
+        .quickstart-section {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .quickstart-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .quickstart-text h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            color: var(--indigo-midnight);
+        }
+
+        .quickstart-text p {
+            font-size: 1.05rem;
+            color: var(--slate);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .terminal {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 1.5rem;
+            font-family: 'Monaco', 'Courier New', monospace;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot:nth-child(1) { background: #FF6B4A; }
+        .terminal-dot:nth-child(2) { background: #F59E0B; }
+        .terminal-dot:nth-child(3) { background: #10B981; }
+
+        .terminal-title {
+            color: #94a3b8;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+            flex: 1;
+        }
+
+        .terminal-code {
+            color: #e2e8f0;
+            font-size: 0.875rem;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .terminal-prompt {
+            color: #10B981;
+        }
+
+        .terminal-command {
+            color: #93c5fd;
+        }
+
+        .terminal-output {
+            color: #cbd5e1;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Contributing Section */
+        .contributing-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .contributing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contribute-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contribute-card:hover {
+            border-color: var(--coral);
+            box-shadow: 0 10px 30px rgba(255, 107, 74, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .contribute-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--coral), var(--purple));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .contribute-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+            color: var(--indigo-midnight);
+        }
+
+        .contribute-card p {
+            color: var(--slate);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .contribute-card a {
+            color: var(--coral);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contribute-card a:hover {
+            color: var(--coral-dark);
+        }
+
+        /* Community Section */
+        .community-section {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .avatars-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+            justify-content: center;
+            margin: 3rem 0;
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.75rem;
+            border: 2px solid white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .community-counter {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--indigo-light);
+            border-radius: 12px;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            color: var(--indigo);
+            font-weight: 600;
+        }
+
+        /* License Section */
+        .license-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .license-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .license-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .license-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--indigo-midnight);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .license-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .license-card li {
+            padding: 0.5rem 0;
+            color: var(--slate);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .license-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .license-note {
+            background: var(--coral-pale);
+            border-left: 4px solid var(--coral);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            color: var(--indigo-midnight);
+            line-height: 1.7;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: var(--gradient);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .final-cta .btn-primary {
+            background: white;
+            color: var(--coral);
+        }
+
+        .final-cta .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .final-cta .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .final-cta .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--indigo-midnight);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            color: var(--coral);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .footer-social a {
+            color: rgba(255, 255, 255, 0.7);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-social a:hover {
+            background: var(--coral);
+            color: white;
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .quickstart-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .quickstart-text h2 {
+                font-size: 1.5rem;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .manifesto-grid,
+            .contributing-grid,
+            .license-content {
+                grid-template-columns: 1fr;
+            }
+
+            .breadcrumb {
+                margin: 5rem 1.5rem 1.5rem;
+            }
+
+            .terminal {
+                font-size: 0.75rem;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Animation for counter */
+        .counter {
+            display: inline-block;
+        }
+
+        /* SVG Icons */
+        .icon-svg {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">Wana.Work</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/open-source" class="active">Open Source</a></li>
+                <li><a href="/docs">Docs</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="https://github.com/wanawork/wanawork" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>Open Source</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+
+        <div class="hero-content">
+            <h1>Open source. Open possibilities.</h1>
+            <p class="hero-subtitle">The only enterprise-grade HCM platform that's fully open source. Self-host on your infrastructure, customize every module, and own your data completely.</p>
+
+            <div class="hero-stats">
+                <div class="stat reveal">
+                    <div class="stat-number"><span class="counter" data-target="2400">0</span>+</div>
+                    <div class="stat-label">GitHub Stars</div>
+                </div>
+                <div class="stat reveal">
+                    <div class="stat-number"><span class="counter" data-target="890">0</span></div>
+                    <div class="stat-label">Forks</div>
+                </div>
+                <div class="stat reveal">
+                    <div class="stat-number"><span class="counter" data-target="156">0</span>+</div>
+                    <div class="stat-label">Contributors</div>
+                </div>
+                <div class="stat reveal">
+                    <div class="stat-number">2d</div>
+                    <div class="stat-label">Last Commit</div>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="https://github.com/wanawork/wanawork" target="_blank" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    Star on GitHub
+                </a>
+                <a href="#quickstart" class="btn btn-secondary">
+                    Deploy Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Open Source Section -->
+    <section class="why-section reveal">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Why Open Source for HR</h2>
+                <p>Transparency, control, and freedom are fundamental to modern workforce management.</p>
+            </div>
+
+            <div class="manifesto-grid">
+                <div class="manifesto-card reveal">
+                    <div class="manifesto-icon">🔒</div>
+                    <h3 class="manifesto-title">Data Sovereignty</h3>
+                    <p class="manifesto-text">Your employee data never leaves your infrastructure. Deploy on your servers, behind your firewall, with complete control over every byte.</p>
+                    <div class="comparison">
+                        <div class="comparison-before">Vendor-controlled data silos</div>
+                        <div class="comparison-arrow">→</div>
+                        <div class="comparison-after">Complete data ownership</div>
+                    </div>
+                </div>
+
+                <div class="manifesto-card reveal">
+                    <div class="manifesto-icon">🚀</div>
+                    <h3 class="manifesto-title">Zero Vendor Lock-in</h3>
+                    <p class="manifesto-text">Fork the code, modify it, take it in new directions. You're never trapped. Your roadmap is your own.</p>
+                    <div class="comparison">
+                        <div class="comparison-before">Proprietary platform lock</div>
+                        <div class="comparison-arrow">→</div>
+                        <div class="comparison-after">Complete portability</div>
+                    </div>
+                </div>
+
+                <div class="manifesto-card reveal">
+                    <div class="manifesto-icon">⚙️</div>
+                    <h3 class="manifesto-title">Unlimited Customization</h3>
+                    <p class="manifesto-text">Full source code access. Build custom modules, integrate with your systems, extend functionality exactly as you need.</p>
+                    <div class="comparison">
+                        <div class="comparison-before">Limited by vendor constraints</div>
+                        <div class="comparison-arrow">→</div>
+                        <div class="comparison-after">Infinite possibilities</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="architecture-section reveal">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Modern, Scalable Architecture</h2>
+                <p>Enterprise-grade technology stack built on proven, production-ready tools.</p>
+            </div>
+
+            <div class="architecture-diagram">
+                <div class="architecture-layer reveal">
+                    <span class="layer-name">Frontend Layer</span>
+                    <div class="layer-tech">
+                        <span class="tech-badge">Vue 3.2</span>
+                        <span class="tech-badge">TypeScript</span>
+                        <span class="tech-badge">Vuetify 3</span>
+                        <span class="tech-badge">Pinia</span>
+                        <span class="tech-badge">Vite 6</span>
+                    </div>
+                </div>
+
+                <div class="architecture-layer reveal">
+                    <span class="layer-name">API Layer</span>
+                    <div class="layer-tech">
+                        <span class="tech-badge">REST API</span>
+                        <span class="tech-badge">Slim Framework 4</span>
+                        <span class="tech-badge">OAuth 2.0</span>
+                        <span class="tech-badge">JSON:API</span>
+                    </div>
+                </div>
+
+                <div class="architecture-layer reveal">
+                    <span class="layer-name">Backend Layer</span>
+                    <div class="layer-tech">
+                        <span class="tech-badge">PHP 8.2</span>
+                        <span class="tech-badge">Doctrine ORM</span>
+                        <span class="tech-badge">190+ Modules</span>
+                        <span class="tech-badge">Message Queues</span>
+                    </div>
+                </div>
+
+                <div class="architecture-layer reveal">
+                    <span class="layer-name">Data Layer</span>
+                    <div class="layer-tech">
+                        <span class="tech-badge">MySQL 8.0 (Percona)</span>
+                        <span class="tech-badge">ElasticSearch 7.16</span>
+                        <span class="tech-badge">Redis Cache</span>
+                    </div>
+                </div>
+
+                <div class="architecture-layer reveal">
+                    <span class="layer-name">Infrastructure</span>
+                    <div class="layer-tech">
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">Docker Compose</span>
+                        <span class="tech-badge">Kubernetes Ready</span>
+                        <span class="tech-badge">Cloud Agnostic</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Docker Quickstart Section -->
+    <section class="quickstart-section" id="quickstart">
+        <div class="section-container">
+            <div class="quickstart-content">
+                <div class="quickstart-text reveal">
+                    <h2>Deploy in Minutes</h2>
+                    <p>Get Wana.Work running on your infrastructure with Docker Compose. Production-ready configuration included.</p>
+                    <p>Everything you need is in the repository. Just clone, compose, and go.</p>
+                    <a href="https://github.com/wanawork/wanawork" target="_blank" class="btn btn-primary">
+                        View Full Docs
+                    </a>
+                </div>
+
+                <div class="terminal reveal">
+                    <div class="terminal-header">
+                        <div class="terminal-dot"></div>
+                        <div class="terminal-dot"></div>
+                        <div class="terminal-dot"></div>
+                        <div class="terminal-title">terminal</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyTerminal()">Copy</button>
+                    <div class="terminal-code" id="terminal-code"><span class="terminal-prompt">$</span> <span class="terminal-command">git clone https://github.com/wanawork/wanawork.git</span>
+<span class="terminal-output">Cloning into 'wanawork'...</span>
+<span class="terminal-prompt">$</span> <span class="terminal-command">cd wanawork/docker</span>
+<span class="terminal-prompt">$</span> <span class="terminal-command">docker compose up -d</span>
+<span class="terminal-output">[+] Running 8/8
+  [+] Network wanawork_default           Created
+  [+] Volume "wanawork_db_data"          Created
+  [+] Container wanawork-mysql          Started
+  [+] Container wanawork-redis          Started
+  [+] Container wanawork-elasticsearch  Started
+  [+] Container wanawork-api            Started
+  [+] Container wanawork-web            Started
+  [+] Container wanawork-scheduler      Started
+
+Access the application at http://localhost:8080</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contributing Section -->
+    <section class="contributing-section reveal">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>How to Contribute</h2>
+                <p>Join a thriving community of developers building the future of open-source HR software.</p>
+            </div>
+
+            <div class="contributing-grid">
+                <div class="contribute-card reveal">
+                    <div class="contribute-icon">🐛</div>
+                    <h3>Report Bugs</h3>
+                    <p>Found an issue? Help us improve by reporting bugs with detailed reproduction steps and examples.</p>
+                    <a href="https://github.com/wanawork/wanawork/issues/new" target="_blank">Report an Issue</a>
+                </div>
+
+                <div class="contribute-card reveal">
+                    <div class="contribute-icon">💻</div>
+                    <h3>Submit PRs</h3>
+                    <p>Write code, fix features, optimize performance. All contributions welcome. Check CONTRIBUTING.md for guidelines.</p>
+                    <a href="https://github.com/wanawork/wanawork/pulls" target="_blank">Browse PRs</a>
+                </div>
+
+                <div class="contribute-card reveal">
+                    <div class="contribute-icon">📚</div>
+                    <h3>Write Docs</h3>
+                    <p>Improve documentation, write guides, create tutorials. Good docs make everything better.</p>
+                    <a href="https://docs.wana.work" target="_blank">View Docs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community-section reveal">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Growing Community</h2>
+                <p>Contributors from around the world building the future together.</p>
+            </div>
+
+            <div class="avatars-grid">
+                <div class="avatar" style="background: linear-gradient(135deg, #FF6B4A, #FF8F6B);">AJ</div>
+                <div class="avatar" style="background: linear-gradient(135deg, #A855F7, #D8B4FE);">SK</div>
+                <div class="avatar" style="background: linear-gradient(135deg, #6366F1, #818CF8);">ME</div>
+                <div class="avatar" style="background: linear-gradient(135deg, #10B981, #6EE7B7);">CP</div>
+                <div class="avatar" style="background: linear-gradient(135deg, #F59E0B, #FBBF24);">LR</div>
+                <div class="avatar" style="background: linear-gradient(135deg, #EF4444, #F87171);">DW</div>
+                <div class="avatar" style="background: linear-gradient(135deg, #06B6D4, #67E8F9);">TJ</div>
+                <div class="avatar" style="background: linear-gradient(135deg, #EC4899, #F472B6);">NK</div>
+                <div class="avatar" style="background: linear-gradient(135deg, #8B5CF6, #C4B5FD);">AM</div>
+                <div class="avatar" style="background: linear-gradient(135deg, #14B8A6, #5EEAD4);">JM</div>
+            </div>
+
+            <div class="community-counter">
+                Join <span class="counter" data-target="156">0</span>+ contributors shaping the future of open-source HR
+            </div>
+        </div>
+    </section>
+
+    <!-- License Section -->
+    <section class="license-section reveal">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>AGPL v3 License</h2>
+                <p>Wana.Work is licensed under the GNU Affero General Public License v3. Here's what that means:</p>
+            </div>
+
+            <div class="license-content">
+                <div class="license-card reveal">
+                    <h3>You Can</h3>
+                    <ul>
+                        <li>Use the software for any purpose</li>
+                        <li>Copy and distribute it freely</li>
+                        <li>Modify the source code</li>
+                        <li>Use it commercially</li>
+                        <li>Host it on your own servers</li>
+                    </ul>
+                </div>
+
+                <div class="license-card reveal">
+                    <h3>You Must</h3>
+                    <ul>
+                        <li>Include a copy of the license</li>
+                        <li>Share modifications publicly</li>
+                        <li>Disclose your source code if you distribute it</li>
+                        <li>Mention the original author</li>
+                        <li>Document your changes</li>
+                    </ul>
+                </div>
+
+                <div class="license-card reveal">
+                    <h3>You Cannot</h3>
+                    <ul>
+                        <li>Hold us liable for any issues</li>
+                        <li>Use our trademarks without permission</li>
+                        <li>Claim you created the original code</li>
+                        <li>Use private modifications without sharing them</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="license-note reveal">
+                <strong>Plain English:</strong> Wana.Work is free and open source. You can use it, modify it, and distribute it as long as you keep the same license and share your changes with the community. If you modify it for your own use only, you don't need to share, but if you distribute or offer it as a service to others, your modifications must be shared under the same license.
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta reveal">
+        <div class="section-container">
+            <h2>Ready to own your HR data?</h2>
+            <p>Join thousands of companies trusting Wana.Work with their most critical employee data.</p>
+            <div class="final-cta-buttons">
+                <a href="https://github.com/wanawork/wanawork" target="_blank" class="btn btn-primary">
+                    Star on GitHub
+                </a>
+                <a href="#quickstart" class="btn btn-secondary">
+                    Deploy Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Product</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/features">Features</a></li>
+                    <li><a href="/pricing">Pricing</a></li>
+                    <li><a href="/open-source">Open Source</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Developers</h3>
+                <ul>
+                    <li><a href="https://docs.wana.work" target="_blank">Documentation</a></li>
+                    <li><a href="https://github.com/wanawork/wanawork" target="_blank">GitHub</a></li>
+                    <li><a href="/api-docs">API Reference</a></li>
+                    <li><a href="/contributing">Contributing Guide</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="https://github.com/wanawork/wanawork/discussions" target="_blank">Discussions</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="https://discord.gg/wanawork" target="_blank">Discord</a></li>
+                    <li><a href="https://twitter.com/wanawork" target="_blank">Twitter</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <li><a href="/security">Security</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                    <li><a href="/license">License</a></li>
+                    <li><a href="/status">Status</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                &copy; 2024 Wana.Work. All rights reserved. Built on MintHCM. AGPL v3 Licensed.
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/wanawork/wanawork" title="GitHub" target="_blank">⭐</a>
+                <a href="https://twitter.com/wanawork" title="Twitter" target="_blank">𝕏</a>
+                <a href="https://discord.gg/wanawork" title="Discord" target="_blank">💬</a>
+                <a href="mailto:hello@wana.work" title="Email">✉️</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const animationDuration = 2000;
+
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const startTime = Date.now();
+
+            const updateCount = () => {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / animationDuration, 1);
+                const current = Math.floor(target * progress);
+                element.textContent = current.toLocaleString();
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                }
+            };
+
+            updateCount();
+        }
+
+        // Start counting when element is visible
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // Copy Terminal Function
+        function copyTerminal() {
+            const terminal = document.getElementById('terminal-code');
+            const text = terminal.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.target;
+                const original = btn.textContent;
+                btn.textContent = 'Copied!';
+                setTimeout(() => {
+                    btn.textContent = original;
+                }, 2000);
+            });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // JSON-LD Schema
+        const schemaScript = document.createElement('script');
+        schemaScript.type = 'application/ld+json';
+        schemaScript.innerHTML = JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Wana.Work",
+            "description": "The only enterprise-grade HCM platform that's fully open source. Self-host on your infrastructure, customize every module, and own your data completely.",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Linux, macOS, Windows",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+            "codeRepository": "https://github.com/wanawork/wanawork",
+            "url": "https://wana.work",
+            "author": {
+                "@type": "Organization",
+                "name": "Wana.Work"
+            }
+        });
+        document.head.appendChild(schemaScript);
+    </script>
+</body>
+</html>

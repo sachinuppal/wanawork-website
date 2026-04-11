@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Tracking & Employee Scheduling Software | Wana.Work</title>
+    <meta name="description" content="Track time, manage schedules, simplify attendance. Clock in/out, shift management, leave requests, and delegation tracking in one platform.">
+    <meta name="keywords" content="employee scheduling software, time tracking, attendance management, leave management system">
+    <meta property="og:title" content="Time Tracking & Employee Scheduling Software | Wana.Work">
+    <meta property="og:description" content="Track time, manage schedules, simplify attendance. Clock in/out, shift management, leave requests, and delegation tracking in one platform.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wana.work/platform/time-attendance">
+    <meta property="og:image" content="https://wana.work/og-time-attendance.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Wana.Work Time & Attendance",
+        "description": "Track time, manage schedules, simplify attendance. Clock in/out, shift management, leave requests, and delegation tracking.",
+        "url": "https://wana.work/platform/time-attendance",
+        "applicationCategory": "HRSoftware",
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": "0"
+        }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'Inter', sans-serif;
+            color: #1E1B4B;
+            background: #FFFFFF;
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            letter-spacing: -0.02em;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            line-height: 1.3;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #64748B;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background-clip: padding-box;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            filter: saturate(180%);
+        }
+
+        nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1E1B4B;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #FF6B4A;
+        }
+
+        .nav-links a.active {
+            color: #FF6B4A;
+            font-weight: 700;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B4A, #A855F7);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 74, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #1E1B4B;
+            border: 1.5px solid #E5E7EB;
+        }
+
+        .btn-secondary:hover {
+            background: #F9FAFB;
+            border-color: #FF6B4A;
+        }
+
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            margin-top: 5rem;
+            padding: 2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: #6366F1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: #64748B;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            margin-bottom: 1.5rem;
+            color: #1E1B4B;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #64748B;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF6B4A, #A855F7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #64748B;
+            margin-top: 0.5rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .hero-visual {
+            background: linear-gradient(135deg, #EEF2FF 0%, #F3E8FF 50%, #ECFDF5 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calendar-preview {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .calendar-month {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #1E1B4B;
+        }
+
+        .calendar-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .weekday {
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #64748B;
+            padding: 0.5rem 0;
+        }
+
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .calendar-day.office {
+            background: #6366F1;
+            color: white;
+        }
+
+        .calendar-day.home {
+            background: #10B981;
+            color: white;
+        }
+
+        .calendar-day.holiday {
+            background: #F59E0B;
+            color: white;
+        }
+
+        .calendar-day.sick {
+            background: #EF4444;
+            color: white;
+        }
+
+        .calendar-day.delegation {
+            background: #A855F7;
+            color: white;
+        }
+
+        .calendar-day.empty {
+            background: #F3F4F6;
+            color: #D1D5DB;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            border-top: 1px solid #E5E7EB;
+        }
+
+        section.full-width {
+            border: none;
+            padding: 0;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #FF6B4A;
+            box-shadow: 0 10px 25px rgba(255, 107, 74, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #FFE8E0, #F3E8FF);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+        }
+
+        /* Feature Layout */
+        .feature-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+
+        .feature-layout.reverse {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .feature-layout.reverse > :first-child {
+            order: 2;
+        }
+
+        .feature-layout.reverse > :last-child {
+            order: 1;
+        }
+
+        .feature-content h3 {
+            margin-bottom: 1rem;
+        }
+
+        .feature-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .feature-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: #64748B;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10B981;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .feature-visual {
+            background: linear-gradient(135deg, #EEF2FF 0%, #F3E8FF 50%, #ECFDF5 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Schedule Grid Visual */
+        .schedule-grid {
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .schedule-header {
+            background: #F9FAFB;
+            border-bottom: 1px solid #E5E7EB;
+            display: grid;
+            grid-template-columns: 120px repeat(5, 1fr);
+            gap: 0;
+        }
+
+        .schedule-header-cell {
+            padding: 1rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #64748B;
+            text-align: center;
+            border-right: 1px solid #E5E7EB;
+        }
+
+        .schedule-header-cell:last-child {
+            border-right: none;
+        }
+
+        .schedule-row {
+            display: grid;
+            grid-template-columns: 120px repeat(5, 1fr);
+            gap: 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .schedule-row:last-child {
+            border-bottom: none;
+        }
+
+        .schedule-name {
+            padding: 1rem;
+            background: #F9FAFB;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-right: 1px solid #E5E7EB;
+        }
+
+        .schedule-cell {
+            padding: 1rem;
+            border-right: 1px solid #E5E7EB;
+            text-align: center;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60px;
+        }
+
+        .schedule-cell:last-child {
+            border-right: none;
+        }
+
+        .schedule-badge {
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+            width: 100%;
+            text-align: center;
+        }
+
+        .schedule-badge.office {
+            background: #6366F1;
+        }
+
+        .schedule-badge.home {
+            background: #10B981;
+        }
+
+        .schedule-badge.holiday {
+            background: #F59E0B;
+            color: #1E1B4B;
+        }
+
+        .schedule-badge.sick {
+            background: #EF4444;
+        }
+
+        .schedule-badge.delegation {
+            background: #A855F7;
+        }
+
+        /* Clock In/Out */
+        .clock-interface {
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .clock-status {
+            font-size: 1rem;
+            color: #64748B;
+            margin-bottom: 1rem;
+        }
+
+        .clock-time {
+            font-size: 3rem;
+            font-weight: 800;
+            font-variant-numeric: tabular-nums;
+            margin-bottom: 2rem;
+            color: #1E1B4B;
+        }
+
+        .clock-button {
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .clock-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+
+        .clock-button.clocked-out {
+            background: linear-gradient(135deg, #6366F1, #4F46E5);
+        }
+
+        .clock-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .clock-stat {
+            background: #F9FAFB;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .clock-stat-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #6366F1;
+        }
+
+        .clock-stat-label {
+            font-size: 0.85rem;
+            color: #64748B;
+            margin-top: 0.5rem;
+        }
+
+        /* Timesheet */
+        .timesheet {
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .timesheet-header {
+            background: #F9FAFB;
+            padding: 1.5rem;
+            border-bottom: 1px solid #E5E7EB;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .timesheet-col {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #64748B;
+        }
+
+        .timesheet-rows {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .timesheet-row {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #E5E7EB;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .timesheet-row:last-child {
+            border-bottom: none;
+        }
+
+        .timesheet-date {
+            font-weight: 600;
+            color: #1E1B4B;
+        }
+
+        .timesheet-hours {
+            color: #6366F1;
+            font-weight: 600;
+        }
+
+        .timesheet-project {
+            color: #64748B;
+        }
+
+        /* Leave Management */
+        .leave-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .leave-card {
+            background: white;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .leave-card h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .leave-type-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .leave-type-icon.annual {
+            background: #EEF2FF;
+            color: #6366F1;
+        }
+
+        .leave-type-icon.sick {
+            background: #FEE2E2;
+            color: #EF4444;
+        }
+
+        .leave-type-icon.personal {
+            background: #FEF3C7;
+            color: #F59E0B;
+        }
+
+        .leave-balance {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1.5rem;
+        }
+
+        .leave-stat {
+            text-align: center;
+        }
+
+        .leave-stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #1E1B4B;
+        }
+
+        .leave-stat-label {
+            font-size: 0.75rem;
+            color: #64748B;
+            margin-top: 0.3rem;
+        }
+
+        .leave-progress {
+            width: 100%;
+            height: 8px;
+            background: #E5E7EB;
+            border-radius: 4px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+
+        .leave-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #10B981, #059669);
+            width: 0%;
+        }
+
+        .leave-form {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #1E1B4B;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #6366F1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        /* Delegation Timeline */
+        .delegation-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: #6366F1;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #6366F1;
+        }
+
+        .timeline-item:not(:last-child):after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 12px;
+            width: 2px;
+            height: calc(100% + 2rem);
+            background: #E5E7EB;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: #F9FAFB;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid #6366F1;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: #64748B;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: #1E1B4B;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: #64748B;
+        }
+
+        /* Charts */
+        .chart-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .chart-box {
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .chart-box h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            gap: 1rem;
+            height: 250px;
+        }
+
+        .bar {
+            flex: 1;
+            background: linear-gradient(180deg, #6366F1, #4F46E5);
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            transition: all 0.3s ease;
+            min-height: 20px;
+        }
+
+        .bar:hover {
+            filter: brightness(1.1);
+        }
+
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: #64748B;
+            white-space: nowrap;
+        }
+
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 600;
+            color: #1E1B4B;
+            font-size: 0.85rem;
+        }
+
+        .heatmap {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
+        }
+
+        .heatmap-cell {
+            aspect-ratio: 1;
+            background: #E5E7EB;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .heatmap-cell:hover {
+            transform: scale(1.1);
+        }
+
+        .heatmap-cell.low {
+            background: #F3F4F6;
+        }
+
+        .heatmap-cell.medium {
+            background: #BFDBFE;
+        }
+
+        .heatmap-cell.high {
+            background: #6366F1;
+            color: white;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: #F9FAFB;
+            padding: 1.5rem;
+            font-weight: 700;
+            text-align: left;
+            border-bottom: 1px solid #E5E7EB;
+            border-right: 1px solid #E5E7EB;
+            font-size: 0.9rem;
+        }
+
+        .comparison-table th:last-child {
+            border-right: none;
+        }
+
+        .comparison-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid #E5E7EB;
+            border-right: 1px solid #E5E7EB;
+            font-size: 0.9rem;
+        }
+
+        .comparison-table td:last-child {
+            border-right: none;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:first-child th:first-child {
+            background: white;
+        }
+
+        .check {
+            color: #10B981;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .cross {
+            color: #D1D5DB;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* CTA Block */
+        .cta-block {
+            background: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+            color: white;
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 5rem 0;
+        }
+
+        .cta-block h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-block p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-buttons .btn {
+            background: white;
+            color: #FF6B4A;
+            font-weight: 700;
+        }
+
+        .cta-buttons .btn:hover {
+            background: #F9FAFB;
+        }
+
+        /* Footer */
+        footer {
+            background: #1E1B4B;
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 5rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        footer h4 {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 0.75rem;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #FF6B4A;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .feature-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .feature-layout.reverse > :first-child {
+                order: unset;
+            }
+
+            .feature-layout.reverse > :last-child {
+                order: unset;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .leave-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .chart-container {
+                grid-template-columns: 1fr;
+            }
+
+            footer .container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            nav .container {
+                padding: 0.75rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                gap: 0.5rem;
+            }
+
+            .btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .breadcrumb {
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding: 2rem 0;
+            }
+
+            .hero-visual {
+                min-height: 300px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .schedule-header,
+            .schedule-row {
+                grid-template-columns: 80px repeat(3, 1fr);
+            }
+
+            .schedule-header-cell,
+            .schedule-cell {
+                padding: 0.75rem;
+                font-size: 0.7rem;
+            }
+
+            .clock-interface {
+                padding: 1.5rem;
+            }
+
+            .clock-time {
+                font-size: 2rem;
+            }
+
+            .clock-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            footer .container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .cta-block {
+                padding: 2rem 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+            }
+
+            .comparison-table {
+                font-size: 0.8rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 1rem 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Wana.Work</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/platform" class="active">Platform</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button class="btn btn-secondary">Sign In</button>
+                <button class="btn btn-primary">Start Free</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/">Home</a>
+            <span>/</span>
+            <a href="/platform">Platform</a>
+            <span>/</span>
+            <span>Time & Attendance</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container" style="display: contents;">
+            <div class="hero-content">
+                <h1>Track time, manage schedules, simplify attendance.</h1>
+                <p>Enterprise-grade time tracking and scheduling solutions that help your team work smarter. Clock in and out, manage complex schedules, request leaves, and delegate work all in one intuitive platform.</p>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">Real-time</div>
+                        <div class="stat-label">Tracking</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">Smart</div>
+                        <div class="stat-label">Scheduling</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">Complete</div>
+                        <div class="stat-label">Leave Management</div>
+                    </div>
+                </div>
+
+                <div class="hero-cta">
+                    <button class="btn btn-primary btn-large">Start Free Trial</button>
+                    <button class="btn btn-secondary btn-large">Watch Demo</button>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="calendar-preview">
+                    <div class="calendar-header">
+                        <div class="calendar-month">April 2026</div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <span style="cursor: pointer; color: #6366F1;">←</span>
+                            <span style="cursor: pointer; color: #6366F1;">→</span>
+                        </div>
+                    </div>
+
+                    <div class="calendar-weekdays">
+                        <div class="weekday">Mon</div>
+                        <div class="weekday">Tue</div>
+                        <div class="weekday">Wed</div>
+                        <div class="weekday">Thu</div>
+                        <div class="weekday">Fri</div>
+                        <div class="weekday">Sat</div>
+                        <div class="weekday">Sun</div>
+                    </div>
+
+                    <div class="calendar-days">
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day office">1</div>
+                        <div class="calendar-day office">2</div>
+                        <div class="calendar-day home">3</div>
+                        <div class="calendar-day holiday">4</div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day office">5</div>
+                        <div class="calendar-day office">6</div>
+                        <div class="calendar-day sick">7</div>
+                        <div class="calendar-day office">8</div>
+                        <div class="calendar-day home">9</div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day home">10</div>
+                        <div class="calendar-day office">11</div>
+                        <div class="calendar-day delegation">12</div>
+                        <div class="calendar-day office">13</div>
+                        <div class="calendar-day office">14</div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day office">15</div>
+                        <div class="calendar-day home">16</div>
+                        <div class="calendar-day office">17</div>
+                        <div class="calendar-day holiday">18</div>
+                        <div class="calendar-day office">19</div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day office">20</div>
+                        <div class="calendar-day office">21</div>
+                        <div class="calendar-day home">22</div>
+                        <div class="calendar-day office">23</div>
+                        <div class="calendar-day office">24</div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day empty"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Management -->
+    <section>
+        <div class="container">
+            <h2>Schedule Management Made Simple</h2>
+
+            <div class="feature-layout">
+                <div class="feature-content">
+                    <h3>Weekly & Monthly Views</h3>
+                    <p>Visualize your team's schedule across different time periods. Color-coded work types help you quickly identify office days, remote work, holidays, sick leave, and delegations all at a glance.</p>
+                    <ul class="feature-list">
+                        <li>Flexible schedule creation and updates</li>
+                        <li>Drag-and-drop shift assignments</li>
+                        <li>Recurring shift patterns</li>
+                        <li>Timezone support for global teams</li>
+                        <li>Real-time schedule sync across devices</li>
+                    </ul>
+                </div>
+
+                <div class="feature-visual">
+                    <div style="width: 100%; max-width: 450px;">
+                        <div class="schedule-grid">
+                            <div class="schedule-header">
+                                <div class="schedule-header-cell">Team</div>
+                                <div class="schedule-header-cell">Mon 7</div>
+                                <div class="schedule-header-cell">Tue 8</div>
+                                <div class="schedule-header-cell">Wed 9</div>
+                                <div class="schedule-header-cell">Thu 10</div>
+                                <div class="schedule-header-cell">Fri 11</div>
+                            </div>
+
+                            <div class="schedule-row">
+                                <div class="schedule-name">Sarah</div>
+                                <div class="schedule-cell"><div class="schedule-badge office">Office</div></div>
+                                <div class="schedule-cell"><div class="schedule-badge office">Office</div></div>
+                                <div class="schedule-cell"><div class="schedule-badge home">Remote</div></div>
+                                <div class="schedule-cell"><div class="schedule-badge office">Office</div></div>
+                                <div class="schedule-cell"><div class="schedule-badge office">Office</div></div>
+                            </div>
+
+                            <div class="schedule-row">
+                                <div class="schedule-name">Mike</div>
+                                <div class="schedule-cell"><div class="schedule-badge office">Office</div></div>
+                                <div class="schedule-cell"><div class="schedule-badge holiday">Holiday</div></div>
+                                <div class="schedule-cell"><div class="schedule-badge holiday">Holiday</div></div>
+                                <div class="schedule-cell"><div class="schedule-badge office">Office</div></div>
+                                <div class="schedule-cell"><div class="schedule-badge office">Office</div></div>
+                            </div>
+
+                            <div class="schedule-row">
+                                <div class="schedule-name">Emma</div>
+                                <div class="schedule-cell"><div class="schedule-badge home">Remote</div></div>
+                                <div class="schedule-cell"><div class="schedule-badge home">Remote</div></div>
+                                <div class="schedule-cell"><div class="schedule-badge office">Office</div></div>
+                                <div class="schedule-cell"><div class="schedule-badge office">Office</div></div>
+                                <div class="schedule-cell"><div class="schedule-badge home">Remote</div></div>
+                            </div>
+
+                            <div class="schedule-row">
+                                <div class="schedule-name">John</div>
+                                <div class="schedule-cell"><div class="schedule-badge office">Office</div></div>
+                                <div class="schedule-cell"><div class="schedule-badge office">Office</div></div>
+                                <div class="schedule-cell"><div class="schedule-badge office">Office</div></div>
+                                <div class="schedule-cell"><div class="schedule-badge sick">Sick</div></div>
+                                <div class="schedule-cell"><div class="schedule-badge office">Office</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Time Tracking -->
+    <section>
+        <div class="container">
+            <div class="feature-layout reverse">
+                <div class="feature-content">
+                    <h3>Accurate Time Tracking</h3>
+                    <p>Track work hours with precision. Employees can clock in and out with a single tap, log time by project, and view daily and weekly summaries. Managers get real-time visibility into team availability and hours.</p>
+                    <ul class="feature-list">
+                        <li>Mobile-optimized clock in and out</li>
+                        <li>Project-based time logging</li>
+                        <li>Automatic break time detection</li>
+                        <li>Weekly and daily timesheet views</li>
+                        <li>Offline time logging with sync</li>
+                        <li>GPS and location tracking optional</li>
+                    </ul>
+                </div>
+
+                <div class="feature-visual">
+                    <div style="width: 100%; max-width: 350px;">
+                        <div class="clock-interface">
+                            <div class="clock-status">Currently Clocked In</div>
+                            <div class="clock-time" style="font-variant-numeric: tabular-nums;">09:42:15</div>
+                            <button class="clock-button">Clock Out</button>
+
+                            <div class="clock-stats">
+                                <div class="clock-stat">
+                                    <div class="clock-stat-value">8h 42m</div>
+                                    <div class="clock-stat-label">Today</div>
+                                </div>
+                                <div class="clock-stat">
+                                    <div class="clock-stat-value">42h 30m</div>
+                                    <div class="clock-stat-label">This Week</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 2rem;">
+                            <div style="font-weight: 600; margin-bottom: 1rem; color: #1E1B4B;">Recent Timesheet</div>
+                            <div class="timesheet">
+                                <div class="timesheet-header">
+                                    <div class="timesheet-col">Date</div>
+                                    <div class="timesheet-col">Hours</div>
+                                    <div class="timesheet-col">Project</div>
+                                    <div class="timesheet-col">Status</div>
+                                </div>
+                                <div class="timesheet-rows">
+                                    <div class="timesheet-row">
+                                        <div class="timesheet-date">Apr 11</div>
+                                        <div class="timesheet-hours">8.5h</div>
+                                        <div class="timesheet-project">Project A</div>
+                                        <div style="color: #10B981; font-weight: 600;">Approved</div>
+                                    </div>
+                                    <div class="timesheet-row">
+                                        <div class="timesheet-date">Apr 10</div>
+                                        <div class="timesheet-hours">8h</div>
+                                        <div class="timesheet-project">Project B</div>
+                                        <div style="color: #10B981; font-weight: 600;">Approved</div>
+                                    </div>
+                                    <div class="timesheet-row">
+                                        <div class="timesheet-date">Apr 9</div>
+                                        <div class="timesheet-hours">7.5h</div>
+                                        <div class="timesheet-project">Project A</div>
+                                        <div style="color: #F59E0B; font-weight: 600;">Pending</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leave Management -->
+    <section>
+        <div class="container">
+            <h2>Streamlined Leave Management</h2>
+
+            <div class="leave-cards">
+                <div class="leave-card">
+                    <div class="leave-type-icon annual">📅</div>
+                    <h3>Annual Leave</h3>
+                    <div class="leave-balance">
+                        <div class="leave-stat">
+                            <div class="leave-stat-number">12</div>
+                            <div class="leave-stat-label">Used</div>
+                        </div>
+                        <div class="leave-stat">
+                            <div class="leave-stat-number">8</div>
+                            <div class="leave-stat-label">Remaining</div>
+                        </div>
+                    </div>
+                    <div class="leave-progress">
+                        <div class="leave-progress-bar" style="width: 60%; background: linear-gradient(90deg, #6366F1, #4F46E5);"></div>
+                    </div>
+                </div>
+
+                <div class="leave-card">
+                    <div class="leave-type-icon sick">🏥</div>
+                    <h3>Sick Leave</h3>
+                    <div class="leave-balance">
+                        <div class="leave-stat">
+                            <div class="leave-stat-number">2</div>
+                            <div class="leave-stat-label">Used</div>
+                        </div>
+                        <div class="leave-stat">
+                            <div class="leave-stat-number">8</div>
+                            <div class="leave-stat-label">Remaining</div>
+                        </div>
+                    </div>
+                    <div class="leave-progress">
+                        <div class="leave-progress-bar" style="width: 20%; background: linear-gradient(90deg, #EF4444, #DC2626);"></div>
+                    </div>
+                </div>
+
+                <div class="leave-card">
+                    <div class="leave-type-icon personal">🎁</div>
+                    <h3>Personal Leave</h3>
+                    <div class="leave-balance">
+                        <div class="leave-stat">
+                            <div class="leave-stat-number">1</div>
+                            <div class="leave-stat-label">Used</div>
+                        </div>
+                        <div class="leave-stat">
+                            <div class="leave-stat-number">4</div>
+                            <div class="leave-stat-label">Remaining</div>
+                        </div>
+                    </div>
+                    <div class="leave-progress">
+                        <div class="leave-progress-bar" style="width: 20%; background: linear-gradient(90deg, #F59E0B, #FBBF24);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-layout">
+                <div class="feature-visual">
+                    <div style="width: 100%; max-width: 400px;">
+                        <div class="leave-form">
+                            <div style="font-weight: 700; margin-bottom: 1.5rem; color: #1E1B4B; text-align: center;">Request Leave</div>
+
+                            <div class="form-group">
+                                <label>Leave Type</label>
+                                <select>
+                                    <option>Annual Leave</option>
+                                    <option>Sick Leave</option>
+                                    <option>Personal Leave</option>
+                                </select>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Start Date</label>
+                                    <input type="date" value="2026-04-20">
+                                </div>
+                                <div class="form-group">
+                                    <label>End Date</label>
+                                    <input type="date" value="2026-04-22">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Duration</label>
+                                <select>
+                                    <option>Full Days (3)</option>
+                                    <option>Half Days</option>
+                                    <option>Custom Hours</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Reason</label>
+                                <textarea placeholder="Tell your manager why you need this leave..."></textarea>
+                            </div>
+
+                            <button class="btn btn-primary" style="width: 100%;">Submit Request</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-content">
+                    <h3>Effortless Leave Requests</h3>
+                    <p>Let employees request leave with detailed forms and managers approve with context. Automatically track balances, prevent overlaps, and maintain team coverage during absences.</p>
+                    <ul class="feature-list">
+                        <li>Self-service leave request forms</li>
+                        <li>Approval workflows with notifications</li>
+                        <li>Automatic balance calculations</li>
+                        <li>Prevent double-booking conflicts</li>
+                        <li>Email and SMS notifications</li>
+                        <li>Leave history and reports</li>
+                        <li>Multiple leave type support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delegation Management -->
+    <section>
+        <div class="container">
+            <h2>Seamless Work Delegation</h2>
+
+            <div class="feature-layout reverse">
+                <div class="feature-content">
+                    <h3>Coverage & Delegation Tracking</h3>
+                    <p>Delegate tasks and responsibilities when you are away. Set up auto-assignment rules, track delegated work, and ensure critical tasks don't fall through the cracks while team members are on leave.</p>
+                    <ul class="feature-list">
+                        <li>Assign tasks during absence periods</li>
+                        <li>Set auto-delegation rules</li>
+                        <li>Real-time delegation notifications</li>
+                        <li>Track delegation timeline</li>
+                        <li>Coverage map visualization</li>
+                        <li>Task handoff documentation</li>
+                        <li>Escalation workflows</li>
+                    </ul>
+                </div>
+
+                <div class="feature-visual">
+                    <div style="width: 100%; max-width: 400px; padding: 2rem;">
+                        <div class="delegation-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">April 15, 2026</div>
+                                    <div class="timeline-title">Delegation Created</div>
+                                    <div class="timeline-desc">Sarah delegated 5 tasks to Mike during her absence (Apr 20-22)</div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">April 15, 2026</div>
+                                    <div class="timeline-title">Notification Sent</div>
+                                    <div class="timeline-desc">Mike received email and SMS notification about new delegated tasks</div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">April 15, 2026</div>
+                                    <div class="timeline-title">Delegation Accepted</div>
+                                    <div class="timeline-desc">Mike confirmed receipt and acceptance of delegated responsibilities</div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">April 22, 2026</div>
+                                    <div class="timeline-title">Delegation Ended</div>
+                                    <div class="timeline-desc">Sarah returned and tasks were transferred back with summary notes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reporting & Analytics -->
+    <section>
+        <div class="container">
+            <h2>Comprehensive Reporting & Analytics</h2>
+
+            <p style="text-align: center; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">Make data-driven decisions with real-time insights into time tracking, attendance patterns, and team utilization. Identify trends and optimize your workforce.</p>
+
+            <div class="chart-container">
+                <div class="chart-box">
+                    <h4>Hours Distribution This Week</h4>
+                    <div class="bar-chart">
+                        <div class="bar" style="height: 75%;">
+                            <div class="bar-value">40h</div>
+                            <div class="bar-label">Monday</div>
+                        </div>
+                        <div class="bar" style="height: 85%;">
+                            <div class="bar-value">42h</div>
+                            <div class="bar-label">Tuesday</div>
+                        </div>
+                        <div class="bar" style="height: 70%;">
+                            <div class="bar-value">38h</div>
+                            <div class="bar-label">Wednesday</div>
+                        </div>
+                        <div class="bar" style="height: 80%;">
+                            <div class="bar-value">40h</div>
+                            <div class="bar-label">Thursday</div>
+                        </div>
+                        <div class="bar" style="height: 60%;">
+                            <div class="bar-value">32h</div>
+                            <div class="bar-label">Friday</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-box">
+                    <h4>Overtime Tracking</h4>
+                    <div class="bar-chart">
+                        <div class="bar" style="height: 45%;">
+                            <div class="bar-value">2h</div>
+                            <div class="bar-label">Sarah</div>
+                        </div>
+                        <div class="bar" style="height: 25%;">
+                            <div class="bar-value">1h</div>
+                            <div class="bar-label">Mike</div>
+                        </div>
+                        <div class="bar" style="height: 60%;">
+                            <div class="bar-value">3h</div>
+                            <div class="bar-label">Emma</div>
+                        </div>
+                        <div class="bar" style="height: 35%;">
+                            <div class="bar-value">1.5h</div>
+                            <div class="bar-label">John</div>
+                        </div>
+                        <div class="bar" style="height: 15%;">
+                            <div class="bar-value">0.5h</div>
+                            <div class="bar-label">Lisa</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-box">
+                    <h4>Team Utilization Heatmap</h4>
+                    <div class="heatmap">
+                        <div class="heatmap-cell high">90%</div>
+                        <div class="heatmap-cell high">88%</div>
+                        <div class="heatmap-cell medium">65%</div>
+                        <div class="heatmap-cell medium">70%</div>
+                        <div class="heatmap-cell low">30%</div>
+                        <div class="heatmap-cell high">85%</div>
+                        <div class="heatmap-cell low">25%</div>
+                        <div class="heatmap-cell high">92%</div>
+                        <div class="heatmap-cell medium">60%</div>
+                        <div class="heatmap-cell high">80%</div>
+                        <div class="heatmap-cell medium">75%</div>
+                        <div class="heatmap-cell low">20%</div>
+                        <div class="heatmap-cell high">88%</div>
+                        <div class="heatmap-cell high">95%</div>
+                    </div>
+                </div>
+
+                <div class="chart-box">
+                    <h4>Attendance Summary</h4>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-size: 0.9rem; color: #64748B;">Office Days</span>
+                                <span style="font-weight: 600; color: #6366F1;">78%</span>
+                            </div>
+                            <div style="height: 8px; background: #E5E7EB; border-radius: 4px; overflow: hidden;">
+                                <div style="height: 100%; background: #6366F1; width: 78%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-size: 0.9rem; color: #64748B;">Remote Days</span>
+                                <span style="font-weight: 600; color: #10B981;">15%</span>
+                            </div>
+                            <div style="height: 8px; background: #E5E7EB; border-radius: 4px; overflow: hidden;">
+                                <div style="height: 100%; background: #10B981; width: 15%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="font-size: 0.9rem; color: #64748B;">Absent</span>
+                                <span style="font-weight: 600; color: #EF4444;">7%</span>
+                            </div>
+                            <div style="height: 8px; background: #E5E7EB; border-radius: 4px; overflow: hidden;">
+                                <div style="height: 100%; background: #EF4444; width: 7%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section>
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">How Wana.Work Compares</h2>
+
+            <div style="overflow-x: auto;">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Wana.Work</th>
+                            <th>Deputy</th>
+                            <th>When I Work</th>
+                            <th>Workday Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Real-time Clock In/Out</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Mobile App Available</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Shift Management</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Leave Management</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Work Delegation Tracking</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Project-based Time Logging</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>GPS Location Tracking</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Advanced Analytics & Reports</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>AI-Powered Insights</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Unified HCM Platform</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Offline Functionality</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Free Tier Available</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Block -->
+    <div class="container">
+        <div class="cta-block">
+            <h2>Ready to Transform Your Team's Time Management?</h2>
+            <p>Join hundreds of companies using Wana.Work to streamline scheduling, time tracking, and leave management. Start free, no credit card required.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-large">Start Your Free Trial</button>
+                <button class="btn btn-large">Schedule a Demo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div>
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#security">Security</a></li>
+                    <li><a href="#integrations">Integrations</a></li>
+                    <li><a href="#updates">What's New</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#press">Press</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#help">Help Center</a></li>
+                    <li><a href="#docs">Documentation</a></li>
+                    <li><a href="#api">API Reference</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#webinars">Webinars</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#dpa">Data Processing Agreement</a></li>
+                    <li><a href="#compliance">Compliance</a></li>
+                    <li><a href="#cookies">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#twitter">Twitter</a></li>
+                    <li><a href="#linkedin">LinkedIn</a></li>
+                    <li><a href="#facebook">Facebook</a></li>
+                    <li><a href="#instagram">Instagram</a></li>
+                    <li><a href="#github">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Wana.Work. All rights reserved. Wana is the flexible workforce platform built for the future of work.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards, sections, etc.
+        document.querySelectorAll('.feature-card, section, .cta-block').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth navigation active state
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === window.location.pathname) {
+                link.classList.add('active');
+            }
+        });
+
+        // Clock timer animation
+        function updateClock() {
+            const clockElement = document.querySelector('.clock-time');
+            if (clockElement) {
+                const now = new Date();
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                const seconds = String(now.getSeconds()).padStart(2, '0');
+                clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+            }
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        // CTA button interactions
+        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+            btn.addEventListener('mousedown', function() {
+                this.style.transform = 'scale(0.98)';
+            });
+            btn.addEventListener('mouseup', function() {
+                this.style.transform = '';
+            });
+        });
+
+        // Leave progress bar animation
+        function animateProgressBars() {
+            const bars = document.querySelectorAll('.leave-progress-bar');
+            bars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.transition = 'width 0.8s ease-out';
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', animateProgressBars);
+        } else {
+            animateProgressBars();
+        }
+    </script>
+</body>
+</html>

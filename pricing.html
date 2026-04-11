@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing: Free Open-Source & Enterprise Plans | Wana.Work</title>
+    <meta name="description" content="Simple, transparent pricing. Start free with our open-source community edition. Upgrade to Pro or Enterprise for premium features and support.">
+    <meta name="keywords" content="HCM pricing, free HR software, open source HR pricing, Workday pricing alternative">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pricing: Free Open-Source & Enterprise Plans | Wana.Work">
+    <meta property="og:description" content="Simple, transparent pricing. Start free with our open-source community edition. Upgrade to Pro or Enterprise for premium features and support.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wana.work/pricing">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Wana.Work Pricing",
+        "description": "Simple, transparent pricing for open-source HCM platform",
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "Community",
+                "price": "0",
+                "priceCurrency": "USD",
+                "description": "Free forever self-hosted edition with all 188 modules and unlimited users"
+            },
+            {
+                "@type": "Offer",
+                "name": "Pro",
+                "price": "12",
+                "priceCurrency": "USD",
+                "priceValidFrom": "2026-04-10",
+                "description": "Cloud-hosted with priority support, SSO/SAML, and advanced analytics"
+            },
+            {
+                "@type": "Offer",
+                "name": "Enterprise",
+                "description": "Custom pricing with dedicated infrastructure and premium support"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1E293B;
+            background: #FFFFFF;
+            line-height: 1.6;
+            letter-spacing: -0.01em;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #FF6B4A;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: #64748B;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FF6B4A;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn-signin {
+            padding: 8px 16px;
+            background: transparent;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #64748B;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-signin:hover {
+            border-color: #FF6B4A;
+            color: #FF6B4A;
+        }
+
+        .btn-primary {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 107, 74, 0.3);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            margin-top: 80px;
+            padding: 24px 24px 0;
+        }
+
+        .breadcrumb-items {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            gap: 12px;
+            font-size: 14px;
+            color: #64748B;
+        }
+
+        .breadcrumb-items a {
+            color: #FF6B4A;
+            text-decoration: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: #1E1B4B;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #64748B;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* Billing Toggle */
+        .billing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+
+        .toggle-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #64748B;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 56px;
+            height: 32px;
+            background: #E2E8F0;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .toggle-switch.active {
+            background: #FF6B4A;
+        }
+
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            background: white;
+            border-radius: 14px;
+            top: 2px;
+            left: 2px;
+            transition: left 0.3s;
+        }
+
+        .toggle-switch.active::after {
+            left: 26px;
+        }
+
+        .savings-badge {
+            display: inline-block;
+            background: #ECFDF5;
+            color: #10B981;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        /* Pricing Cards */
+        .pricing-section {
+            padding: 60px 24px;
+        }
+
+        .pricing-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid #6366F1;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.02), rgba(168, 85, 247, 0.02));
+        }
+
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #FF6B4A, #A855F7);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+            color: #1E1B4B;
+        }
+
+        .card-price {
+            font-size: 48px;
+            font-weight: 800;
+            color: #FF6B4A;
+            margin: 16px 0 8px 0;
+            letter-spacing: -0.02em;
+        }
+
+        .card-price-annual {
+            display: none;
+        }
+
+        .card-price-annual.show {
+            display: block;
+        }
+
+        .card-price-monthly {
+            display: block;
+        }
+
+        .card-price-monthly.hide {
+            display: none;
+        }
+
+        .card-billing {
+            font-size: 14px;
+            color: #64748B;
+            margin-bottom: 24px;
+        }
+
+        .card-description {
+            font-size: 14px;
+            color: #64748B;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .card-cta {
+            width: 100%;
+            padding: 12px 24px;
+            background: #F1F5F9;
+            color: #1E1B4B;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 32px;
+        }
+
+        .pricing-card.featured .card-cta {
+            background: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+            color: white;
+        }
+
+        .card-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-features {
+            list-style: none;
+            border-top: 1px solid #E2E8F0;
+            padding-top: 32px;
+        }
+
+        .card-features li {
+            padding: 12px 0;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            font-size: 14px;
+            color: #64748B;
+        }
+
+        .feature-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Feature Comparison */
+        .comparison-section {
+            padding: 80px 24px;
+            background: #F8FAFC;
+        }
+
+        .comparison-section h2 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1E1B4B;
+        }
+
+        .comparison-table {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            background: linear-gradient(135deg, #F8FAFC, #F1F5F9);
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .table-header-cell {
+            padding: 24px;
+            font-weight: 600;
+            color: #1E1B4B;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .table-header-cell:first-child {
+            text-align: left;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-row.section-header {
+            background: #F8FAFC;
+        }
+
+        .table-row.section-header .table-cell {
+            font-weight: 700;
+            color: #1E1B4B;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 16px 24px;
+        }
+
+        .table-cell {
+            padding: 16px 24px;
+            font-size: 14px;
+            color: #64748B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .table-cell:first-child {
+            text-align: left;
+            justify-content: flex-start;
+        }
+
+        .table-row.section-header .table-cell:first-child {
+            color: #1E1B4B;
+        }
+
+        .check-icon {
+            width: 20px;
+            height: 20px;
+            color: #10B981;
+        }
+
+        .x-icon {
+            width: 20px;
+            height: 20px;
+            color: #EF4444;
+        }
+
+        /* Deployment Comparison */
+        .deployment-section {
+            padding: 80px 24px;
+        }
+
+        .deployment-section h2 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1E1B4B;
+        }
+
+        .deployment-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .deployment-card {
+            background: linear-gradient(135deg, #FFF1EE, #FFFFFF);
+            border: 1px solid #FFE0D6;
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .deployment-card:nth-child(2) {
+            background: linear-gradient(135deg, #EEF2FF, #FFFFFF);
+            border-color: #E0E7FF;
+        }
+
+        .deployment-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            color: #1E1B4B;
+        }
+
+        .deployment-pros {
+            list-style: none;
+        }
+
+        .deployment-pros li {
+            padding: 12px 0;
+            display: flex;
+            gap: 12px;
+            font-size: 14px;
+            color: #64748B;
+        }
+
+        .deployment-pros li::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%2310B981"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        /* ROI Calculator */
+        .roi-section {
+            padding: 80px 24px;
+            background: linear-gradient(135deg, #1E1B4B, #312E81);
+        }
+
+        .roi-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .roi-section h2 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .roi-calculator {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 48px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .roi-input-group {
+            margin-bottom: 40px;
+        }
+
+        .roi-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1E1B4B;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .roi-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            color: #1E1B4B;
+        }
+
+        .roi-input:focus {
+            outline: none;
+            border-color: #FF6B4A;
+            box-shadow: 0 0 0 3px rgba(255, 107, 74, 0.1);
+        }
+
+        .roi-slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #E2E8F0;
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .roi-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #FF6B4A;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .roi-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #FF6B4A;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .roi-value {
+            display: inline-block;
+            margin-left: 12px;
+            color: #FF6B4A;
+            font-weight: 600;
+        }
+
+        .roi-results {
+            background: #F8FAFC;
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 40px;
+        }
+
+        .roi-result-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .roi-result-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .roi-result-item {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #E2E8F0;
+        }
+
+        .roi-result-label {
+            font-size: 12px;
+            color: #64748B;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .roi-result-value {
+            font-size: 32px;
+            font-weight: 800;
+            color: #FF6B4A;
+            letter-spacing: -0.02em;
+        }
+
+        .roi-savings-bar {
+            margin-top: 8px;
+            height: 6px;
+            background: #E2E8F0;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .roi-savings-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10B981, #34D399);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 24px;
+            background: #F8FAFC;
+        }
+
+        .faq-section h2 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1E1B4B;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #F1F5F9;
+        }
+
+        .faq-question h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1E1B4B;
+            letter-spacing: -0.01em;
+            margin: 0;
+        }
+
+        .faq-toggle {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+
+        .faq-toggle.active {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            border-top: 1px solid #E2E8F0;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 24px;
+            color: #64748B;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* Transparency Section */
+        .transparency-section {
+            padding: 80px 24px;
+        }
+
+        .transparency-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .transparency-content h2 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            color: #1E1B4B;
+        }
+
+        .transparency-content p {
+            font-size: 16px;
+            color: #64748B;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .transparency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .transparency-item {
+            text-align: center;
+        }
+
+        .transparency-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 16px;
+            background: #F1F5F9;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .transparency-item h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1E1B4B;
+            margin-bottom: 8px;
+        }
+
+        .transparency-item p {
+            font-size: 13px;
+            color: #64748B;
+            margin: 0;
+        }
+
+        /* Enterprise CTA */
+        .enterprise-cta {
+            padding: 80px 24px;
+            background: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+        }
+
+        .enterprise-cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .enterprise-cta h2 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+        }
+
+        .enterprise-cta p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .enterprise-cta-button {
+            padding: 14px 32px;
+            background: white;
+            color: #FF6B4A;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .enterprise-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #1E293B;
+            color: white;
+            padding: 60px 24px 40px;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #FF6B4A;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #64748B;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links {
+                gap: 20px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .deployment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .roi-result-row {
+                grid-template-columns: 1fr;
+            }
+
+            .table-header,
+            .table-row {
+                grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            nav {
+                padding: 12px 16px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 60px 16px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .pricing-grid {
+                gap: 20px;
+            }
+
+            .pricing-card {
+                padding: 24px;
+            }
+
+            .card-price {
+                font-size: 36px;
+            }
+
+            .comparison-section h2,
+            .deployment-section h2,
+            .faq-section h2,
+            .transparency-content h2,
+            .enterprise-cta h2,
+            .roi-section h2 {
+                font-size: 28px;
+            }
+
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr 1fr;
+                font-size: 12px;
+            }
+
+            .table-header-cell,
+            .table-cell {
+                padding: 12px;
+            }
+
+            .table-header-cell:first-child {
+                grid-column: 1;
+            }
+
+            .roi-calculator {
+                padding: 24px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="nav-logo">Wana.Work</a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#comparison">Comparison</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="nav-actions">
+                <a href="/signin" class="btn-signin">Sign In</a>
+                <a href="https://app.wana.work" class="btn-primary">Start Free</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-items">
+            <a href="/">Home</a>
+            <span>/</span>
+            <span>Pricing</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Simple, transparent pricing. Start free.</h1>
+            <p class="hero-subtitle">Choose the plan that fits your organization. No hidden fees, no surprise bills. Scale from community to enterprise with confidence.</p>
+
+            <!-- Billing Toggle -->
+            <div class="billing-toggle">
+                <span class="toggle-label">Monthly</span>
+                <div class="toggle-switch" id="billingToggle" onclick="toggleBilling()"></div>
+                <span class="toggle-label">Annual<span class="savings-badge" id="savingsBadge">Save 25%</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="pricing-section" id="pricing">
+        <div class="pricing-grid">
+            <!-- Community Card -->
+            <div class="pricing-card fade-in">
+                <h2 class="card-title">Community</h2>
+                <div class="card-price">Free</div>
+                <p class="card-description">Forever. No credit card required.</p>
+                <button class="card-cta">Deploy Now</button>
+                <ul class="card-features">
+                    <li>
+                        <svg class="feature-icon" viewBox="0 0 20 20" fill="#10B981">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Self-hosted deployment</span>
+                    </li>
+                    <li>
+                        <svg class="feature-icon" viewBox="0 0 20 20" fill="#10B981">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>All 188 modules</span>
+                    </li>
+                    <li>
+                        <svg class="feature-icon" viewBox="0 0 20 20" fill="#10B981">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Unlimited users</span>
+                    </li>
+                    <li>
+                        <svg class="feature-icon" viewBox="0 0 20 20" fill="#10B981">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Community support</span>
+                    </li>
+                    <li>
+                        <svg class="feature-icon" viewBox="0 0 20 20" fill="#10B981">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Open source (AGPL)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Pro Card (Featured) -->
+            <div class="pricing-card featured fade-in">
+                <h2 class="card-title">Pro</h2>
+                <div class="card-price card-price-monthly">
+                    <span>$12</span><span style="font-size: 24px; color: #64748B; font-weight: 400;">/user/month</span>
+                </div>
+                <div class="card-price card-price-annual" style="display: none;">
+                    <span>$9</span><span style="font-size: 24px; color: #64748B; font-weight: 400;">/user/month</span>
+                </div>
+                <p class="card-billing billing-monthly">Billed monthly</p>
+                <p class="card-billing billing-annual" style="display: none;">Billed annually</p>
+                <p class="card-description">Everything in Community plus cloud hosting, priority support, and advanced features.</p>
+                <button class="card-cta">Start Free Trial</button>
+                <ul class="card-features">
+                    <li>
+                        <svg class="feature-icon" viewBox="0 0 20 20" fill="#10B981">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Cloud-hosted</span>
+                    </li>
+                    <li>
+                        <svg class="feature-icon" viewBox="0 0 20 20" fill="#10B981">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Priority support</span>
+                    </li>
+                    <li>
+                        <svg class="feature-icon" viewBox="0 0 20 20" fill="#10B981">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>SSO/SAML</span>
+                    </li>
+                    <li>
+                        <svg class="feature-icon" viewBox="0 0 20 20" fill="#10B981">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Advanced analytics</span>
+                    </li>
+                    <li>
+                        <svg class="feature-icon" viewBox="0 0 20 20" fill="#10B981">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>99.9% SLA</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Enterprise Card -->
+            <div class="pricing-card fade-in">
+                <h2 class="card-title">Enterprise</h2>
+                <div class="card-price">Custom</div>
+                <p class="card-description">Everything in Pro plus dedicated infrastructure, custom development, and premium support.</p>
+                <button class="card-cta">Contact Sales</button>
+                <ul class="card-features">
+                    <li>
+                        <svg class="feature-icon" viewBox="0 0 20 20" fill="#10B981">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Dedicated infrastructure</span>
+                    </li>
+                    <li>
+                        <svg class="feature-icon" viewBox="0 0 20 20" fill="#10B981">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Custom SLA</span>
+                    </li>
+                    <li>
+                        <svg class="feature-icon" viewBox="0 0 20 20" fill="#10B981">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Onboarding assistance</span>
+                    </li>
+                    <li>
+                        <svg class="feature-icon" viewBox="0 0 20 20" fill="#10B981">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Custom development</span>
+                    </li>
+                    <li>
+                        <svg class="feature-icon" viewBox="0 0 20 20" fill="#10B981">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Dedicated support</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Comparison -->
+    <section class="comparison-section" id="comparison">
+        <h2>Detailed Feature Comparison</h2>
+        <div class="comparison-table">
+            <div class="table-header">
+                <div class="table-header-cell">Feature</div>
+                <div class="table-header-cell">Community</div>
+                <div class="table-header-cell">Pro</div>
+                <div class="table-header-cell">Enterprise</div>
+            </div>
+
+            <!-- Core Platform Section -->
+            <div class="table-row section-header">
+                <div class="table-cell">CORE PLATFORM</div>
+                <div class="table-cell"></div>
+                <div class="table-cell"></div>
+                <div class="table-cell"></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Core HR Modules</div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Employee Management</div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Payroll Integration</div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Time and Attendance</div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Leave Management</div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+
+            <!-- Security & Compliance Section -->
+            <div class="table-row section-header">
+                <div class="table-cell">SECURITY & COMPLIANCE</div>
+                <div class="table-cell"></div>
+                <div class="table-cell"></div>
+                <div class="table-cell"></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Role-Based Access Control</div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">SSO/SAML Authentication</div>
+                <div class="table-cell"><svg class="x-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Encryption at Rest & Transit</div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Audit Logging</div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Compliance Reports (GDPR, HIPAA)</div>
+                <div class="table-cell"><svg class="x-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+
+            <!-- Support Section -->
+            <div class="table-row section-header">
+                <div class="table-cell">SUPPORT</div>
+                <div class="table-cell"></div>
+                <div class="table-cell"></div>
+                <div class="table-cell"></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Community Support</div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Priority Email Support</div>
+                <div class="table-cell"><svg class="x-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Phone & Chat Support</div>
+                <div class="table-cell"><svg class="x-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="x-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Dedicated Account Manager</div>
+                <div class="table-cell"><svg class="x-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="x-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+
+            <!-- Deployment Section -->
+            <div class="table-row section-header">
+                <div class="table-cell">DEPLOYMENT</div>
+                <div class="table-cell"></div>
+                <div class="table-cell"></div>
+                <div class="table-cell"></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Self-Hosted Deployment</div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="x-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Cloud Hosting</div>
+                <div class="table-cell"><svg class="x-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Dedicated Infrastructure</div>
+                <div class="table-cell"><svg class="x-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="x-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">99.9% Uptime SLA</div>
+                <div class="table-cell"><svg class="x-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+
+            <!-- Customization Section -->
+            <div class="table-row section-header">
+                <div class="table-cell">CUSTOMIZATION</div>
+                <div class="table-cell"></div>
+                <div class="table-cell"></div>
+                <div class="table-cell"></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">API Access</div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Advanced Customization</div>
+                <div class="table-cell"><svg class="x-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="x-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Custom Module Development</div>
+                <div class="table-cell"><svg class="x-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="x-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Webhook Integrations</div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <div class="table-cell"><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deployment Comparison -->
+    <section class="deployment-section">
+        <h2>Self-Hosted vs Cloud</h2>
+        <div class="deployment-grid">
+            <div class="deployment-card">
+                <h3>Self-Hosted (Community)</h3>
+                <ul class="deployment-pros">
+                    <li>Complete data control and privacy</li>
+                    <li>Deploy on your infrastructure</li>
+                    <li>No recurring licensing costs</li>
+                    <li>Full source code transparency</li>
+                    <li>Unlimited users and storage</li>
+                    <li>Community-driven development</li>
+                </ul>
+            </div>
+            <div class="deployment-card">
+                <h3>Cloud Hosting (Pro & Enterprise)</h3>
+                <ul class="deployment-pros">
+                    <li>Zero infrastructure management</li>
+                    <li>Automatic updates and patches</li>
+                    <li>Global CDN and redundancy</li>
+                    <li>Professional support included</li>
+                    <li>Advanced analytics and reporting</li>
+                    <li>Compliance certifications included</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="roi-section">
+        <div class="roi-content">
+            <h2>Estimate Your Savings</h2>
+            <div class="roi-calculator">
+                <div class="roi-input-group">
+                    <label class="roi-label">
+                        Number of Employees
+                        <span class="roi-value" id="employeeCount">50</span>
+                    </label>
+                    <input type="range" class="roi-slider" id="employeeSlider" min="10" max="5000" value="50" step="10" oninput="calculateROI()">
+                    <input type="number" class="roi-input" id="employeeInput" value="50" min="10" max="5000" step="10" onchange="updateSlider()">
+                </div>
+
+                <div class="roi-results">
+                    <div class="roi-result-row">
+                        <div class="roi-result-item">
+                            <div class="roi-result-label">Workday Annual Cost</div>
+                            <div class="roi-result-value" id="workdayCost">$7,500</div>
+                            <div class="roi-savings-bar">
+                                <div class="roi-savings-fill" id="workdayBar" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                        <div class="roi-result-item">
+                            <div class="roi-result-label">Wana.Work Pro Annual Cost</div>
+                            <div class="roi-result-value" id="wanaCost">$7,200</div>
+                            <div class="roi-savings-bar">
+                                <div class="roi-savings-fill" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="roi-result-row">
+                        <div class="roi-result-item">
+                            <div class="roi-result-label">BambooHR Annual Cost</div>
+                            <div class="roi-result-value" id="bamboohrCost">$4,950</div>
+                            <div class="roi-savings-bar">
+                                <div class="roi-savings-fill" id="bamboohrBar" style="width: 65%;"></div>
+                            </div>
+                        </div>
+                        <div class="roi-result-item">
+                            <div class="roi-result-label">Annual Savings vs Workday</div>
+                            <div class="roi-result-value" id="savingsWorkday" style="color: #10B981;">$300</div>
+                            <div class="roi-savings-bar">
+                                <div class="roi-savings-fill" style="background: linear-gradient(90deg, #10B981, #34D399); width: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Does the Community edition include all features?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 20 20" fill="currentColor" style="width: 100%; height: 100%; color: #FF6B4A;">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Yes! The Community edition includes all 188 HR modules with full functionality. The difference between Community and Pro is deployment method, cloud infrastructure, and support level. You get the complete HCM platform with unlimited users at no cost.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>What is included in Pro support?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 20 20" fill="currentColor" style="width: 100%; height: 100%; color: #FF6B4A;">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Pro includes priority email support with 24-hour response time, community forum access, and comprehensive documentation. Enterprise customers get phone and chat support with dedicated account managers.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Can I switch plans or upgrade later?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 20 20" fill="currentColor" style="width: 100%; height: 100%; color: #FF6B4A;">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Absolutely! You can start with Community and upgrade to Pro at any time. All your data will be migrated seamlessly to the cloud. Similarly, you can downgrade from Pro to Community if needed. There are no lock-in contracts or switching penalties.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>What are the AGPL license implications?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 20 20" fill="currentColor" style="width: 100%; height: 100%; color: #FF6B4A;">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        The Community edition is licensed under AGPL v3, which means if you modify the code and use it internally, you must share those modifications with your users. Most organizations use the software as-is, which has no restrictions. If you need a different license, contact our sales team for a commercial license option.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>How does Pro pricing work?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 20 20" fill="currentColor" style="width: 100%; height: 100%; color: #FF6B4A;">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Pro pricing is per active user per month. Monthly billing is $12 per user, and annual billing is $9 per user (a 25% discount). You only pay for users who actively use the system. There are no setup fees or hidden charges, and you can add or remove users anytime.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>What compliance certifications does Wana.Work have?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 20 20" fill="currentColor" style="width: 100%; height: 100%; color: #FF6B4A;">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Pro and Enterprise plans include GDPR, HIPAA, and SOC 2 Type II compliance. We also provide compliance reports and audit trails. For Community users, you have full control of your deployment and can implement your own security measures.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Can I import data from other HCM systems?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 20 20" fill="currentColor" style="width: 100%; height: 100%; color: #FF6B4A;">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Yes! We support data import from most popular HCM systems including Workday, BambooHR, ADP, and Gusto. Our team provides migration assistance for Pro and Enterprise customers at no additional cost. The process typically takes 2-4 weeks depending on data complexity.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Is there a free trial for Pro?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 20 20" fill="currentColor" style="width: 100%; height: 100%; color: #FF6B4A;">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Yes! Pro includes a 14-day free trial with full functionality and priority support. No credit card required. After the trial, you can upgrade to a paid plan or downgrade to Community at any time.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparency Section -->
+    <section class="transparency-section">
+        <div class="transparency-content">
+            <h2>No Surprise Bills</h2>
+            <p>We believe in transparent, simple pricing with no hidden fees, setup charges, or surprise expenses.</p>
+            <div class="transparency-grid">
+                <div class="transparency-item">
+                    <div class="transparency-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px; color: #FF6B4A;">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3>No Setup Fees</h3>
+                    <p>Zero upfront costs to get started</p>
+                </div>
+                <div class="transparency-item">
+                    <div class="transparency-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px; color: #FF6B4A;">
+                            <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3>Pay Only for Active Users</h3>
+                    <p>No charges for inactive accounts</p>
+                </div>
+                <div class="transparency-item">
+                    <div class="transparency-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px; color: #FF6B4A;">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3>Cancel Anytime</h3>
+                    <p>No long-term contracts required</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enterprise CTA -->
+    <section class="enterprise-cta">
+        <div class="enterprise-cta-content">
+            <h2>Ready to Transform Your HR?</h2>
+            <p>Whether you choose Community, Pro, or Enterprise, Wana.Work gives you the power to manage your most important asset: your people.</p>
+            <button class="enterprise-cta-button" onclick="window.location.href='/contact-sales'">Contact Sales</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="/features">Features</a></li>
+                        <li><a href="/modules">Modules</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="/security">Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/press">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/docs">Documentation</a></li>
+                        <li><a href="/api">API Reference</a></li>
+                        <li><a href="/templates">Templates</a></li>
+                        <li><a href="/community">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/cookies">Cookie Policy</a></li>
+                        <li><a href="/compliance">Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="https://github.com/wanawork">GitHub</a></li>
+                        <li><a href="https://twitter.com/wanawork">Twitter</a></li>
+                        <li><a href="https://linkedin.com/company/wanawork">LinkedIn</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2024 Wana.Work. All rights reserved.</span>
+                <span>Made with care for HR professionals worldwide</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Billing Toggle
+        function toggleBilling() {
+            const toggle = document.getElementById('billingToggle');
+            const monthlyPrices = document.querySelectorAll('.card-price-monthly, .billing-monthly');
+            const annualPrices = document.querySelectorAll('.card-price-annual, .billing-annual');
+
+            toggle.classList.toggle('active');
+
+            monthlyPrices.forEach(el => {
+                if (el.classList.contains('billing-monthly')) {
+                    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+                } else {
+                    el.classList.toggle('hide');
+                }
+            });
+
+            annualPrices.forEach(el => {
+                if (el.classList.contains('billing-annual')) {
+                    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+                } else {
+                    el.classList.toggle('show');
+                }
+            });
+        }
+
+        // FAQ Accordion
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('.faq-toggle').classList.remove('active');
+                }
+            });
+
+            answer.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+
+        // ROI Calculator
+        function calculateROI() {
+            const slider = document.getElementById('employeeSlider');
+            const input = document.getElementById('employeeInput');
+            const count = parseInt(slider.value);
+
+            input.value = count;
+            document.getElementById('employeeCount').textContent = count;
+
+            const workdayCost = count * 150;
+            const wanaCost = count * 12 * 12;
+            const bamboohrCost = count * 99;
+            const savings = workdayCost - wanaCost;
+
+            document.getElementById('workdayCost').textContent = '$' + workdayCost.toLocaleString();
+            document.getElementById('wanaCost').textContent = '$' + wanaCost.toLocaleString();
+            document.getElementById('bamboohrCost').textContent = '$' + bamboohrCost.toLocaleString();
+            document.getElementById('savingsWorkday').textContent = '$' + savings.toLocaleString();
+
+            const maxCost = Math.max(workdayCost, bamboohrCost);
+            document.getElementById('workdayBar').style.width = (workdayCost / maxCost * 100) + '%';
+            document.getElementById('bamboohrBar').style.width = (bamboohrCost / maxCost * 100) + '%';
+        }
+
+        function updateSlider() {
+            const input = document.getElementById('employeeInput');
+            const slider = document.getElementById('employeeSlider');
+            slider.value = Math.min(Math.max(parseInt(input.value), 10), 5000);
+            calculateROI();
+        }
+
+        // Intersection Observer for Fade-In
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = (Array.from(document.querySelectorAll('.fade-in')).indexOf(entry.target) * 0.1) + 's';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Initialize ROI
+        calculateROI();
+    </script>
+</body>
+</html>

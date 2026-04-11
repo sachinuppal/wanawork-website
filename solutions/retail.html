@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HCM for Retail & Hospitality: High-Volume Hiring & Scheduling | Wana.Work</title>
+  <meta name="description" content="HR platform for retail and hospitality. High-volume hiring, multi-location scheduling, hourly workforce management, and rapid onboarding. Staff smarter, schedule faster.">
+  <meta property="og:title" content="HCM for Retail & Hospitality | Wana.Work">
+  <meta property="og:description" content="Staff smarter. Schedule faster. Serve better.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wana.work/solutions/retail">
+  <meta property="og:image" content="https://wana.work/og-retail.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1E1B4B;
+      background: #FFFFFF;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.85);
+      border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+      padding: 0 2rem;
+    }
+
+    nav .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #64748B;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: #FF6B4A;
+    }
+
+    nav a.active {
+      color: #FF6B4A;
+    }
+
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #FF6B4A;
+      border-radius: 1px;
+    }
+
+    nav .cta-button {
+      background: linear-gradient(135deg, #FF6B4A, #A855F7);
+      color: white;
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    nav .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 107, 74, 0.3);
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 2rem 0;
+      margin-top: 70px;
+      font-size: 0.9rem;
+      color: #64748B;
+    }
+
+    .breadcrumb a {
+      color: #6366F1;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      color: #1E1B4B;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: #64748B;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 400;
+    }
+
+    .pain-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .pain-point {
+      background: #FFF1EE;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: left;
+      border: 1px solid rgba(255, 107, 74, 0.2);
+    }
+
+    .pain-point h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #E5533A;
+      margin-bottom: 0.5rem;
+    }
+
+    .pain-point p {
+      font-size: 0.95rem;
+      color: #64748B;
+      line-height: 1.5;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .hero-ctas button {
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hero-ctas .primary {
+      background: linear-gradient(135deg, #FF6B4A, #A855F7);
+      color: white;
+    }
+
+    .hero-ctas .primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(255, 107, 74, 0.3);
+    }
+
+    .hero-ctas .secondary {
+      background: transparent;
+      color: #FF6B4A;
+      border: 2px solid #FF6B4A;
+    }
+
+    .hero-ctas .secondary:hover {
+      background: #FFF1EE;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, #EEF2FF, #F3E8FF);
+      border-radius: 20px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FF6B4A, #A855F7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: #64748B;
+      margin-top: 0.5rem;
+    }
+
+    /* Challenge/Solution Grid */
+    .challenges {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: #1E1B4B;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: #64748B;
+      margin-bottom: 2rem;
+    }
+
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .challenge-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid #E0E7FF;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideUp 0.6s ease forwards;
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .challenge-card:hover {
+      box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
+      border-color: #FF6B4A;
+    }
+
+    .challenge-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #FF8F6B, #A855F7);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .challenge-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: white;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .challenge-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1E1B4B;
+      margin-bottom: 0.5rem;
+    }
+
+    .challenge-card p {
+      color: #64748B;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .challenge-solution {
+      background: #EEF2FF;
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 3px solid #6366F1;
+      font-size: 0.9rem;
+      color: #4F46E5;
+      font-weight: 500;
+    }
+
+    /* Featured Modules */
+    .modules {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #FFF1EE, #F3E8FF);
+      border-radius: 20px;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .module-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 107, 74, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .module-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(255, 107, 74, 0.15);
+    }
+
+    .module-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #FF6B4A;
+      margin-bottom: 0.5rem;
+    }
+
+    .module-card p {
+      font-size: 0.9rem;
+      color: #64748B;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .module-link {
+      color: #6366F1;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .module-link:hover {
+      gap: 0.8rem;
+    }
+
+    .module-link::after {
+      content: '→';
+      transition: all 0.3s ease;
+    }
+
+    /* Compliance Callout */
+    .compliance {
+      max-width: 1280px;
+      margin: 4rem auto 0;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, #1E1B4B, #4F46E5);
+      border-radius: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .compliance h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .compliance p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+    }
+
+    .compliance-badges {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* Use Case */
+    .usecase {
+      max-width: 1280px;
+      margin: 4rem auto;
+      padding: 3rem 2rem;
+    }
+
+    .usecase-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .usecase-text h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      color: #1E1B4B;
+    }
+
+    .usecase-text p {
+      font-size: 1rem;
+      color: #64748B;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .usecase-highlight {
+      background: linear-gradient(135deg, #FFF1EE, #F3E8FF);
+      padding: 1.5rem;
+      border-left: 4px solid #FF6B4A;
+      border-radius: 8px;
+      font-style: italic;
+      color: #4F46E5;
+      margin: 1.5rem 0;
+    }
+
+    .usecase-visual {
+      background: linear-gradient(135deg, #EEF2FF, #F3E8FF);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748B;
+    }
+
+    /* Industry Stats */
+    .industry-stats {
+      max-width: 1280px;
+      margin: 4rem auto;
+      padding: 3rem 2rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item {
+      background: linear-gradient(135deg, #FFF1EE, #F3E8FF);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid rgba(255, 107, 74, 0.2);
+    }
+
+    .stat-item-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FF6B4A, #A855F7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-item-label {
+      font-size: 0.95rem;
+      color: #64748B;
+      font-weight: 600;
+    }
+
+    /* CTA Block */
+    .cta-block {
+      background: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+      padding: 4rem 2rem;
+      text-align: center;
+      margin: 4rem 0 0;
+      color: white;
+    }
+
+    .cta-block h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .cta-block p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .cta-block button {
+      background: white;
+      color: #FF6B4A;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .cta-block button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      background: #1E1B4B;
+      color: white;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+    }
+
+    footer .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    footer h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 0.8rem;
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    footer .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .challenge-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .usecase-content {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav .container {
+        padding: 0 1rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .pain-points {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .challenge-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modules {
+        padding: 2rem 1rem;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .modules-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .compliance {
+        padding: 2rem 1rem;
+      }
+
+      .usecase {
+        padding: 2rem 1rem;
+      }
+
+      .usecase-content {
+        gap: 1.5rem;
+      }
+
+      .usecase-text h2 {
+        font-size: 1.5rem;
+      }
+
+      .industry-stats {
+        padding: 2rem 1rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-block h2 {
+        font-size: 1.8rem;
+      }
+
+      footer .container {
+        grid-template-columns: 1fr;
+      }
+
+      .breadcrumb {
+        padding: 1rem 1rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <div class="logo">Wana.Work</div>
+      <ul>
+        <li><a href="https://wana.work">Home</a></li>
+        <li><a href="https://wana.work/solutions" class="active">Solutions</a></li>
+        <li><a href="https://wana.work/features">Features</a></li>
+        <li><a href="https://wana.work/pricing">Pricing</a></li>
+        <li><a href="https://wana.work/contact">Contact</a></li>
+        <li><button class="cta-button">Get Started</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="https://wana.work">Home</a> / <a href="https://wana.work/solutions">Solutions</a> / Retail & Hospitality
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Staff smarter. Schedule faster. Serve better.</h1>
+    <p class="hero-subtitle">High-volume hiring, multi-location scheduling, and hourly workforce management for retail and hospitality.</p>
+
+    <div class="pain-points">
+      <div class="pain-point">
+        <h3>High-Volume Seasonal Hiring</h3>
+        <p>Hire 100+ seasonal staff across multiple locations without getting overwhelmed.</p>
+      </div>
+      <div class="pain-point">
+        <h3>Complex Multi-Location Scheduling</h3>
+        <p>Coordinate schedules across dozens of locations with shift swaps and coverage optimization.</p>
+      </div>
+      <div class="pain-point">
+        <h3>Hourly Workforce Management</h3>
+        <p>Track time entries, handle wage compliance, and manage high turnover efficiently.</p>
+      </div>
+    </div>
+
+    <div class="hero-ctas">
+      <button class="primary">Start Free Trial</button>
+      <button class="secondary">Book a Demo</button>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-value">1000+</div>
+        <div class="stat-label">Applicants Processed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">50+</div>
+        <div class="stat-label">Locations Managed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">Days</div>
+        <div class="stat-label">To Full Onboarding</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenge/Solution Grid -->
+  <section class="challenges">
+    <h2 class="section-title">Retail & Hospitality Challenges</h2>
+    <p class="section-subtitle">Solutions built for the unique demands of high-volume, fast-moving retail and hospitality operations.</p>
+
+    <div class="challenge-grid">
+      <div class="challenge-card">
+        <div class="challenge-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <h3>High-Volume Seasonal Hiring</h3>
+        <p>Manage hundreds of applications during peak seasons across multiple locations.</p>
+        <div class="challenge-solution">Recruitment module with bulk applicant management and fast offer workflow</div>
+      </div>
+
+      <div class="challenge-card">
+        <div class="challenge-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="2" y="4" width="20" height="14" rx="2"></rect>
+            <line x1="2" y1="10" x2="22" y2="10"></line>
+            <line x1="8" y1="18" x2="8" y2="22"></line>
+            <line x1="16" y1="18" x2="16" y2="22"></line>
+          </svg>
+        </div>
+        <h3>Multi-Location Scheduling Complexity</h3>
+        <p>Coordinate schedules across dozens of stores with shift swaps and availability management.</p>
+        <div class="challenge-solution">WorkSchedules with multi-location views, shift swap optimization, and coverage alerts</div>
+      </div>
+
+      <div class="challenge-card">
+        <div class="challenge-icon">
+          <svg viewBox="0 0 24 24">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+            <polyline points="17 6 23 6 23 12"></polyline>
+          </svg>
+        </div>
+        <h3>Hourly Workforce Time Tracking</h3>
+        <p>Track time entries, manage overtime, and ensure wage compliance across all locations.</p>
+        <div class="challenge-solution">TimeEntries module with geolocation clocking, overtime tracking, and wage compliance</div>
+      </div>
+
+      <div class="challenge-card">
+        <div class="challenge-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M18 8H6V6h12m0 12H6v-2h12m2-6H4c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-6c0-1.1-.9-2-2-2z"></path>
+          </svg>
+        </div>
+        <h3>Rapid Onboarding and Training</h3>
+        <p>Get seasonal staff up to speed quickly with streamlined onboarding and compliance training.</p>
+        <div class="challenge-solution">Onboarding module with pre-built retail checklists and digital document signing</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Modules -->
+  <section class="modules">
+    <div class="container" style="max-width: 1280px;">
+      <h2 class="section-title">Platform Features for Retail & Hospitality</h2>
+      <p class="section-subtitle">Core modules built for high-volume, fast-moving retail operations.</p>
+
+      <div class="modules-grid">
+        <div class="module-card">
+          <h3>Recruitment</h3>
+          <p>Handle high-volume applicants with bulk processing and rapid offer generation.</p>
+          <a href="https://wana.work/features/recruitment" class="module-link">Learn More</a>
+        </div>
+        <div class="module-card">
+          <h3>WorkSchedules</h3>
+          <p>Multi-location scheduling with shift swaps, coverage optimization, and real-time alerts.</p>
+          <a href="https://wana.work/features/workschedules" class="module-link">Learn More</a>
+        </div>
+        <div class="module-card">
+          <h3>TimeEntries</h3>
+          <p>Geolocation clocking, overtime tracking, and wage compliance for hourly teams.</p>
+          <a href="https://wana.work/features/timeentries" class="module-link">Learn More</a>
+        </div>
+        <div class="module-card">
+          <h3>Onboarding</h3>
+          <p>Rapid onboarding with pre-built retail checklists and compliance training.</p>
+          <a href="https://wana.work/features/onboarding" class="module-link">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance Callout -->
+  <section class="compliance">
+    <h2>Built for Retail & Hospitality Compliance</h2>
+    <p>Wana.Work meets labor law compliance, wage and hour requirements, and minor work restrictions.</p>
+    <div class="compliance-badges">
+      <div class="badge">Wage & Hour</div>
+      <div class="badge">Labor Law</div>
+      <div class="badge">Minor Restrictions</div>
+      <div class="badge">Overtime Tracking</div>
+    </div>
+  </section>
+
+  <!-- Use Case -->
+  <section class="usecase">
+    <div class="usecase-content">
+      <div class="usecase-text">
+        <h2>A Day in the Life: Multi-Store Retail Manager</h2>
+        <p>David manages HR for a 25-store retail chain during the busy holiday season with 200 full-time and 300 seasonal employees.</p>
+        <p>His morning starts with the Recruitment dashboard. He sees that 250 applications came in overnight for seasonal positions. He quickly screens, ranks, and sends offers to top candidates. By noon, 50 new hires have been added to the system.</p>
+        <p>A store manager reports low staffing for the weekend. David uses WorkSchedules to see real-time coverage across all locations and identifies stores that can shift workers. He initiates the swap and sends notifications to affected employees.</p>
+        <div class="usecase-highlight">"With Wana.Work, I went from spending 40 hours per week on hiring and scheduling to maybe 10. We're faster, more compliant, and our employee satisfaction has actually improved because schedules are transparent."</div>
+        <p>By afternoon, he's reviewing time entries and overtime reports, ensuring all labor law compliance, then reviewing new hire satisfaction surveys.</p>
+      </div>
+      <div class="usecase-visual">
+        <svg viewBox="0 0 200 200" style="width: 150px; height: 150px; opacity: 0.3;">
+          <rect x="20" y="40" width="160" height="120" stroke="#FF6B4A" fill="none" stroke-width="2" rx="8"></rect>
+          <circle cx="60" cy="70" r="12" stroke="#A855F7" fill="none" stroke-width="2"></circle>
+          <circle cx="100" cy="70" r="12" stroke="#A855F7" fill="none" stroke-width="2"></circle>
+          <circle cx="140" cy="70" r="12" stroke="#A855F7" fill="none" stroke-width="2"></circle>
+          <line x1="30" y1="100" x2="170" y2="100" stroke="#6366F1" stroke-width="2"></line>
+          <line x1="30" y1="130" x2="170" y2="130" stroke="#6366F1" stroke-width="2"></line>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industry Stats -->
+  <section class="industry-stats">
+    <h2 class="section-title">Retail & Hospitality Industry Realities</h2>
+    <p class="section-subtitle">Key operational and staffing challenges in retail and hospitality.</p>
+
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-item-value">60%</div>
+        <div class="stat-item-label">Annual Turnover Rate</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item-value">150%</div>
+        <div class="stat-item-label">Seasonal Growth</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item-value">10 mins</div>
+        <div class="stat-item-label">Average Onboarding</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item-value">5+ stores</div>
+        <div class="stat-item-label">Avg Company Size</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Block -->
+  <section class="cta-block">
+    <h2>Ready to Transform Your Retail & Hospitality Operations?</h2>
+    <p>Hire faster, schedule smarter, and serve better with unified workforce management.</p>
+    <button>Start Your Free Trial Today</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="https://wana.work/features">Features</a></li>
+          <li><a href="https://wana.work/pricing">Pricing</a></li>
+          <li><a href="https://wana.work/security">Security</a></li>
+          <li><a href="https://wana.work/compliance">Compliance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="https://wana.work/solutions/healthcare">Healthcare</a></li>
+          <li><a href="https://wana.work/solutions/manufacturing">Manufacturing</a></li>
+          <li><a href="https://wana.work/solutions/technology">Technology</a></li>
+          <li><a href="https://wana.work/solutions/finance">Finance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://wana.work/about">About</a></li>
+          <li><a href="https://wana.work/blog">Blog</a></li>
+          <li><a href="https://wana.work/careers">Careers</a></li>
+          <li><a href="https://wana.work/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="https://wana.work/privacy">Privacy</a></li>
+          <li><a href="https://wana.work/terms">Terms</a></li>
+          <li><a href="https://wana.work/dpa">DPA</a></li>
+          <li><a href="https://wana.work/cookies">Cookies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="https://wana.work/docs">Documentation</a></li>
+          <li><a href="https://wana.work/api">API</a></li>
+          <li><a href="https://wana.work/integrations">Integrations</a></li>
+          <li><a href="https://wana.work/support">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Wana.Work. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.challenge-card, .module-card, .stat-item').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Wana.Work Retail & Hospitality HCM Solution",
+      "description": "HR platform for retail and hospitality with high-volume hiring, multi-location scheduling, and hourly workforce management",
+      "applicationCategory": "BusinessApplication",
+      "url": "https://wana.work/solutions/retail",
+      "offers": {
+        "@type": "Offer",
+        "price": "Contact for pricing",
+        "priceCurrency": "USD"
+      }
+    }
+  </script>
+</body>
+</html>

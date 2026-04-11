@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HCM for Manufacturing: Multi-Site Workforce Management | Wana.Work</title>
+  <meta name="description" content="HR platform for manufacturing teams. Multi-site coordination, safety training compliance, shift management, and equipment certifications. Manage your workforce across every plant.">
+  <meta property="og:title" content="HCM for Manufacturing | Wana.Work">
+  <meta property="og:description" content="Manage your workforce across every plant, every shift.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wana.work/solutions/manufacturing">
+  <meta property="og:image" content="https://wana.work/og-manufacturing.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1E1B4B;
+      background: #FFFFFF;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.85);
+      border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+      padding: 0 2rem;
+    }
+
+    nav .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #64748B;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: #FF6B4A;
+    }
+
+    nav a.active {
+      color: #FF6B4A;
+    }
+
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #FF6B4A;
+      border-radius: 1px;
+    }
+
+    nav .cta-button {
+      background: linear-gradient(135deg, #FF6B4A, #A855F7);
+      color: white;
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    nav .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 107, 74, 0.3);
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 2rem 0;
+      margin-top: 70px;
+      font-size: 0.9rem;
+      color: #64748B;
+    }
+
+    .breadcrumb a {
+      color: #6366F1;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      color: #1E1B4B;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: #64748B;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 400;
+    }
+
+    .pain-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .pain-point {
+      background: #FFF1EE;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: left;
+      border: 1px solid rgba(255, 107, 74, 0.2);
+    }
+
+    .pain-point h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #E5533A;
+      margin-bottom: 0.5rem;
+    }
+
+    .pain-point p {
+      font-size: 0.95rem;
+      color: #64748B;
+      line-height: 1.5;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .hero-ctas button {
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hero-ctas .primary {
+      background: linear-gradient(135deg, #FF6B4A, #A855F7);
+      color: white;
+    }
+
+    .hero-ctas .primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(255, 107, 74, 0.3);
+    }
+
+    .hero-ctas .secondary {
+      background: transparent;
+      color: #FF6B4A;
+      border: 2px solid #FF6B4A;
+    }
+
+    .hero-ctas .secondary:hover {
+      background: #FFF1EE;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, #EEF2FF, #F3E8FF);
+      border-radius: 20px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FF6B4A, #A855F7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: #64748B;
+      margin-top: 0.5rem;
+    }
+
+    /* Challenge/Solution Grid */
+    .challenges {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: #1E1B4B;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: #64748B;
+      margin-bottom: 2rem;
+    }
+
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .challenge-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid #E0E7FF;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideUp 0.6s ease forwards;
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .challenge-card:hover {
+      box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
+      border-color: #FF6B4A;
+    }
+
+    .challenge-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #FF8F6B, #A855F7);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .challenge-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: white;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .challenge-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1E1B4B;
+      margin-bottom: 0.5rem;
+    }
+
+    .challenge-card p {
+      color: #64748B;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .challenge-solution {
+      background: #EEF2FF;
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 3px solid #6366F1;
+      font-size: 0.9rem;
+      color: #4F46E5;
+      font-weight: 500;
+    }
+
+    /* Featured Modules */
+    .modules {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #FFF1EE, #F3E8FF);
+      border-radius: 20px;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .module-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 107, 74, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .module-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(255, 107, 74, 0.15);
+    }
+
+    .module-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #FF6B4A;
+      margin-bottom: 0.5rem;
+    }
+
+    .module-card p {
+      font-size: 0.9rem;
+      color: #64748B;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .module-link {
+      color: #6366F1;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .module-link:hover {
+      gap: 0.8rem;
+    }
+
+    .module-link::after {
+      content: '→';
+      transition: all 0.3s ease;
+    }
+
+    /* Compliance Callout */
+    .compliance {
+      max-width: 1280px;
+      margin: 4rem auto 0;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, #1E1B4B, #4F46E5);
+      border-radius: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .compliance h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .compliance p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+    }
+
+    .compliance-badges {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* Use Case */
+    .usecase {
+      max-width: 1280px;
+      margin: 4rem auto;
+      padding: 3rem 2rem;
+    }
+
+    .usecase-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .usecase-text h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      color: #1E1B4B;
+    }
+
+    .usecase-text p {
+      font-size: 1rem;
+      color: #64748B;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .usecase-highlight {
+      background: linear-gradient(135deg, #FFF1EE, #F3E8FF);
+      padding: 1.5rem;
+      border-left: 4px solid #FF6B4A;
+      border-radius: 8px;
+      font-style: italic;
+      color: #4F46E5;
+      margin: 1.5rem 0;
+    }
+
+    .usecase-visual {
+      background: linear-gradient(135deg, #EEF2FF, #F3E8FF);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748B;
+    }
+
+    /* Industry Stats */
+    .industry-stats {
+      max-width: 1280px;
+      margin: 4rem auto;
+      padding: 3rem 2rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item {
+      background: linear-gradient(135deg, #FFF1EE, #F3E8FF);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid rgba(255, 107, 74, 0.2);
+    }
+
+    .stat-item-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FF6B4A, #A855F7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-item-label {
+      font-size: 0.95rem;
+      color: #64748B;
+      font-weight: 600;
+    }
+
+    /* CTA Block */
+    .cta-block {
+      background: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+      padding: 4rem 2rem;
+      text-align: center;
+      margin: 4rem 0 0;
+      color: white;
+    }
+
+    .cta-block h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .cta-block p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .cta-block button {
+      background: white;
+      color: #FF6B4A;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .cta-block button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      background: #1E1B4B;
+      color: white;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+    }
+
+    footer .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    footer h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 0.8rem;
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    footer .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .challenge-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .usecase-content {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav .container {
+        padding: 0 1rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .pain-points {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .challenge-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modules {
+        padding: 2rem 1rem;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .modules-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .compliance {
+        padding: 2rem 1rem;
+      }
+
+      .usecase {
+        padding: 2rem 1rem;
+      }
+
+      .usecase-content {
+        gap: 1.5rem;
+      }
+
+      .usecase-text h2 {
+        font-size: 1.5rem;
+      }
+
+      .industry-stats {
+        padding: 2rem 1rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-block h2 {
+        font-size: 1.8rem;
+      }
+
+      footer .container {
+        grid-template-columns: 1fr;
+      }
+
+      .breadcrumb {
+        padding: 1rem 1rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <div class="logo">Wana.Work</div>
+      <ul>
+        <li><a href="https://wana.work">Home</a></li>
+        <li><a href="https://wana.work/solutions" class="active">Solutions</a></li>
+        <li><a href="https://wana.work/features">Features</a></li>
+        <li><a href="https://wana.work/pricing">Pricing</a></li>
+        <li><a href="https://wana.work/contact">Contact</a></li>
+        <li><button class="cta-button">Get Started</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="https://wana.work">Home</a> / <a href="https://wana.work/solutions">Solutions</a> / Manufacturing
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Manage your workforce across every plant, every shift.</h1>
+    <p class="hero-subtitle">Multi-site coordination, safety training, and shift management for manufacturing operations.</p>
+
+    <div class="pain-points">
+      <div class="pain-point">
+        <h3>Multi-Site Coordination</h3>
+        <p>Track and manage teams across multiple plants and facilities with unified visibility.</p>
+      </div>
+      <div class="pain-point">
+        <h3>Safety Training Compliance</h3>
+        <p>Ensure all employees complete required safety certifications and refresher training.</p>
+      </div>
+      <div class="pain-point">
+        <h3>Equipment Certifications</h3>
+        <p>Manage operator certifications and skills validation for specialized equipment operation.</p>
+      </div>
+    </div>
+
+    <div class="hero-ctas">
+      <button class="primary">Start Free Trial</button>
+      <button class="secondary">Book a Demo</button>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-value">Multiple</div>
+        <div class="stat-label">Plant Management</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">Training Tracking</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">Zero</div>
+        <div class="stat-label">Compliance Gaps</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenge/Solution Grid -->
+  <section class="challenges">
+    <h2 class="section-title">Manufacturing Workforce Challenges</h2>
+    <p class="section-subtitle">Solutions built for the unique demands of manufacturing operations.</p>
+
+    <div class="challenge-grid">
+      <div class="challenge-card">
+        <div class="challenge-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="2" y="3" width="8" height="8" rx="1"></rect>
+            <rect x="14" y="3" width="8" height="8" rx="1"></rect>
+            <rect x="2" y="15" width="8" height="6" rx="1"></rect>
+            <rect x="14" y="15" width="8" height="6" rx="1"></rect>
+          </svg>
+        </div>
+        <h3>Multi-Plant Workforce Coordination</h3>
+        <p>Manage employees across multiple facilities, shifts, and departments with centralized oversight.</p>
+        <div class="challenge-solution">Organizations module enables multi-site structure and unified employee management</div>
+      </div>
+
+      <div class="challenge-card">
+        <div class="challenge-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"></path>
+            <polyline points="10 17 8 15 6 17"></polyline>
+          </svg>
+        </div>
+        <h3>OSHA and Safety Compliance</h3>
+        <p>Track mandatory safety training and certifications across your entire manufacturing workforce.</p>
+        <div class="challenge-solution">Trainings module with OSHA-specific training tracks and mandatory completion workflows</div>
+      </div>
+
+      <div class="challenge-card">
+        <div class="challenge-icon">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <h3>Shift Handoff and Attendance</h3>
+        <p>Manage shift rotations, handle employee absences, and coordinate handoffs between shifts.</p>
+        <div class="challenge-solution">WorkSchedules with shift swap capabilities and automated absence management</div>
+      </div>
+
+      <div class="challenge-card">
+        <div class="challenge-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
+            <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
+          </svg>
+        </div>
+        <h3>Equipment Operation Certifications</h3>
+        <p>Track operator certifications for CNC machines, forklifts, and other specialized equipment.</p>
+        <div class="challenge-solution">Certificates module with equipment-specific credential tracking and renewal alerts</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Modules -->
+  <section class="modules">
+    <div class="container" style="max-width: 1280px;">
+      <h2 class="section-title">Platform Features for Manufacturing</h2>
+      <p class="section-subtitle">Core modules that power manufacturing HR operations.</p>
+
+      <div class="modules-grid">
+        <div class="module-card">
+          <h3>WorkSchedules</h3>
+          <p>Manage shift patterns, coordinate multi-site scheduling, and handle time off requests.</p>
+          <a href="https://wana.work/features/workschedules" class="module-link">Learn More</a>
+        </div>
+        <div class="module-card">
+          <h3>Trainings</h3>
+          <p>Track safety training, OSHA compliance, and mandatory certifications across your plants.</p>
+          <a href="https://wana.work/features/trainings" class="module-link">Learn More</a>
+        </div>
+        <div class="module-card">
+          <h3>Certificates</h3>
+          <p>Manage equipment operator certifications and professional licenses with automated tracking.</p>
+          <a href="https://wana.work/features/certificates" class="module-link">Learn More</a>
+        </div>
+        <div class="module-card">
+          <h3>Organizations</h3>
+          <p>Organize employees by plant, department, and shift for unified multi-site management.</p>
+          <a href="https://wana.work/features/organizations" class="module-link">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance Callout -->
+  <section class="compliance">
+    <h2>Built for Manufacturing Safety Standards</h2>
+    <p>Wana.Work meets the safety and compliance requirements of modern manufacturing operations.</p>
+    <div class="compliance-badges">
+      <div class="badge">OSHA</div>
+      <div class="badge">ISO 45001</div>
+      <div class="badge">Industry Standards</div>
+      <div class="badge">Multi-Site Ready</div>
+    </div>
+  </section>
+
+  <!-- Use Case -->
+  <section class="usecase">
+    <div class="usecase-content">
+      <div class="usecase-text">
+        <h2>A Day in the Life: Plant Operations Manager</h2>
+        <p>James manages HR across two manufacturing plants with over 300 employees and rotating shifts.</p>
+        <p>His morning starts by reviewing the Wana.Work dashboard for multi-plant staffing levels. He checks that night shift staffing is adequate and verifies all CNC operators have current certifications.</p>
+        <p>A new OSHA training requirement is released. James uses the Trainings module to create a mandatory course, assign it to all affected employees, and track completion status across both plants.</p>
+        <div class="usecase-highlight">"With Wana.Work managing our multi-site operations, I have full compliance visibility and zero scheduling conflicts. Our safety metrics have improved significantly."</div>
+        <p>By mid-afternoon, James is coordinating a shift swap request and reviewing incident reports. Everything is documented and audit-ready within minutes.</p>
+      </div>
+      <div class="usecase-visual">
+        <svg viewBox="0 0 200 200" style="width: 150px; height: 150px; opacity: 0.3;">
+          <rect x="40" y="50" width="60" height="50" stroke="#FF6B4A" fill="none" stroke-width="2"></rect>
+          <rect x="100" y="50" width="60" height="50" stroke="#A855F7" fill="none" stroke-width="2"></rect>
+          <line x1="70" y1="100" x2="130" y2="100" stroke="#6366F1" stroke-width="2"></line>
+          <circle cx="70" cy="130" r="15" stroke="#FF6B4A" fill="none" stroke-width="2"></circle>
+          <circle cx="130" cy="130" r="15" stroke="#A855F7" fill="none" stroke-width="2"></circle>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industry Stats -->
+  <section class="industry-stats">
+    <h2 class="section-title">Manufacturing Industry Landscape</h2>
+    <p class="section-subtitle">Key challenges facing manufacturing HR and operations.</p>
+
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-item-value">22%</div>
+        <div class="stat-item-label">Manufacturing Turnover Rate</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item-value">85%</div>
+        <div class="stat-item-label">Require Safety Certifications</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item-value">150</div>
+        <div class="stat-item-label">Hours per OSHA Audit</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item-value">3+</div>
+        <div class="stat-item-label">Average Shifts per Day</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Block -->
+  <section class="cta-block">
+    <h2>Ready to Streamline Manufacturing Operations?</h2>
+    <p>Unify your workforce across plants, ensure safety compliance, and reduce HR administrative burden.</p>
+    <button>Start Your Free Trial Today</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="https://wana.work/features">Features</a></li>
+          <li><a href="https://wana.work/pricing">Pricing</a></li>
+          <li><a href="https://wana.work/security">Security</a></li>
+          <li><a href="https://wana.work/compliance">Compliance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="https://wana.work/solutions/healthcare">Healthcare</a></li>
+          <li><a href="https://wana.work/solutions/manufacturing">Manufacturing</a></li>
+          <li><a href="https://wana.work/solutions/technology">Technology</a></li>
+          <li><a href="https://wana.work/solutions/finance">Finance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://wana.work/about">About</a></li>
+          <li><a href="https://wana.work/blog">Blog</a></li>
+          <li><a href="https://wana.work/careers">Careers</a></li>
+          <li><a href="https://wana.work/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="https://wana.work/privacy">Privacy</a></li>
+          <li><a href="https://wana.work/terms">Terms</a></li>
+          <li><a href="https://wana.work/dpa">DPA</a></li>
+          <li><a href="https://wana.work/cookies">Cookies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="https://wana.work/docs">Documentation</a></li>
+          <li><a href="https://wana.work/api">API</a></li>
+          <li><a href="https://wana.work/integrations">Integrations</a></li>
+          <li><a href="https://wana.work/support">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Wana.Work. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.challenge-card, .module-card, .stat-item').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Wana.Work Manufacturing HCM Solution",
+      "description": "HR platform for manufacturing with multi-site coordination, safety training, shift management, and equipment certifications",
+      "applicationCategory": "BusinessApplication",
+      "url": "https://wana.work/solutions/manufacturing",
+      "offers": {
+        "@type": "Offer",
+        "price": "Contact for pricing",
+        "priceCurrency": "USD"
+      }
+    }
+  </script>
+</body>
+</html>

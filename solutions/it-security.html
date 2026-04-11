@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wana.Work for IT & Security: Self-Hosted, Secure HR Platform</title>
+  <meta name="description" content="Self-hosted open source HCM platform with full source code audit capability, role-based access controls, and comprehensive audit logs.">
+  <meta property="og:title" content="Wana.Work for IT & Security: Self-Hosted HCM">
+  <meta property="og:description" content="Your infrastructure. Your rules. Your data. Self-hosted on your servers with full security control.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wana.work/solutions/it-security">
+  <meta property="og:image" content="https://wana.work/og-it-security.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Wana.Work for IT & Security",
+    "description": "Self-hosted, secure HCM platform for IT and security teams",
+    "url": "https://wana.work/solutions/it-security",
+    "mainEntity": {
+      "@type": "SoftwareApplication",
+      "name": "Wana.Work",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  }
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #1F2937;
+      background: #FFFFFF;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 1rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #64748B;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a.active {
+      color: #FF6B4A;
+    }
+
+    .nav-links a:hover {
+      color: #FF6B4A;
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, #FF6B4A, #A855F7);
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 107, 74, 0.3);
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      max-width: 1280px;
+      margin: 6rem auto 0;
+      padding: 0 2rem 1.5rem;
+      font-size: 0.875rem;
+      color: #64748B;
+    }
+
+    .breadcrumb a {
+      color: #FF6B4A;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: #1E1B4B;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero .value-props {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .value-prop {
+      padding: 2rem;
+      background: #EEF2FF;
+      border-radius: 12px;
+      border-left: 4px solid #6366F1;
+    }
+
+    .value-prop-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #1E1B4B;
+      margin-bottom: 0.75rem;
+    }
+
+    .value-prop-text {
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+
+    .primary-cta {
+      background: linear-gradient(135deg, #FF6B4A, #A855F7);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 1rem;
+    }
+
+    .primary-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(255, 107, 74, 0.4);
+    }
+
+    .secondary-cta {
+      border: 2px solid #6366F1;
+      color: #6366F1;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      font-size: 1rem;
+      background: white;
+      cursor: pointer;
+    }
+
+    .secondary-cta:hover {
+      background: #EEF2FF;
+    }
+
+    /* Day in the Life */
+    .day-in-life {
+      background: linear-gradient(135deg, #E0E7FF, #F0F9FF);
+      padding: 6rem 2rem;
+      margin: 4rem 0;
+    }
+
+    .section-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: #1E1B4B;
+      letter-spacing: -0.02em;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .timeline-item {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      border-top: 4px solid #6366F1;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s;
+      opacity: 0;
+      animation: slideInUp 0.6s ease-out forwards;
+    }
+
+    .timeline-item:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .timeline-item:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .timeline-time {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #6366F1;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1E1B4B;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-text {
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Features */
+    .features {
+      padding: 6rem 2rem;
+      background: #FFFFFF;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .feature-card {
+      padding: 2.5rem 2rem;
+      background: linear-gradient(135deg, #EEF2FF, #FFFFFF);
+      border: 2px solid #E0E7FF;
+      border-radius: 12px;
+      transition: all 0.3s;
+      opacity: 0;
+    }
+
+    .feature-card.visible {
+      opacity: 1;
+      animation: slideInUp 0.6s ease-out;
+    }
+
+    .feature-card:hover {
+      border-color: #6366F1;
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #6366F1, #4F46E5);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .feature-icon svg {
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
+
+    .feature-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1E1B4B;
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-description {
+      color: #475569;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* Dashboard Preview */
+    .dashboard-section {
+      background: linear-gradient(135deg, #1E1B4B, #4F46E5);
+      color: white;
+      padding: 6rem 2rem;
+    }
+
+    .dashboard-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .dashboard-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .dashboard-mockup {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+      color: #1F2937;
+    }
+
+    .security-dashboard {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .security-panel {
+      background: #F3F4F6;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid #6366F1;
+    }
+
+    .security-panel-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1E1B4B;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .status-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10B981;
+    }
+
+    .security-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid #E5E7EB;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .security-item:last-child {
+      border-bottom: none;
+    }
+
+    .security-label {
+      font-size: 0.875rem;
+      color: #475569;
+      font-weight: 500;
+    }
+
+    .security-value {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #6366F1;
+      background: rgba(99, 102, 241, 0.1);
+      padding: 0.25rem 0.75rem;
+      border-radius: 8px;
+    }
+
+    .code-block {
+      background: #1F2937;
+      color: #E5E7EB;
+      padding: 1.5rem;
+      border-radius: 8px;
+      font-family: "Courier New", monospace;
+      font-size: 0.85rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+
+    /* Deep Dive */
+    .deep-dive {
+      background: white;
+      padding: 6rem 2rem;
+    }
+
+    .deep-dive-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .deep-dive-text h3 {
+      font-size: 1.875rem;
+      font-weight: 800;
+      color: #1E1B4B;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+
+    .deep-dive-text p {
+      color: #475569;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .deep-dive-features {
+      list-style: none;
+      margin: 2rem 0;
+    }
+
+    .deep-dive-features li {
+      padding: 1rem 0;
+      padding-left: 2rem;
+      position: relative;
+      color: #475569;
+    }
+
+    .deep-dive-features li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+      color: #6366F1;
+    }
+
+    .deep-dive-visual {
+      background: linear-gradient(135deg, #EEF2FF, #FFFFFF);
+      border: 2px solid #E0E7FF;
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .insight-box {
+      background: white;
+      border-left: 4px solid #6366F1;
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .insight-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: #6366F1;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+
+    .insight-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #1E1B4B;
+      margin: 0.5rem 0;
+    }
+
+    .insight-description {
+      font-size: 0.875rem;
+      color: #6B7280;
+    }
+
+    /* Footer */
+    footer {
+      background: #1E1B4B;
+      color: white;
+      padding: 4rem 2rem 2rem;
+    }
+
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-column h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: #FF6B4A;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-column ul li a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: #FF6B4A;
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-copyright {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.875rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-social a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-social a:hover {
+      color: #FF6B4A;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .nav-links {
+        gap: 1.5rem;
+      }
+
+      .hero {
+        padding: 3rem 1.5rem;
+      }
+
+      .deep-dive-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .security-dashboard {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .hero .value-props {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .value-prop {
+        padding: 1.5rem;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+      }
+
+      .primary-cta,
+      .secondary-cta {
+        width: 100%;
+      }
+
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-columns {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">wana.work</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#solutions" class="active">Solutions</a></li>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#docs">Docs</a></li>
+      </ul>
+      <a href="/#contact" class="cta-button">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="/">Home</a> / <a href="/#solutions">Solutions</a> / IT & Security
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Your infrastructure. Your rules. Your data.</h1>
+    <div class="value-props">
+      <div class="value-prop">
+        <div class="value-prop-title">Self-Hosted</div>
+        <div class="value-prop-text">Deploy on your infrastructure. You control the servers, the data, and the security.</div>
+      </div>
+      <div class="value-prop">
+        <div class="value-prop-title">Source Code Audit</div>
+        <div class="value-prop-text">Full access to audit every line of code. Know exactly what your HCM system is doing.</div>
+      </div>
+      <div class="value-prop">
+        <div class="value-prop-title">Access Control & Audit Logs</div>
+        <div class="value-prop-text">Fine-grained role-based access controls and comprehensive audit trails for compliance.</div>
+      </div>
+    </div>
+    <div class="hero-ctas">
+      <button class="primary-cta">Deployment Guide</button>
+      <button class="secondary-cta">Security Review</button>
+    </div>
+  </section>
+
+  <!-- Day in the Life -->
+  <section class="day-in-life">
+    <div class="section-container">
+      <h2 class="section-title">A day in the life of IT running Wana.Work</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-time">Morning</div>
+          <div class="timeline-title">Monitor and Review</div>
+          <div class="timeline-text">Review access logs and check system health in your monitoring dashboard. Verify all services are running and audit trail is logging correctly.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">Midday</div>
+          <div class="timeline-title">Deploy and Configure</div>
+          <div class="timeline-text">Deploy the latest update via Docker or Kubernetes. Configure SSO integration with your identity provider. Test new security policies.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">Afternoon</div>
+          <div class="timeline-title">Audit and Secure</div>
+          <div class="timeline-text">Audit user permissions and role assignments. Review API usage and rate limits. Ensure data encryption is configured correctly.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="section-container">
+      <h2 class="section-title">Enterprise-grade security features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div class="feature-title">Docker & Kubernetes</div>
+          <div class="feature-description">Deploy as Docker containers or Kubernetes pods. Fits seamlessly into modern infrastructure patterns.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+          </div>
+          <div class="feature-title">OAuth 2.0 & OIDC</div>
+          <div class="feature-description">Enterprise authentication with OAuth 2.0 and OpenID Connect. Integrate with your existing identity provider.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div class="feature-title">Role-Based Access</div>
+          <div class="feature-description">Fine-grained RBAC with customizable roles and permissions for every action in the system.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M2 12h20"></path>
+            </svg>
+          </div>
+          <div class="feature-title">API Management</div>
+          <div class="feature-description">REST and GraphQL APIs with built-in rate limiting, authentication, and comprehensive documentation.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 12h18M3 6h18M3 18h18"></path>
+            </svg>
+          </div>
+          <div class="feature-title">Audit Logs</div>
+          <div class="feature-description">Complete audit trail of every action. Track who did what, when, and from where for compliance reporting.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+          </div>
+          <div class="feature-title">Monitoring & Alerts</div>
+          <div class="feature-description">Built-in monitoring with Prometheus metrics and OpenSearch integration for advanced logging and analysis.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Preview -->
+  <section class="dashboard-section">
+    <div class="dashboard-container">
+      <h2 class="dashboard-title">IT Security Dashboard</h2>
+      <div class="dashboard-mockup">
+        <div class="security-dashboard">
+          <div class="security-panel">
+            <div class="security-panel-title">
+              <div class="status-indicator"></div>
+              System Status
+            </div>
+            <div class="security-item">
+              <div class="security-label">API Gateway</div>
+              <div class="security-value">Healthy</div>
+            </div>
+            <div class="security-item">
+              <div class="security-label">Database</div>
+              <div class="security-value">Healthy</div>
+            </div>
+            <div class="security-item">
+              <div class="security-label">Cache Layer</div>
+              <div class="security-value">Healthy</div>
+            </div>
+            <div class="security-item">
+              <div class="security-label">Search Engine</div>
+              <div class="security-value">Healthy</div>
+            </div>
+            <div class="security-item">
+              <div class="security-label">Message Queue</div>
+              <div class="security-value">Healthy</div>
+            </div>
+          </div>
+          <div class="security-panel">
+            <div class="security-panel-title">
+              <div class="status-indicator"></div>
+              Security Metrics
+            </div>
+            <div class="security-item">
+              <div class="security-label">Active Users</div>
+              <div class="security-value">245</div>
+            </div>
+            <div class="security-item">
+              <div class="security-label">Failed Logins (24h)</div>
+              <div class="security-value">3</div>
+            </div>
+            <div class="security-item">
+              <div class="security-label">Audit Events (24h)</div>
+              <div class="security-value">1,847</div>
+            </div>
+            <div class="security-item">
+              <div class="security-label">SSL/TLS Grade</div>
+              <div class="security-value">A+</div>
+            </div>
+            <div class="security-item">
+              <div class="security-label">Data Encryption</div>
+              <div class="security-value">AES-256</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep Dive -->
+  <section class="deep-dive">
+    <div class="deep-dive-content">
+      <div class="deep-dive-text">
+        <h3>Security architecture you can trust</h3>
+        <p>Open source means transparency. Your security team can audit every component, understand the threat model, and know exactly what protection you have.</p>
+        <ul class="deep-dive-features">
+          <li>End-to-end encryption for sensitive data</li>
+          <li>Role-based access controls at database level</li>
+          <li>Immutable audit logs for compliance</li>
+          <li>OWASP security standards compliance</li>
+          <li>Multi-factor authentication support</li>
+          <li>IP whitelisting and rate limiting</li>
+          <li>Vulnerability scanning in CI/CD pipeline</li>
+          <li>Automated security patching</li>
+        </ul>
+      </div>
+      <div class="deep-dive-visual">
+        <div class="insight-box">
+          <div class="insight-label">Compliance</div>
+          <div class="insight-value">SOC 2 Type II</div>
+          <div class="insight-description">Third-party verified security and operational controls</div>
+        </div>
+        <div class="insight-box">
+          <div class="insight-label">Data Protection</div>
+          <div class="insight-value">GDPR Ready</div>
+          <div class="insight-description">Data retention policies and export capabilities built in</div>
+        </div>
+        <div class="insight-box">
+          <div class="insight-label">Deployment</div>
+          <div class="insight-value">Your Control</div>
+          <div class="insight-description">Self-hosted or private cloud with zero data leaving your network</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="hero" style="background: linear-gradient(135deg, #EEF2FF, #F0F9FF); padding: 6rem 2rem;">
+    <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Ready to deploy secure HR infrastructure?</h2>
+    <p style="color: #475569; font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Get started with Wana.Work on your infrastructure. Full control, complete transparency, enterprise security.</p>
+    <div class="hero-ctas">
+      <button class="primary-cta">Read Deployment Guide</button>
+      <button class="secondary-cta">Schedule Security Review</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Roadmap</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="#">HR Leaders</a></li>
+            <li><a href="#">People Ops</a></li>
+            <li><a href="#">IT & Security</a></li>
+            <li><a href="#">Executives</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">API Reference</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Legal</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Open Source</h4>
+          <ul>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Contributing</a></li>
+            <li><a href="#">License</a></li>
+            <li><a href="#">Code of Conduct</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">&copy; 2026 Wana.Work. All rights reserved.</div>
+        <div class="footer-social">
+          <a href="#">Twitter</a>
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.feature-card').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wana.Work Platform: Complete HCM Suite for Modern Teams</title>
+<meta name="description" content="One platform for every HR workflow. Core HR, recruitment, onboarding, performance, learning, time tracking, and workflow automation in a single unified system.">
+<link rel="canonical" href="https://wana.work/platform">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--coral:#FF6B4A;--coral-light:#FF8F6B;--coral-dark:#E5533A;--coral-pale:#FFF1EE;--indigo:#6366F1;--indigo-deep:#4F46E5;--indigo-light:#EEF2FF;--indigo-midnight:#1E1B4B;--purple:#A855F7;--purple-light:#F3E8FF;--slate:#64748B;--green:#10B981;--green-light:#ECFDF5;--amber:#F59E0B;--surface:#FFF;--bg:#F8FAFC;--text:#0F172A;--text-secondary:#475569;--text-tertiary:#94A3B8;--border:#E2E8F0;--border-light:#F1F5F9;--gradient-brand:linear-gradient(135deg,#FF6B4A,#A855F7,#6366F1);--glass-bg:rgba(255,255,255,0.72);--glass-border:rgba(255,255,255,0.4);--radius-sm:8px;--radius-md:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 1px 3px rgba(0,0,0,0.06);--shadow-md:0 4px 16px rgba(0,0,0,0.08);--shadow-lg:0 12px 40px rgba(0,0,0,0.1);--font:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--transition:0.3s cubic-bezier(0.4,0,0.2,1)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-weight:800;letter-spacing:-0.02em;line-height:1.15}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 40px;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--glass-border);box-shadow:0 1px 12px rgba(0,0,0,0.04)}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-logo{display:flex;align-items:center;text-decoration:none;font-size:24px;font-weight:900;letter-spacing:-0.5px;color:var(--indigo-midnight)}.nav-logo .dot{color:var(--coral)}
+.nav-links{display:flex;align-items:center;gap:8px;list-style:none}
+.nav-links a{text-decoration:none;font-size:14px;font-weight:500;color:var(--text-secondary);padding:8px 16px;border-radius:var(--radius-sm);transition:var(--transition)}
+.nav-links a:hover,.nav-links a.active{background:var(--indigo-light);color:var(--indigo)}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.btn-ghost{font-size:14px;font-weight:600;color:var(--text-secondary);text-decoration:none;padding:8px 16px;border-radius:var(--radius-sm);transition:var(--transition)}.btn-ghost:hover{color:var(--indigo)}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-size:14px;font-weight:700;color:#fff;background:var(--coral);padding:10px 24px;border-radius:var(--radius-sm);text-decoration:none;border:none;cursor:pointer;transition:var(--transition);box-shadow:0 2px 8px rgba(255,107,74,0.3)}.btn-primary:hover{background:var(--coral-dark);transform:translateY(-1px);box-shadow:0 4px 16px rgba(255,107,74,0.4)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-size:14px;font-weight:700;color:var(--indigo);background:#fff;padding:10px 24px;border-radius:var(--radius-sm);text-decoration:none;border:2px solid var(--indigo);cursor:pointer;transition:var(--transition)}.btn-secondary:hover{background:var(--indigo-light);transform:translateY(-1px)}
+.btn-large{font-size:16px;padding:14px 32px;border-radius:var(--radius-md)}
+
+/* Breadcrumb */
+.breadcrumb{max-width:1280px;margin:0 auto;padding:92px 40px 0;font-size:13px;color:var(--text-tertiary)}
+.breadcrumb a{color:var(--slate);text-decoration:none;transition:var(--transition)}.breadcrumb a:hover{color:var(--indigo)}
+.breadcrumb span{margin:0 8px;opacity:0.5}
+
+/* Hero */
+.platform-hero{max-width:1280px;margin:0 auto;padding:24px 40px 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.platform-hero h1{font-size:56px;font-weight:900;letter-spacing:-0.03em;line-height:1.05;margin-bottom:20px}
+.platform-hero h1 .gradient{background:var(--gradient-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.platform-hero p{font-size:18px;color:var(--text-secondary);line-height:1.7;margin-bottom:32px;max-width:500px}
+.hero-ctas{display:flex;gap:16px}
+
+/* Feature map */
+.feature-map{position:relative;width:100%;aspect-ratio:1;max-width:500px}
+.fm-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;background:var(--gradient-brand);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:800;text-align:center;z-index:2;box-shadow:0 8px 32px rgba(99,102,241,0.3)}
+.fm-node{position:absolute;width:100px;height:100px;border-radius:var(--radius-lg);background:#fff;border:2px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:11px;font-weight:700;color:var(--text);transition:var(--transition);cursor:pointer;box-shadow:var(--shadow-sm)}
+.fm-node:hover{border-color:var(--indigo);box-shadow:var(--shadow-md);transform:scale(1.08)}
+.fm-node .fm-icon{font-size:24px}
+.fm-line{position:absolute;background:var(--border);z-index:0}
+
+.fm-node:nth-child(2){top:2%;left:50%;transform:translateX(-50%)}
+.fm-node:nth-child(3){top:18%;right:4%}
+.fm-node:nth-child(4){top:55%;right:0}
+.fm-node:nth-child(5){bottom:2%;right:18%}
+.fm-node:nth-child(6){bottom:2%;left:18%}
+.fm-node:nth-child(7){top:55%;left:0}
+.fm-node:nth-child(8){top:18%;left:4%}
+
+/* Stats */
+.stats-bar{background:var(--indigo-midnight);padding:64px 40px}
+.stats-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+.stat .num{font-size:48px;font-weight:900;color:#fff;letter-spacing:-0.02em;font-variant-numeric:tabular-nums}
+.stat .label{font-size:13px;color:rgba(255,255,255,0.5);font-weight:500;margin-top:4px}
+
+/* Cluster sections */
+.section{padding:100px 40px}
+.section-alt{background:#fff}
+.section-inner{max-width:1280px;margin:0 auto}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--coral);margin-bottom:16px}
+.section-label .line{width:24px;height:2px;background:var(--coral);border-radius:1px}
+.section-title{font-size:40px;font-weight:900;letter-spacing:-0.03em;margin-bottom:16px}
+.section-subtitle{font-size:16px;color:var(--text-secondary);max-width:600px;line-height:1.7}
+
+.cluster-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px}
+.cluster-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;transition:var(--transition);cursor:pointer;text-decoration:none;color:inherit;display:block}
+.cluster-card:hover{border-color:var(--indigo);box-shadow:var(--shadow-md);transform:translateY(-3px)}
+.cluster-card .icon{width:48px;height:48px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+.cluster-card h3{font-size:20px;font-weight:800;margin-bottom:8px}
+.cluster-card p{font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:16px}
+.cluster-modules{display:flex;flex-wrap:wrap;gap:6px}
+.cluster-tag{font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;background:var(--surface);color:var(--slate);border:1px solid var(--border)}
+.cluster-link{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:var(--indigo);margin-top:12px}
+
+/* Architecture */
+.arch-visual{margin-top:48px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-xl);padding:48px;box-shadow:var(--shadow-sm)}
+.arch-layers{display:flex;flex-direction:column;gap:16px}
+.arch-layer{border-radius:var(--radius-md);padding:20px 24px;display:flex;align-items:center;gap:16px}
+.arch-layer-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;width:120px;flex-shrink:0}
+.arch-layer-content{display:flex;flex-wrap:wrap;gap:8px;flex:1}
+.arch-chip{font-size:12px;font-weight:600;padding:6px 14px;border-radius:var(--radius-sm);background:#fff;border:1px solid var(--border)}
+.arch-layer.frontend{background:var(--indigo-light)}.arch-layer.frontend .arch-layer-label{color:var(--indigo)}.arch-layer.frontend .arch-chip{border-color:var(--indigo);color:var(--indigo)}
+.arch-layer.api{background:var(--coral-pale)}.arch-layer.api .arch-layer-label{color:var(--coral)}.arch-layer.api .arch-chip{border-color:var(--coral);color:var(--coral)}
+.arch-layer.backend{background:var(--purple-light)}.arch-layer.backend .arch-layer-label{color:var(--purple)}.arch-layer.backend .arch-chip{border-color:var(--purple);color:var(--purple)}
+.arch-layer.data{background:var(--green-light)}.arch-layer.data .arch-layer-label{color:var(--green)}.arch-layer.data .arch-chip{border-color:var(--green);color:var(--green)}
+.arch-layer.infra{background:#F1F5F9}.arch-layer.infra .arch-layer-label{color:var(--slate)}.arch-layer.infra .arch-chip{border-color:var(--slate);color:var(--slate)}
+
+/* Build vs Buy */
+.compare-table{width:100%;border-collapse:collapse;margin-top:32px;font-size:14px}
+.compare-table th{text-align:left;padding:14px 20px;background:var(--indigo-midnight);color:#fff;font-weight:700;font-size:13px}
+.compare-table th:first-child{border-radius:var(--radius-md) 0 0 0}
+.compare-table th:last-child{border-radius:0 var(--radius-md) 0 0}
+.compare-table td{padding:14px 20px;border-bottom:1px solid var(--border)}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table tr:hover td{background:var(--bg)}
+.check{color:var(--green);font-weight:700}.cross{color:#EF4444;font-weight:700}
+.highlight-col{background:var(--indigo-light) !important}
+
+/* CTA */
+.cta-section{position:relative;padding:100px 40px;overflow:hidden}
+.cta-bg{position:absolute;inset:0;background:var(--gradient-brand)}.cta-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 50%,rgba(255,255,255,0.15) 0%,transparent 50%),radial-gradient(circle at 80% 50%,rgba(255,255,255,0.1) 0%,transparent 50%)}
+.cta-inner{position:relative;max-width:720px;margin:0 auto;text-align:center;z-index:2}
+.cta-section h2{font-size:44px;font-weight:900;color:#fff;margin-bottom:16px;letter-spacing:-0.03em}
+.cta-section p{font-size:18px;color:rgba(255,255,255,0.8);margin-bottom:36px;line-height:1.7}
+.cta-buttons{display:flex;gap:16px;justify-content:center}
+.btn-white{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-size:16px;font-weight:700;color:var(--indigo-midnight);background:#fff;padding:14px 32px;border-radius:var(--radius-md);text-decoration:none;border:none;cursor:pointer;transition:var(--transition);box-shadow:0 4px 16px rgba(0,0,0,0.15)}.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2)}
+.btn-outline-white{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-size:16px;font-weight:700;color:#fff;background:transparent;padding:14px 32px;border-radius:var(--radius-md);text-decoration:none;border:2px solid rgba(255,255,255,0.4);cursor:pointer;transition:var(--transition)}.btn-outline-white:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.7)}
+
+/* Footer */
+.footer{background:var(--indigo-midnight);color:#fff;padding:80px 40px 40px}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:48px;margin-bottom:64px}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,0.45);line-height:1.7;margin-top:16px;max-width:280px}
+.footer-col h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.4);margin-bottom:20px}
+.footer-col a{display:block;font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;padding:4px 0;transition:var(--transition)}.footer-col a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:32px;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:rgba(255,255,255,0.3)}
+.footer-bottom a{color:rgba(255,255,255,0.3);text-decoration:none}.footer-bottom a:hover{color:rgba(255,255,255,0.6)}
+.footer-legal{display:flex;gap:24px}
+
+/* Animations */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}.reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}
+
+@media(max-width:1024px){.platform-hero{grid-template-columns:1fr;gap:40px}.platform-hero h1{font-size:40px}.feature-map{max-width:400px;margin:0 auto}.cluster-grid{grid-template-columns:1fr}.stats-inner{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.platform-hero{padding:24px 20px 60px}.platform-hero h1{font-size:32px}.breadcrumb{padding:92px 20px 0}.section{padding:80px 20px}.nav{padding:0 20px}.nav-links{display:none}.stats-inner{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.footer-bottom{flex-direction:column;gap:16px;text-align:center}.compare-table{font-size:12px}.arch-layer{flex-direction:column;align-items:flex-start}.arch-layer-label{width:auto}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">Wana<span class="dot">.</span>Work</a>
+        <ul class="nav-links">
+            <li><a href="/platform" class="active">Platform</a></li>
+            <li><a href="/solutions">Solutions</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/open-source">Open Source</a></li>
+            <li><a href="/resources">Resources</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="https://app.wana.work" class="btn-ghost">Sign In</a>
+            <a href="https://app.wana.work" class="btn-primary">Start Free</a>
+        </div>
+    </div>
+</nav>
+
+<div class="breadcrumb">
+    <a href="/">Home</a><span>/</span><strong>Platform</strong>
+</div>
+
+<section class="platform-hero">
+    <div>
+        <h1>One platform.<br><span class="gradient">Every HR workflow.</span></h1>
+        <p>From the moment a candidate applies to the day they retire, Wana.Work manages every dimension of the employee lifecycle in a single, open-source system.</p>
+        <div class="hero-ctas">
+            <a href="https://app.wana.work" class="btn-primary btn-large">Start Free &rarr;</a>
+            <a href="/contact.html" class="btn-secondary btn-large">Book a Demo</a>
+        </div>
+    </div>
+    <div class="feature-map">
+        <div class="fm-center">Wana.Work<br>Platform</div>
+        <div class="fm-node" onclick="location.href='/platform/core-hr'"><span class="fm-icon">&#128101;</span>Core HR</div>
+        <div class="fm-node" onclick="location.href='/platform/recruitment'"><span class="fm-icon">&#128269;</span>Recruitment</div>
+        <div class="fm-node" onclick="location.href='/platform/onboarding'"><span class="fm-icon">&#9989;</span>Onboarding</div>
+        <div class="fm-node" onclick="location.href='/platform/performance'"><span class="fm-icon">&#11088;</span>Performance</div>
+        <div class="fm-node" onclick="location.href='/platform/learning'"><span class="fm-icon">&#128218;</span>Learning</div>
+        <div class="fm-node" onclick="location.href='/platform/time-attendance'"><span class="fm-icon">&#128339;</span>Time</div>
+        <div class="fm-node" onclick="location.href='/platform/workflows'"><span class="fm-icon">&#9889;</span>Workflows</div>
+    </div>
+</section>
+
+<section class="stats-bar">
+    <div class="stats-inner">
+        <div class="stat"><div class="num">188</div><div class="label">HR Modules</div></div>
+        <div class="stat"><div class="num">7</div><div class="label">Feature Domains</div></div>
+        <div class="stat"><div class="num">22</div><div class="label">Module Categories</div></div>
+        <div class="stat"><div class="num">100%</div><div class="label">Open Source</div></div>
+    </div>
+</section>
+
+<section class="section" id="clusters">
+    <div class="section-inner">
+        <div class="reveal">
+            <div class="section-label"><span class="line"></span> Feature Clusters</div>
+            <h2 class="section-title">Everything your HR team needs.</h2>
+            <p class="section-subtitle">Seven integrated domains covering the complete employee lifecycle, from talent acquisition through ongoing development.</p>
+        </div>
+        <div class="cluster-grid">
+            <a class="cluster-card reveal reveal-delay-1" href="/platform/core-hr">
+                <div class="icon" style="background:var(--indigo-light);color:var(--indigo);">&#128101;</div>
+                <h3>Core HR &amp; People Management</h3>
+                <p>Your single source of truth for all people data. Centralized employee records, interactive org charts, position management, and document storage.</p>
+                <div class="cluster-modules">
+                    <span class="cluster-tag">Employees</span><span class="cluster-tag">Contacts</span><span class="cluster-tag">Organizations</span><span class="cluster-tag">Positions</span><span class="cluster-tag">Competencies</span><span class="cluster-tag">Documents</span><span class="cluster-tag">Certificates</span>
+                </div>
+                <div class="cluster-link">Explore Core HR &rarr;</div>
+            </a>
+            <a class="cluster-card reveal reveal-delay-2" href="/platform/recruitment">
+                <div class="icon" style="background:var(--coral-pale);color:var(--coral);">&#128269;</div>
+                <h3>Recruitment &amp; Talent Acquisition</h3>
+                <p>Find, attract, and hire the right people faster. Full applicant tracking system with kanban pipelines, job posting management, and interview coordination.</p>
+                <div class="cluster-modules">
+                    <span class="cluster-tag">Candidates</span><span class="cluster-tag">Candidatures</span><span class="cluster-tag">Recruitments</span><span class="cluster-tag">Job Postings</span><span class="cluster-tag">Interviews</span>
+                </div>
+                <div class="cluster-link">Explore Recruitment &rarr;</div>
+            </a>
+            <a class="cluster-card reveal reveal-delay-3" href="/platform/onboarding">
+                <div class="icon" style="background:var(--green-light);color:var(--green);">&#9989;</div>
+                <h3>Onboarding &amp; Offboarding</h3>
+                <p>Seamless employee transitions from first day to last. Template-driven checklists, automated task assignments, and structured exit workflows.</p>
+                <div class="cluster-modules">
+                    <span class="cluster-tag">Onboardings</span><span class="cluster-tag">Offboardings</span><span class="cluster-tag">Templates</span><span class="cluster-tag">Checklists</span>
+                </div>
+                <div class="cluster-link">Explore Onboarding &rarr;</div>
+            </a>
+            <a class="cluster-card reveal reveal-delay-4" href="/platform/performance">
+                <div class="icon" style="background:var(--purple-light);color:var(--purple);">&#11088;</div>
+                <h3>Performance &amp; Goals</h3>
+                <p>Drive growth with continuous feedback and clear goals. 360-degree reviews, OKR tracking, competency-based assessments, and peer recognition.</p>
+                <div class="cluster-modules">
+                    <span class="cluster-tag">Appraisals</span><span class="cluster-tag">Goals</span><span class="cluster-tag">KPIs</span><span class="cluster-tag">Surveys</span><span class="cluster-tag">Recognition</span>
+                </div>
+                <div class="cluster-link">Explore Performance &rarr;</div>
+            </a>
+            <a class="cluster-card reveal reveal-delay-1" href="/platform/learning">
+                <div class="icon" style="background:#FEF3C7;color:var(--amber);">&#128218;</div>
+                <h3>Learning &amp; Development</h3>
+                <p>Upskill your workforce with built-in learning management. Training courses, certification tracking, knowledge base, and skill gap analysis.</p>
+                <div class="cluster-modules">
+                    <span class="cluster-tag">Trainings</span><span class="cluster-tag">Certificates</span><span class="cluster-tag">Knowledge Base</span><span class="cluster-tag">Resources</span>
+                </div>
+                <div class="cluster-link">Explore Learning &rarr;</div>
+            </a>
+            <a class="cluster-card reveal reveal-delay-2" href="/platform/time-attendance">
+                <div class="icon" style="background:#E0F2FE;color:#0284C7;">&#128339;</div>
+                <h3>Time, Attendance &amp; Scheduling</h3>
+                <p>Track hours, manage schedules, and simplify attendance. Clock in/out, shift management, leave requests, and delegation tracking.</p>
+                <div class="cluster-modules">
+                    <span class="cluster-tag">Work Schedules</span><span class="cluster-tag">Delegations</span><span class="cluster-tag">Time Entries</span><span class="cluster-tag">Absences</span>
+                </div>
+                <div class="cluster-link">Explore Time &amp; Attendance &rarr;</div>
+            </a>
+            <a class="cluster-card reveal reveal-delay-3" href="/platform/workflows" style="grid-column: span 2;">
+                <div class="icon" style="background:#FCE7F3;color:#DB2777;">&#9889;</div>
+                <h3>Workflows &amp; Automation</h3>
+                <p>Automate every HR process without writing code. Visual workflow designer with triggers, conditions, actions, alerts, email templates, and scheduled automations. Eliminate manual tasks and ensure every process runs consistently.</p>
+                <div class="cluster-modules">
+                    <span class="cluster-tag">Workflow Builder</span><span class="cluster-tag">Conditions</span><span class="cluster-tag">Actions</span><span class="cluster-tag">Alerts</span><span class="cluster-tag">Email Templates</span><span class="cluster-tag">Schedulers</span>
+                </div>
+                <div class="cluster-link">Explore Workflows &rarr;</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt" id="architecture">
+    <div class="section-inner">
+        <div class="reveal">
+            <div class="section-label"><span class="line"></span> Architecture</div>
+            <h2 class="section-title">Modern stack. Enterprise reliability.</h2>
+            <p class="section-subtitle">Built on proven open-source technologies, designed for scale, and deployable anywhere with Docker or Kubernetes.</p>
+        </div>
+        <div class="arch-visual reveal">
+            <div class="arch-layers">
+                <div class="arch-layer frontend">
+                    <div class="arch-layer-label">Frontend</div>
+                    <div class="arch-layer-content">
+                        <span class="arch-chip">Vue 3.2</span><span class="arch-chip">TypeScript</span><span class="arch-chip">Vuetify 3</span><span class="arch-chip">Pinia</span><span class="arch-chip">Vite 6</span>
+                    </div>
+                </div>
+                <div class="arch-layer api">
+                    <div class="arch-layer-label">API Layer</div>
+                    <div class="arch-layer-content">
+                        <span class="arch-chip">REST API</span><span class="arch-chip">Slim Framework 4</span><span class="arch-chip">OAuth 2.0</span><span class="arch-chip">JSON Responses</span>
+                    </div>
+                </div>
+                <div class="arch-layer backend">
+                    <div class="arch-layer-label">Backend</div>
+                    <div class="arch-layer-content">
+                        <span class="arch-chip">PHP 8.2</span><span class="arch-chip">Doctrine ORM</span><span class="arch-chip">SuiteCRM Engine</span><span class="arch-chip">190+ Modules</span>
+                    </div>
+                </div>
+                <div class="arch-layer data">
+                    <div class="arch-layer-label">Data</div>
+                    <div class="arch-layer-content">
+                        <span class="arch-chip">MySQL 8.0 (Percona)</span><span class="arch-chip">ElasticSearch 7.16</span><span class="arch-chip">Full-text Search</span>
+                    </div>
+                </div>
+                <div class="arch-layer infra">
+                    <div class="arch-layer-label">Infrastructure</div>
+                    <div class="arch-layer-content">
+                        <span class="arch-chip">Docker</span><span class="arch-chip">Docker Compose</span><span class="arch-chip">Apache</span><span class="arch-chip">Kubernetes Ready</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="compare">
+    <div class="section-inner">
+        <div class="reveal">
+            <div class="section-label"><span class="line"></span> Comparison</div>
+            <h2 class="section-title">Build vs. buy. Why not both?</h2>
+            <p class="section-subtitle">Wana.Work gives you the depth of enterprise HCM with the flexibility to customize everything.</p>
+        </div>
+        <table class="compare-table reveal">
+            <thead>
+                <tr>
+                    <th>Capability</th>
+                    <th>Traditional HCM (Workday/Oracle)</th>
+                    <th>SMB Tools (BambooHR/Gusto)</th>
+                    <th class="highlight-col" style="background:var(--indigo);color:white;">Wana.Work</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Full HCM suite (HR, Recruit, Perf, L&amp;D)</td><td class="check">&#10003;</td><td class="cross">&#10007; Partial</td><td class="highlight-col check">&#10003;</td></tr>
+                <tr><td>Self-hosted deployment</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="highlight-col check">&#10003;</td></tr>
+                <tr><td>Open source code access</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="highlight-col check">&#10003;</td></tr>
+                <tr><td>Custom module development</td><td class="cross">&#10007; Config only</td><td class="cross">&#10007;</td><td class="highlight-col check">&#10003;</td></tr>
+                <tr><td>No per-user licensing fees</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="highlight-col check">&#10003; Community Edition</td></tr>
+                <tr><td>Full data ownership</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="highlight-col check">&#10003;</td></tr>
+                <tr><td>Modern tech stack (Vue 3, REST API)</td><td class="cross">&#10007; Legacy</td><td>Varies</td><td class="highlight-col check">&#10003;</td></tr>
+                <tr><td>Enterprise-grade workflows</td><td class="check">&#10003;</td><td class="cross">&#10007; Basic</td><td class="highlight-col check">&#10003;</td></tr>
+                <tr><td>Quick setup (Docker, 10 min)</td><td class="cross">&#10007; Months</td><td class="check">&#10003;</td><td class="highlight-col check">&#10003;</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="cta-bg"></div>
+    <div class="cta-inner reveal">
+        <h2>See the full platform in action.</h2>
+        <p>Deploy in minutes with Docker or schedule a guided demo to see how Wana.Work fits your organization.</p>
+        <div class="cta-buttons">
+            <a href="https://app.wana.work" class="btn-white">Start Free &rarr;</a>
+            <a href="/contact.html" class="btn-outline-white">Book a Demo</a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div style="font-size:24px;font-weight:900;letter-spacing:-0.5px">Wana<span style="color:var(--coral)">.</span>Work</div>
+                <p>The modern, open-source Human Capital Management platform. Where people want to work.</p>
+            </div>
+            <div class="footer-col"><h4>Platform</h4><a href="/platform/core-hr">Core HR</a><a href="/platform/recruitment">Recruitment</a><a href="/platform/onboarding">Onboarding</a><a href="/platform/performance">Performance</a><a href="/platform/learning">Learning</a><a href="/platform/time-attendance">Time &amp; Attendance</a><a href="/platform/workflows">Workflows</a></div>
+            <div class="footer-col"><h4>Solutions</h4><a href="/solutions/healthcare">Healthcare</a><a href="/solutions/manufacturing">Manufacturing</a><a href="/solutions/technology">Technology</a><a href="/solutions/finance">Finance</a><a href="/solutions/education">Education</a><a href="/solutions/retail">Retail</a></div>
+            <div class="footer-col"><h4>Resources</h4><a href="/docs">Documentation</a><a href="/api">API Reference</a><a href="/blog">Blog</a><a href="/changelog">Changelog</a><a href="https://github.com/wanawork">GitHub</a></div>
+            <div class="footer-col"><h4>Company</h4><a href="/about">About</a><a href="/contact">Contact</a><a href="/pricing">Pricing</a><a href="/open-source">Open Source</a></div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Wana.Work. All rights reserved. Licensed under AGPL v3.</span>
+            <div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/cookies">Cookies</a></div>
+        </div>
+    </div>
+</footer>
+
+<script>
+const ro=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+</script>
+</body>
+</html>

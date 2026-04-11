@@ -1,0 +1,2303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Management Software: Reviews, Goals & OKRs | Wana.Work</title>
+    <meta name="description" content="Grow your people with continuous feedback and clear goals. 360-degree reviews, OKR tracking, competency frameworks, and recognition tools.">
+    <meta name="keywords" content="performance management software, 360 degree reviews, OKR tracking software, employee performance review">
+    <meta property="og:title" content="Performance Management Software: Reviews, Goals & OKRs | Wana.Work">
+    <meta property="og:description" content="Grow your people with continuous feedback and clear goals. 360-degree reviews, OKR tracking, competency frameworks, and recognition tools.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wana.work/platform/performance">
+    <meta property="og:image" content="https://wana.work/og-performance.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --coral: #FF6B4A;
+            --coral-light: #FF8F6B;
+            --coral-dark: #E5533A;
+            --coral-pale: #FFF1EE;
+            --indigo: #6366F1;
+            --indigo-deep: #4F46E5;
+            --indigo-light: #EEF2FF;
+            --indigo-midnight: #1E1B4B;
+            --purple: #A855F7;
+            --purple-light: #F3E8FF;
+            --slate: #64748B;
+            --green: #10B981;
+            --green-light: #ECFDF5;
+            --amber: #F59E0B;
+            --white: #FFFFFF;
+            --black: #000000;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-600: #4B5563;
+            --gray-900: #111827;
+            --gradient-main: linear-gradient(135deg, #FF6B4A, #A855F7, #6366F1);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--gray-600);
+            background-color: var(--white);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.03em;
+        }
+
+        .nav-center {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-size: 14px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--indigo-deep);
+        }
+
+        .nav-link.active {
+            color: var(--indigo-deep);
+            font-weight: 600;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--coral);
+            border-radius: 2px;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .btn-secondary {
+            padding: 10px 20px;
+            background: transparent;
+            border: 1.5px solid var(--indigo);
+            color: var(--indigo-deep);
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--indigo-light);
+            color: var(--indigo-deep);
+        }
+
+        .btn-primary {
+            padding: 10px 24px;
+            background: var(--coral);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(255, 107, 74, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--coral-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 74, 0.4);
+        }
+
+        /* Main content */
+        main {
+            margin-top: 80px;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 40px 60px;
+            font-size: 13px;
+            color: var(--gray-400);
+            background: var(--gray-50);
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .breadcrumb a {
+            color: var(--indigo-deep);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--coral);
+        }
+
+        .breadcrumb span {
+            color: var(--gray-300);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 80px 60px;
+            background: linear-gradient(135deg, rgba(255, 107, 74, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: var(--indigo-midnight);
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: var(--slate);
+            margin-bottom: 40px;
+            max-width: 600px;
+            font-weight: 400;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--coral);
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--indigo-deep);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--gray-400);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-image {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mockup-dashboard {
+            background: linear-gradient(135deg, var(--indigo-light) 0%, var(--purple-light) 100%);
+            border-radius: 8px;
+            padding: 40px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .mockup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .mockup-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--indigo-midnight);
+        }
+
+        .mockup-indicator {
+            width: 12px;
+            height: 12px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .mockup-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .mockup-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+        }
+
+        .mockup-card-title {
+            font-size: 12px;
+            color: var(--gray-400);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .mockup-card-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--indigo-deep);
+        }
+
+        .feedback-indicator {
+            font-size: 11px;
+            color: var(--green);
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section.gradient-bg {
+            background: linear-gradient(135deg, var(--indigo-light) 0%, var(--purple-light) 100%);
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            font-size: 12px;
+            color: var(--coral);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        h2 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--indigo-midnight);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--slate);
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        /* Feature Layout */
+        .feature-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        .feature-layout.reverse {
+            direction: rtl;
+        }
+
+        .feature-layout.reverse > * {
+            direction: ltr;
+        }
+
+        .feature-content {
+            padding: 20px 0;
+        }
+
+        .feature-content h3 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--indigo-midnight);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .feature-content p {
+            font-size: 16px;
+            color: var(--slate);
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .feature-list li {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 15px;
+            color: var(--gray-600);
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--coral-pale);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-icon svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--coral);
+            fill: none;
+        }
+
+        .feature-visual {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--shadow-lg);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--indigo-light) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .feature-visual > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 360 Reviews Visualization */
+        .review-circle {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .review-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border: 3px solid var(--indigo);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--indigo-deep);
+            font-size: 13px;
+            text-align: center;
+            z-index: 10;
+            box-shadow: var(--shadow-md);
+        }
+
+        .review-rater {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 12px;
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .rater-manager {
+            background: var(--coral);
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .rater-peers {
+            background: var(--indigo);
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+
+        .rater-reports {
+            background: var(--purple);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .rater-self {
+            background: var(--green);
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .review-form {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: var(--shadow-md);
+            margin-top: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--indigo-midnight);
+            margin-bottom: 8px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--gray-200);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--gray-600);
+            transition: all 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--indigo);
+            background: var(--indigo-light);
+        }
+
+        .rating-stars {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .star {
+            width: 28px;
+            height: 28px;
+            background: var(--gray-100);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .star.active, .star:hover {
+            background: var(--amber);
+            color: var(--white);
+        }
+
+        /* Goal Cascade */
+        .goal-cascade {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .goal-level {
+            background: var(--white);
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 4px solid var(--indigo);
+            box-shadow: var(--shadow-md);
+        }
+
+        .goal-level.team {
+            border-left-color: var(--purple);
+            margin-left: 40px;
+        }
+
+        .goal-level.individual {
+            border-left-color: var(--coral);
+            margin-left: 80px;
+        }
+
+        .goal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .goal-title {
+            font-weight: 600;
+            color: var(--indigo-midnight);
+            font-size: 14px;
+        }
+
+        .goal-status {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-on-track {
+            background: var(--green-light);
+            color: var(--green);
+        }
+
+        .status-at-risk {
+            background: #FEF3C7;
+            color: var(--amber);
+        }
+
+        .status-off-track {
+            background: #FEE2E2;
+            color: #DC2626;
+        }
+
+        .progress-bar {
+            background: var(--gray-200);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--coral), var(--purple));
+            border-radius: 4px;
+            transition: width 0.4s ease;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--gray-400);
+        }
+
+        /* Feedback Section */
+        .feedback-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .feedback-chat {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: var(--shadow-md);
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feedback-messages {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .feedback-message {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .message-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--indigo-light);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--indigo-deep);
+        }
+
+        .message-content {
+            flex: 1;
+        }
+
+        .message-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--indigo-midnight);
+            margin-bottom: 4px;
+        }
+
+        .message-text {
+            font-size: 14px;
+            color: var(--gray-600);
+            background: var(--gray-50);
+            padding: 10px 12px;
+            border-radius: 6px;
+            line-height: 1.5;
+        }
+
+        .feedback-input {
+            display: flex;
+            gap: 8px;
+        }
+
+        .feedback-input input {
+            flex: 1;
+            padding: 10px 12px;
+            border: 1px solid var(--gray-200);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 13px;
+        }
+
+        .feedback-input button {
+            padding: 10px 16px;
+            background: var(--indigo);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+
+        .feedback-input button:hover {
+            background: var(--indigo-deep);
+        }
+
+        .recognition-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .recognition-card {
+            background: linear-gradient(135deg, var(--coral-pale) 0%, var(--purple-light) 100%);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--coral);
+        }
+
+        .recognition-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .recognition-from {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .recognition-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+            color: var(--coral);
+        }
+
+        .recognition-name {
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--indigo-midnight);
+        }
+
+        .recognition-badge {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .recognition-text {
+            font-size: 14px;
+            color: var(--indigo-midnight);
+            line-height: 1.5;
+        }
+
+        /* Competency Matrix */
+        .competency-grid {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .matrix-header {
+            display: grid;
+            grid-template-columns: 200px repeat(4, 1fr);
+            background: var(--indigo-light);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .matrix-cell {
+            padding: 16px;
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--indigo-deep);
+            border-right: 1px solid var(--gray-200);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .matrix-cell:last-child {
+            border-right: none;
+        }
+
+        .matrix-row {
+            display: grid;
+            grid-template-columns: 200px repeat(4, 1fr);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .matrix-row:last-child {
+            border-bottom: none;
+        }
+
+        .matrix-label {
+            padding: 16px;
+            background: var(--gray-50);
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--indigo-midnight);
+            border-right: 1px solid var(--gray-200);
+        }
+
+        .proficiency-level {
+            padding: 16px;
+            border-right: 1px solid var(--gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 12px;
+            position: relative;
+        }
+
+        .proficiency-level:last-child {
+            border-right: none;
+        }
+
+        .proficiency-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+
+        .proficiency-beginner {
+            color: var(--gray-400);
+        }
+
+        .proficiency-beginner .proficiency-dot {
+            background: var(--gray-300);
+        }
+
+        .proficiency-developing {
+            color: var(--amber);
+        }
+
+        .proficiency-developing .proficiency-dot {
+            background: var(--amber);
+        }
+
+        .proficiency-proficient {
+            color: var(--green);
+        }
+
+        .proficiency-proficient .proficiency-dot {
+            background: var(--green);
+        }
+
+        .proficiency-expert {
+            color: var(--indigo-deep);
+        }
+
+        .proficiency-expert .proficiency-dot {
+            background: var(--indigo-deep);
+        }
+
+        /* Analytics */
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .chart-container {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .chart-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--indigo-midnight);
+            margin-bottom: 20px;
+        }
+
+        .chart-bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 16px;
+            height: 200px;
+        }
+
+        .bar-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bar {
+            width: 100%;
+            background: linear-gradient(180deg, var(--coral), var(--coral-light));
+            border-radius: 4px 4px 0 0;
+            transition: all 0.3s ease;
+            min-height: 4px;
+        }
+
+        .bar:hover {
+            filter: brightness(0.95);
+        }
+
+        .bar-label {
+            font-size: 12px;
+            color: var(--gray-400);
+            text-align: center;
+        }
+
+        .heatmap {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .heatmap-cell {
+            aspect-ratio: 1;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 12px;
+            color: var(--white);
+            transition: all 0.2s;
+        }
+
+        .heatmap-cell:hover {
+            transform: scale(1.05);
+        }
+
+        .heatmap-1 { background: #ECFDF5; color: var(--green); border: 1px solid var(--green); }
+        .heatmap-2 { background: #DCFCE7; color: var(--green); }
+        .heatmap-3 { background: #BBF7D0; color: var(--white); }
+        .heatmap-4 { background: #86EFAC; color: var(--white); }
+        .heatmap-5 { background: var(--green); color: var(--white); }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .comparison-table thead {
+            background: var(--indigo-light);
+        }
+
+        .comparison-table th {
+            padding: 20px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 13px;
+            color: var(--indigo-deep);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--gray-200);
+        }
+
+        .comparison-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--gray-100);
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        .comparison-table tbody tr:hover {
+            background: var(--gray-50);
+        }
+
+        .table-check {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .table-cross {
+            color: var(--gray-300);
+            font-weight: 700;
+        }
+
+        .table-feature {
+            font-weight: 600;
+            color: var(--indigo-midnight);
+        }
+
+        .table-wana {
+            background: var(--coral-pale);
+            font-weight: 600;
+            color: var(--coral-dark);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient-main);
+            border-radius: 20px;
+            padding: 80px 60px;
+            text-align: center;
+            color: var(--white);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .cta-title {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .cta-subtitle {
+            font-size: 16px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .cta-btn-primary {
+            background: var(--white);
+            color: var(--coral);
+        }
+
+        .cta-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .cta-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--indigo-midnight);
+            color: var(--gray-400);
+            padding: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: var(--coral);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: var(--gray-400);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-legal a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-legal a:hover {
+            color: var(--coral);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            animation: slideInLeft 0.6s ease forwards;
+        }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(40px);
+            animation: slideInRight 0.6s ease forwards;
+        }
+
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: slideInUp 0.6s ease forwards;
+        }
+
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 0 40px;
+            }
+
+            section {
+                padding: 80px 40px;
+            }
+
+            .breadcrumb {
+                padding: 30px 40px;
+            }
+
+            .hero {
+                padding: 60px 40px;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .feature-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .feature-layout.reverse {
+                direction: ltr;
+            }
+
+            .goal-level.team,
+            .goal-level.individual {
+                margin-left: 0;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .mockup-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .comparison-table {
+                font-size: 12px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px 12px;
+            }
+
+            .cta-section {
+                padding: 60px 40px;
+            }
+
+            .cta-title {
+                font-size: 32px;
+            }
+
+            .nav-center {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+                height: 70px;
+            }
+
+            .nav-center {
+                display: none;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .breadcrumb {
+                padding: 20px;
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .mockup-dashboard {
+                height: 300px;
+                padding: 20px;
+            }
+
+            .feature-content h3 {
+                font-size: 24px;
+            }
+
+            .feature-list {
+                margin-bottom: 20px;
+            }
+
+            .feature-visual {
+                min-height: 300px;
+                padding: 20px;
+            }
+
+            .feedback-container {
+                grid-template-columns: 1fr;
+            }
+
+            .feedback-chat {
+                height: 300px;
+            }
+
+            .matrix-header,
+            .matrix-row {
+                grid-template-columns: 120px repeat(4, 1fr);
+                font-size: 11px;
+            }
+
+            .matrix-cell,
+            .matrix-label,
+            .proficiency-level {
+                padding: 12px 8px;
+            }
+
+            .analytics-grid {
+                gap: 20px;
+            }
+
+            .chart-container {
+                padding: 20px;
+            }
+
+            .chart-bars {
+                height: 150px;
+                gap: 8px;
+            }
+
+            .comparison-table {
+                font-size: 11px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px 8px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+            .cta-section {
+                padding: 40px 20px;
+                border-radius: 12px;
+            }
+
+            .cta-title {
+                font-size: 24px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-btn {
+                width: 100%;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+
+            .footer-legal {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-logo">Wana.Work</div>
+        <div class="nav-center">
+            <a href="#" class="nav-link active">Platform</a>
+            <a href="#" class="nav-link">Solutions</a>
+            <a href="#" class="nav-link">Pricing</a>
+            <a href="#" class="nav-link">Docs</a>
+        </div>
+        <div class="nav-right">
+            <button class="btn-secondary">Sign In</button>
+            <button class="btn-primary">Start Free</button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="/">Home</a>
+            <span>/</span>
+            <a href="/platform">Platform</a>
+            <span>/</span>
+            <span>Performance</span>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Grow your people with continuous feedback and clear goals.</h1>
+                <p class="hero-subtitle">Build a high-performing culture with 360-degree reviews, OKR tracking, competency frameworks, and peer recognition in one platform.</p>
+
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-value">360°</div>
+                        <div class="stat-label">Reviews</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">Real-time</div>
+                        <div class="stat-label">Feedback</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">OKR</div>
+                        <div class="stat-label">Alignment</div>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="mockup-dashboard">
+                        <div class="mockup-header">
+                            <div class="mockup-title">Performance Overview</div>
+                            <div class="mockup-indicator"></div>
+                        </div>
+                        <div class="mockup-cards">
+                            <div class="mockup-card">
+                                <div class="mockup-card-title">Review Cycle</div>
+                                <div class="mockup-card-value">87%</div>
+                                <div class="feedback-indicator">
+                                    <span style="color: var(--green);">●</span>
+                                    Complete
+                                </div>
+                            </div>
+                            <div class="mockup-card">
+                                <div class="mockup-card-title">Goal Progress</div>
+                                <div class="mockup-card-value">72%</div>
+                                <div class="feedback-indicator" style="color: var(--amber);">
+                                    <span style="color: var(--amber);">●</span>
+                                    On Track
+                                </div>
+                            </div>
+                            <div class="mockup-card">
+                                <div class="mockup-card-title">Feedback Score</div>
+                                <div class="mockup-card-value">4.6/5</div>
+                                <div class="feedback-indicator">
+                                    <span style="color: var(--green);">●</span>
+                                    Excellent
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 360-Degree Reviews -->
+        <section class="gradient-bg">
+            <div class="section-header">
+                <span class="section-label">APPRAISALS</span>
+                <h2>360-Degree Review Cycles</h2>
+                <p class="section-subtitle">Collect comprehensive feedback from managers, peers, direct reports, and self-assessments to build a complete picture of performance and potential.</p>
+            </div>
+
+            <div class="feature-layout">
+                <div class="feature-content">
+                    <h3>Multi-Rater Feedback</h3>
+                    <p>Get holistic feedback from all angles. Configure review cycles with customizable templates, rating scales, and competency frameworks that align with your organizational values.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <span>Customizable review templates and rating scales</span>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <span>Anonymous rater options for candid feedback</span>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <span>Automated reminders and completion tracking</span>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <span>Real-time feedback summaries and insights</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="feature-visual">
+                    <div class="review-circle">
+                        <div class="review-center">You</div>
+                        <div class="review-rater rater-manager">Manager<br><small style="font-size: 10px; opacity: 0.8;">8.2/10</small></div>
+                        <div class="review-rater rater-peers">Peers<br><small style="font-size: 10px; opacity: 0.8;">7.9/10</small></div>
+                        <div class="review-rater rater-reports">Reports<br><small style="font-size: 10px; opacity: 0.8;">8.5/10</small></div>
+                        <div class="review-rater rater-self">Self<br><small style="font-size: 10px; opacity: 0.8;">8.1/10</small></div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 60px;">
+                <h3 style="font-size: 20px; color: var(--indigo-midnight); margin-bottom: 20px; font-weight: 700;">Sample Review Form</h3>
+                <div class="review-form">
+                    <div class="form-group">
+                        <label class="form-label">Rate overall performance</label>
+                        <div class="rating-stars">
+                            <div class="star active">5</div>
+                            <div class="star active">4</div>
+                            <div class="star active">3</div>
+                            <div class="star">2</div>
+                            <div class="star">1</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Key strengths</label>
+                        <input type="text" class="form-input" value="Leadership, Communication, Problem Solving" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Areas for development</label>
+                        <input type="text" class="form-input" value="Delegation, Strategic Planning" readonly>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Goals & OKRs -->
+        <section>
+            <div class="section-header">
+                <span class="section-label">GOALS</span>
+                <h2>Goal and OKR Tracking</h2>
+                <p class="section-subtitle">Align individual goals with team and company objectives. Track progress in real-time, identify blockers, and ensure everyone knows how their work drives business outcomes.</p>
+            </div>
+
+            <div class="feature-layout reverse">
+                <div class="feature-content">
+                    <h3>Cascading Goal Alignment</h3>
+                    <p>Break down company objectives into team and individual goals. Track progress with status indicators, timeline views, and automated check-ins to keep everyone aligned and motivated.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <span>Company, team, and individual goal levels</span>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <span>Progress tracking and status updates</span>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <span>Automated check-in reminders</span>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <span>Support for OKR and traditional goal frameworks</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="feature-visual">
+                    <div class="goal-cascade">
+                        <div class="goal-level">
+                            <div class="goal-header">
+                                <div class="goal-title">Increase market share in Q2</div>
+                                <div class="goal-status status-on-track">On Track</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%;"></div>
+                            </div>
+                            <div class="progress-label">
+                                <span>Progress</span>
+                                <span>78%</span>
+                            </div>
+                        </div>
+
+                        <div class="goal-level team">
+                            <div class="goal-header">
+                                <div class="goal-title">Increase sales by 30%</div>
+                                <div class="goal-status status-on-track">On Track</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%;"></div>
+                            </div>
+                            <div class="progress-label">
+                                <span>Progress</span>
+                                <span>65%</span>
+                            </div>
+                        </div>
+
+                        <div class="goal-level individual">
+                            <div class="goal-header">
+                                <div class="goal-title">Close 12 enterprise deals</div>
+                                <div class="goal-status status-at-risk">At Risk</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 42%;"></div>
+                            </div>
+                            <div class="progress-label">
+                                <span>Progress</span>
+                                <span>42%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Continuous Feedback -->
+        <section class="gradient-bg">
+            <div class="section-header">
+                <span class="section-label">FEEDBACK</span>
+                <h2>Continuous Feedback and Recognition</h2>
+                <p class="section-subtitle">Foster a culture of appreciation. Share real-time feedback, recognize achievements, and celebrate wins with integrated peer recognition and pulse surveys.</p>
+            </div>
+
+            <div class="feature-layout">
+                <div class="feature-content">
+                    <h3>Real-time Feedback Loop</h3>
+                    <p>Move beyond annual reviews. Enable ongoing conversations with lightweight feedback tools, peer recognition programs, and quick pulse surveys to keep performance conversations alive year-round.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <span>Chat-style feedback threads</span>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <span>Peer recognition with custom badges</span>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <span>One-minute pulse surveys</span>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <span>Engagement sentiment tracking</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="feature-visual">
+                    <div class="feedback-container">
+                        <div class="feedback-chat">
+                            <div class="feedback-messages">
+                                <div class="feedback-message">
+                                    <div class="message-avatar">JD</div>
+                                    <div class="message-content">
+                                        <div class="message-name">Jane Doe</div>
+                                        <div class="message-text">Great work on the Q2 presentation!</div>
+                                    </div>
+                                </div>
+                                <div class="feedback-message">
+                                    <div class="message-avatar">SM</div>
+                                    <div class="message-content">
+                                        <div class="message-name">Sarah Miller</div>
+                                        <div class="message-text">Your analysis was thorough and insightful.</div>
+                                    </div>
+                                </div>
+                                <div class="feedback-message">
+                                    <div class="message-avatar">RM</div>
+                                    <div class="message-content">
+                                        <div class="message-name">Robert Martinez</div>
+                                        <div class="message-text">Keep up the excellent leadership this quarter.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="feedback-input">
+                                <input type="text" placeholder="Share feedback...">
+                                <button>Send</button>
+                            </div>
+                        </div>
+
+                        <div class="recognition-cards">
+                            <div class="recognition-card">
+                                <div class="recognition-header">
+                                    <div class="recognition-from">
+                                        <div class="recognition-avatar">JD</div>
+                                        <div class="recognition-name">Jane Doe</div>
+                                    </div>
+                                    <div class="recognition-badge">🏆</div>
+                                </div>
+                                <div class="recognition-text">Amazing leadership on the new product launch</div>
+                            </div>
+
+                            <div class="recognition-card">
+                                <div class="recognition-header">
+                                    <div class="recognition-from">
+                                        <div class="recognition-avatar">TJ</div>
+                                        <div class="recognition-name">Thomas Johnson</div>
+                                    </div>
+                                    <div class="recognition-badge">⭐</div>
+                                </div>
+                                <div class="recognition-text">Went above and beyond to help the team</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competency Frameworks -->
+        <section>
+            <div class="section-header">
+                <span class="section-label">COMPETENCIES</span>
+                <h2>Skills and Competency Frameworks</h2>
+                <p class="section-subtitle">Define organizational competencies aligned with your culture and strategy. Track skill development, identify capability gaps, and plan talent growth paths.</p>
+            </div>
+
+            <div class="feature-layout reverse">
+                <div class="feature-content">
+                    <h3>Customizable Competency Matrix</h3>
+                    <p>Build competency models that reflect your organization. Assess employee proficiency levels, visualize skill gaps, and create targeted development plans aligned with career progression.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <span>Custom competency definitions</span>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <span>Proficiency level assessments</span>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <span>Development pathway planning</span>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <span>Skill gap identification</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="feature-visual">
+                    <table class="competency-grid">
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Competency</th>
+                                <th>Beginner</th>
+                                <th>Developing</th>
+                                <th>Proficient</th>
+                                <th>Expert</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="matrix-label">Leadership</td>
+                                <td class="proficiency-level proficiency-beginner"><span class="proficiency-dot"></span>Level 1</td>
+                                <td class="proficiency-level proficiency-developing"><span class="proficiency-dot"></span>Level 2</td>
+                                <td class="proficiency-level proficiency-proficient"><span class="proficiency-dot"></span>Level 3</td>
+                                <td class="proficiency-level proficiency-expert"><span class="proficiency-dot"></span>Level 4</td>
+                            </tr>
+                            <tr>
+                                <td class="matrix-label">Communication</td>
+                                <td class="proficiency-level proficiency-developing"><span class="proficiency-dot"></span>Level 2</td>
+                                <td class="proficiency-level proficiency-proficient"><span class="proficiency-dot"></span>Level 3</td>
+                                <td class="proficiency-level proficiency-expert"><span class="proficiency-dot"></span>Level 4</td>
+                                <td class="proficiency-level proficiency-expert"><span class="proficiency-dot"></span>Level 4</td>
+                            </tr>
+                            <tr>
+                                <td class="matrix-label">Problem Solving</td>
+                                <td class="proficiency-level proficiency-proficient"><span class="proficiency-dot"></span>Level 3</td>
+                                <td class="proficiency-level proficiency-expert"><span class="proficiency-dot"></span>Level 4</td>
+                                <td class="proficiency-level proficiency-expert"><span class="proficiency-dot"></span>Level 4</td>
+                                <td class="proficiency-level proficiency-expert"><span class="proficiency-dot"></span>Level 4</td>
+                            </tr>
+                            <tr>
+                                <td class="matrix-label">Strategic Thinking</td>
+                                <td class="proficiency-level proficiency-beginner"><span class="proficiency-dot"></span>Level 1</td>
+                                <td class="proficiency-level proficiency-developing"><span class="proficiency-dot"></span>Level 2</td>
+                                <td class="proficiency-level proficiency-proficient"><span class="proficiency-dot"></span>Level 3</td>
+                                <td class="proficiency-level proficiency-proficient"><span class="proficiency-dot"></span>Level 3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics & Insights -->
+        <section class="gradient-bg">
+            <div class="section-header">
+                <span class="section-label">ANALYTICS</span>
+                <h2>Performance Analytics and Insights</h2>
+                <p class="section-subtitle">Understand performance trends across your organization. Monitor team health, identify high performers, and uncover patterns to inform strategic talent decisions.</p>
+            </div>
+
+            <div class="analytics-grid">
+                <div class="chart-container">
+                    <div class="chart-title">Performance Score Trends</div>
+                    <div class="chart-bars">
+                        <div class="bar-group">
+                            <div class="bar" style="height: 45%;"></div>
+                            <div class="bar-label">Q1</div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar" style="height: 62%;"></div>
+                            <div class="bar-label">Q2</div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar" style="height: 58%;"></div>
+                            <div class="bar-label">Q3</div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar" style="height: 75%;"></div>
+                            <div class="bar-label">Q4</div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar" style="height: 88%;"></div>
+                            <div class="bar-label">YTD</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-title">Team Performance Heatmap</div>
+                    <div class="heatmap">
+                        <div class="heatmap-cell heatmap-5">Team A</div>
+                        <div class="heatmap-cell heatmap-4">Team B</div>
+                        <div class="heatmap-cell heatmap-3">Team C</div>
+                        <div class="heatmap-cell heatmap-2">Team D</div>
+                        <div class="heatmap-cell heatmap-4">Team E</div>
+                        <div class="heatmap-cell heatmap-4">Team F</div>
+                        <div class="heatmap-cell heatmap-5">Team G</div>
+                        <div class="heatmap-cell heatmap-3">Team H</div>
+                        <div class="heatmap-cell heatmap-4">Team I</div>
+                        <div class="heatmap-cell heatmap-3">Team J</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-container" style="margin-top: 40px;">
+                <div class="chart-title">Rating Distribution</div>
+                <div class="chart-bars">
+                    <div class="bar-group">
+                        <div class="bar" style="height: 12%;"></div>
+                        <div class="bar-label">Below Expectations<br>8%</div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 28%;"></div>
+                        <div class="bar-label">Meets Expectations<br>22%</div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 52%;"></div>
+                        <div class="bar-label">Exceeds<br>Expectations<br>48%</div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 38%;"></div>
+                        <div class="bar-label">Far Exceeds<br>Expectations<br>22%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section>
+            <div class="section-header">
+                <span class="section-label">COMPARISON</span>
+                <h2>How Wana.Work Compares</h2>
+                <p class="section-subtitle">Enterprise-grade performance management that's actually easy to use. Built for teams of all sizes with flexibility that grows with you.</p>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Wana.Work</th>
+                        <th>Lattice</th>
+                        <th>15Five</th>
+                        <th>Workday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="table-feature">360 Degree Reviews</td>
+                        <td class="table-check table-wana">✓</td>
+                        <td class="table-check">✓</td>
+                        <td class="table-check">✓</td>
+                        <td class="table-check">✓</td>
+                    </tr>
+                    <tr>
+                        <td class="table-feature">OKR Tracking</td>
+                        <td class="table-check table-wana">✓</td>
+                        <td class="table-check">✓</td>
+                        <td class="table-check">✓</td>
+                        <td class="table-cross">✗</td>
+                    </tr>
+                    <tr>
+                        <td class="table-feature">Continuous Feedback</td>
+                        <td class="table-check table-wana">✓</td>
+                        <td class="table-check">✓</td>
+                        <td class="table-check">✓</td>
+                        <td class="table-cross">✗</td>
+                    </tr>
+                    <tr>
+                        <td class="table-feature">Competency Frameworks</td>
+                        <td class="table-check table-wana">✓</td>
+                        <td class="table-check">✓</td>
+                        <td class="table-cross">✗</td>
+                        <td class="table-check">✓</td>
+                    </tr>
+                    <tr>
+                        <td class="table-feature">Peer Recognition</td>
+                        <td class="table-check table-wana">✓</td>
+                        <td class="table-check">✓</td>
+                        <td class="table-check">✓</td>
+                        <td class="table-cross">✗</td>
+                    </tr>
+                    <tr>
+                        <td class="table-feature">Pulse Surveys</td>
+                        <td class="table-check table-wana">✓</td>
+                        <td class="table-check">✓</td>
+                        <td class="table-check">✓</td>
+                        <td class="table-cross">✗</td>
+                    </tr>
+                    <tr>
+                        <td class="table-feature">Goal Cascading</td>
+                        <td class="table-check table-wana">✓</td>
+                        <td class="table-check">✓</td>
+                        <td class="table-cross">✗</td>
+                        <td class="table-check">✓</td>
+                    </tr>
+                    <tr>
+                        <td class="table-feature">Real-time Analytics</td>
+                        <td class="table-check table-wana">✓</td>
+                        <td class="table-check">✓</td>
+                        <td class="table-check">✓</td>
+                        <td class="table-check">✓</td>
+                    </tr>
+                    <tr>
+                        <td class="table-feature">Mobile App</td>
+                        <td class="table-check table-wana">✓</td>
+                        <td class="table-check">✓</td>
+                        <td class="table-check">✓</td>
+                        <td class="table-check">✓</td>
+                    </tr>
+                    <tr>
+                        <td class="table-feature">Open Source</td>
+                        <td class="table-check table-wana">✓</td>
+                        <td class="table-cross">✗</td>
+                        <td class="table-cross">✗</td>
+                        <td class="table-cross">✗</td>
+                    </tr>
+                    <tr>
+                        <td class="table-feature">Self-Hosted Option</td>
+                        <td class="table-check table-wana">✓</td>
+                        <td class="table-cross">✗</td>
+                        <td class="table-cross">✗</td>
+                        <td class="table-check">✓</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- CTA Section -->
+        <section style="padding: 0;">
+            <div class="cta-section">
+                <h2 class="cta-title">Ready to transform your performance culture?</h2>
+                <p class="cta-subtitle">Join hundreds of companies using Wana.Work to build engaged, high-performing teams. Start your free trial today, no credit card required.</p>
+                <div class="cta-buttons">
+                    <button class="cta-btn cta-btn-primary">Start Free Trial</button>
+                    <button class="cta-btn cta-btn-secondary">Schedule Demo</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Platform</h3>
+                <ul>
+                    <li><a href="#">Performance</a></li>
+                    <li><a href="#">Talent</a></li>
+                    <li><a href="#">Compensation</a></li>
+                    <li><a href="#">Engagement</a></li>
+                    <li><a href="#">Analytics</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Solutions</h3>
+                <ul>
+                    <li><a href="#">For Startups</a></li>
+                    <li><a href="#">For Enterprise</a></li>
+                    <li><a href="#">For Remote Teams</a></li>
+                    <li><a href="#">For SMB</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">API Reference</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">GDPR</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Copyright 2026 Wana.Work. All rights reserved.</span>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Security</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Wana.Work Performance Management",
+        "description": "Enterprise-grade performance management software with 360-degree reviews, OKR tracking, competency frameworks, and recognition tools.",
+        "url": "https://wana.work/platform/performance",
+        "image": "https://wana.work/og-performance.png",
+        "brand": {
+            "@type": "Brand",
+            "name": "Wana.Work"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Free trial available"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "1200"
+        }
+    }
+    </script>
+
+    <!-- Intersection Observer for Scroll Animations -->
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+
+                    // Add staggered animations to lists
+                    const items = entry.target.querySelectorAll('.feature-list li');
+                    items.forEach((item, index) => {
+                        item.style.animation = `slideInLeft 0.6s ease ${index * 0.1}s forwards`;
+                        item.style.opacity = '0';
+                    });
+
+                    // Animate bars when visible
+                    const bars = entry.target.querySelectorAll('.bar');
+                    bars.forEach((bar, index) => {
+                        const currentHeight = bar.style.height;
+                        bar.style.height = '0';
+                        bar.style.transition = `height 0.8s ease ${index * 0.1}s`;
+                        setTimeout(() => {
+                            bar.style.height = currentHeight;
+                        }, 50);
+                    });
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Interactive elements
+        document.querySelectorAll('.star').forEach(star => {
+            star.addEventListener('click', function() {
+                const parent = this.parentElement;
+                parent.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
+                this.classList.add('active');
+                const prevStars = Array.from(parent.children);
+                prevStars.slice(0, prevStars.indexOf(this) + 1).forEach(s => s.classList.add('active'));
+            });
+        });
+    </script>
+</body>
+</html>
