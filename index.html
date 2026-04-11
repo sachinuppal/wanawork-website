@@ -589,9 +589,10 @@ h1, h2, h3, h4, h5, h6 {
    SOCIAL PROOF BAR
    ============================================ */
 .social-proof {
-    padding: 48px 40px;
+    padding: 72px 40px 64px;
     background: white;
     border-bottom: 1px solid var(--border);
+    overflow: hidden;
 }
 
 .social-proof-inner {
@@ -600,32 +601,147 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-.social-proof-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-tertiary);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 24px;
+.social-proof-header {
+    margin-bottom: 40px;
 }
 
-.logo-row {
+.social-proof-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.social-proof-qualifier {
+    font-size: 15px;
+    color: var(--text-secondary);
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.social-proof-qualifier strong {
+    color: var(--text);
+}
+
+/* Logo carousel */
+.logo-carousel {
+    position: relative;
+    margin: 0 -40px;
+    padding: 0 40px;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logo-track {
+    display: flex;
+    gap: 64px;
+    align-items: center;
+    animation: scrollLogos 35s linear infinite;
+    width: max-content;
+}
+
+.logo-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollLogos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.logo-item {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 48px;
-    flex-wrap: wrap;
+    height: 48px;
+    opacity: 0.35;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    cursor: default;
 }
 
-.logo-placeholder {
-    font-size: 20px;
+.logo-item:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.logo-item svg {
+    height: 28px;
+    width: auto;
+}
+
+.logo-item .logo-wordmark {
+    font-family: var(--font);
+    font-size: 22px;
     font-weight: 800;
-    color: var(--border);
     letter-spacing: -0.5px;
-    transition: var(--transition);
+    color: var(--text);
+    white-space: nowrap;
+    user-select: none;
 }
 
-.logo-placeholder:hover { color: var(--slate); }
+/* Second row for more logos */
+.logo-track-reverse {
+    display: flex;
+    gap: 64px;
+    align-items: center;
+    animation: scrollLogosReverse 40s linear infinite;
+    width: max-content;
+    margin-top: 32px;
+}
+
+.logo-track-reverse:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollLogosReverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+/* Trust stats */
+.trust-stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-light);
+}
+
+.trust-stat {
+    text-align: center;
+}
+
+.trust-stat .ts-num {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.trust-stat .ts-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .trust-stats { flex-wrap: wrap; gap: 24px; }
+    .logo-track { gap: 40px; }
+    .logo-track-reverse { gap: 40px; }
+    .logo-item .logo-wordmark { font-size: 18px; }
+    .social-proof { padding: 48px 20px 40px; }
+}
 
 /* ============================================
    SECTIONS COMMON
@@ -1489,14 +1605,263 @@ h1, h2, h3, h4, h5, h6 {
      ============================================ -->
 <section class="social-proof">
     <div class="social-proof-inner">
-        <div class="social-proof-label">Trusted by forward-thinking teams worldwide</div>
-        <div class="logo-row">
-            <span class="logo-placeholder">Acme Corp</span>
-            <span class="logo-placeholder">TechFlow</span>
-            <span class="logo-placeholder">Meridian</span>
-            <span class="logo-placeholder">NovaStar</span>
-            <span class="logo-placeholder">Zenith</span>
-            <span class="logo-placeholder">Helix</span>
+        <div class="social-proof-header">
+            <div class="social-proof-label">Built on technology trusted by global enterprises</div>
+            <p class="social-proof-qualifier">Wana.Work is built on the same <strong>open-source foundation</strong> that powers HR and CRM systems at some of the world's most recognized organizations.</p>
+        </div>
+
+        <!-- Row 1: Major enterprise logos scrolling left -->
+        <div class="logo-carousel">
+            <div class="logo-track" id="logoTrack1">
+                <!-- IBM -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 100 40" height="28">
+                        <text x="50" y="32" text-anchor="middle" font-family="'Inter',sans-serif" font-size="34" font-weight="900" letter-spacing="-1" fill="#1F70C1">IBM</text>
+                    </svg>
+                </div>
+                <!-- Audi -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 140 40" height="28">
+                        <text x="70" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="28" font-weight="800" letter-spacing="3" fill="#000000">AUDI</text>
+                    </svg>
+                </div>
+                <!-- T-Mobile -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 160 40" height="28">
+                        <text x="80" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="24" font-weight="800" fill="#E20074">T-Mobile</text>
+                    </svg>
+                </div>
+                <!-- Sennheiser -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 180 40" height="28">
+                        <text x="90" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="700" letter-spacing="1" fill="#000000">SENNHEISER</text>
+                    </svg>
+                </div>
+                <!-- Reebok -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 140 40" height="28">
+                        <text x="70" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="24" font-weight="800" fill="#000000">Reebok</text>
+                    </svg>
+                </div>
+                <!-- Zurich Insurance -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 200 40" height="28">
+                        <text x="100" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="700" fill="#003399">Zurich Insurance</text>
+                    </svg>
+                </div>
+                <!-- Live Nation -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 180 40" height="28">
+                        <text x="90" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="800" fill="#C8102E">Live Nation</text>
+                    </svg>
+                </div>
+                <!-- Mitsubishi -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 170 40" height="28">
+                        <text x="85" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="700" fill="#E60012">MITSUBISHI</text>
+                    </svg>
+                </div>
+                <!-- HTC -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 100 40" height="28">
+                        <text x="50" y="32" text-anchor="middle" font-family="'Inter',sans-serif" font-size="30" font-weight="900" letter-spacing="-0.5" fill="#6CC24A">HTC</text>
+                    </svg>
+                </div>
+                <!-- Sherwin-Williams -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 230 40" height="28">
+                        <text x="115" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="20" font-weight="700" fill="#004F71">Sherwin-Williams</text>
+                    </svg>
+                </div>
+                <!-- DUPLICATES for seamless loop -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 100 40" height="28">
+                        <text x="50" y="32" text-anchor="middle" font-family="'Inter',sans-serif" font-size="34" font-weight="900" letter-spacing="-1" fill="#1F70C1">IBM</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 140 40" height="28">
+                        <text x="70" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="28" font-weight="800" letter-spacing="3" fill="#000000">AUDI</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 160 40" height="28">
+                        <text x="80" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="24" font-weight="800" fill="#E20074">T-Mobile</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 180 40" height="28">
+                        <text x="90" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="700" letter-spacing="1" fill="#000000">SENNHEISER</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 140 40" height="28">
+                        <text x="70" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="24" font-weight="800" fill="#000000">Reebok</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 200 40" height="28">
+                        <text x="100" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="700" fill="#003399">Zurich Insurance</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 180 40" height="28">
+                        <text x="90" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="800" fill="#C8102E">Live Nation</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 170 40" height="28">
+                        <text x="85" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="700" fill="#E60012">MITSUBISHI</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 100 40" height="28">
+                        <text x="50" y="32" text-anchor="middle" font-family="'Inter',sans-serif" font-size="30" font-weight="900" letter-spacing="-0.5" fill="#6CC24A">HTC</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 230 40" height="28">
+                        <text x="115" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="20" font-weight="700" fill="#004F71">Sherwin-Williams</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2: More enterprise logos scrolling right -->
+        <div class="logo-carousel">
+            <div class="logo-track-reverse" id="logoTrack2">
+                <!-- Agfa -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 100 40" height="28">
+                        <text x="50" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="26" font-weight="800" fill="#E31937">AGFA</text>
+                    </svg>
+                </div>
+                <!-- Materion -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 160 40" height="28">
+                        <text x="80" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="700" fill="#00529B">Materion</text>
+                    </svg>
+                </div>
+                <!-- NHS -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 100 40" height="28">
+                        <text x="50" y="32" text-anchor="middle" font-family="'Inter',sans-serif" font-size="30" font-weight="900" fill="#005EB8">NHS</text>
+                    </svg>
+                </div>
+                <!-- Volgren -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 140 40" height="28">
+                        <text x="70" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="700" fill="#1B3A5C">Volgren</text>
+                    </svg>
+                </div>
+                <!-- NTUC -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 110 40" height="28">
+                        <text x="55" y="32" text-anchor="middle" font-family="'Inter',sans-serif" font-size="28" font-weight="900" fill="#E4002B">NTUC</text>
+                    </svg>
+                </div>
+                <!-- Super General -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 200 40" height="28">
+                        <text x="100" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="20" font-weight="700" fill="#1A1A1A">Super General</text>
+                    </svg>
+                </div>
+                <!-- WATT+VOLT -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 180 40" height="28">
+                        <text x="90" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="800" fill="#FF6600">WATT+VOLT</text>
+                    </svg>
+                </div>
+                <!-- Unite / Mercateo -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 120 40" height="28">
+                        <text x="60" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="24" font-weight="800" fill="#0057A3">Unite</text>
+                    </svg>
+                </div>
+                <!-- Titomic -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 140 40" height="28">
+                        <text x="70" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="700" fill="#2D2D2D">Titomic</text>
+                    </svg>
+                </div>
+                <!-- Empresas ADOC -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 180 40" height="28">
+                        <text x="90" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="800" fill="#C41E3A">Empresas ADOC</text>
+                    </svg>
+                </div>
+                <!-- DUPLICATES for seamless loop -->
+                <div class="logo-item">
+                    <svg viewBox="0 0 100 40" height="28">
+                        <text x="50" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="26" font-weight="800" fill="#E31937">AGFA</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 160 40" height="28">
+                        <text x="80" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="700" fill="#00529B">Materion</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 100 40" height="28">
+                        <text x="50" y="32" text-anchor="middle" font-family="'Inter',sans-serif" font-size="30" font-weight="900" fill="#005EB8">NHS</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 140 40" height="28">
+                        <text x="70" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="700" fill="#1B3A5C">Volgren</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 110 40" height="28">
+                        <text x="55" y="32" text-anchor="middle" font-family="'Inter',sans-serif" font-size="28" font-weight="900" fill="#E4002B">NTUC</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 200 40" height="28">
+                        <text x="100" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="20" font-weight="700" fill="#1A1A1A">Super General</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 180 40" height="28">
+                        <text x="90" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="800" fill="#FF6600">WATT+VOLT</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 120 40" height="28">
+                        <text x="60" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="24" font-weight="800" fill="#0057A3">Unite</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 140 40" height="28">
+                        <text x="70" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="700" fill="#2D2D2D">Titomic</text>
+                    </svg>
+                </div>
+                <div class="logo-item">
+                    <svg viewBox="0 0 180 40" height="28">
+                        <text x="90" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="22" font-weight="800" fill="#C41E3A">Empresas ADOC</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust stats -->
+        <div class="trust-stats">
+            <div class="trust-stat">
+                <div class="ts-num">4M+</div>
+                <div class="ts-label">Platform Users</div>
+            </div>
+            <div class="trust-stat">
+                <div class="ts-num">120+</div>
+                <div class="ts-label">Countries</div>
+            </div>
+            <div class="trust-stat">
+                <div class="ts-num">5,000+</div>
+                <div class="ts-label">Organizations</div>
+            </div>
+            <div class="trust-stat">
+                <div class="ts-num">26</div>
+                <div class="ts-label">Languages</div>
+            </div>
         </div>
     </div>
 </section>
