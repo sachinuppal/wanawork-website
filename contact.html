@@ -731,6 +731,12 @@
             </div>
 
             <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+                <div class="form-error">Please enter a valid phone number</div>
+            </div>
+
+            <div class="form-group">
                 <label for="company">Company Name</label>
                 <input type="text" id="company" name="company" required>
                 <div class="form-error">Company name is required</div>
@@ -987,6 +993,7 @@
                 firstName: { value: formData.get('firstName'), type: 'text' },
                 lastName: { value: formData.get('lastName'), type: 'text' },
                 email: { value: formData.get('email'), type: 'email' },
+                phone: { value: formData.get('phone'), type: 'tel' },
                 company: { value: formData.get('company'), type: 'text' },
                 companySize: { value: formData.get('companySize'), type: 'select' },
                 inquiryType: { value: formData.get('inquiryType'), type: 'select' },
@@ -1009,6 +1016,13 @@
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!fields.email.value.trim() || !emailRegex.test(fields.email.value)) {
                 document.getElementById('email').parentElement.classList.add('error');
+                isValid = false;
+            }
+
+            // Validate phone
+            const phoneRegex = /^[+\d][\d\s().-]{6,}$/;
+            if (!fields.phone.value.trim() || !phoneRegex.test(fields.phone.value.trim())) {
+                document.getElementById('phone').parentElement.classList.add('error');
                 isValid = false;
             }
 
@@ -1045,6 +1059,7 @@
                     firstName: fields.firstName.value.trim(),
                     lastName: fields.lastName.value.trim(),
                     email: fields.email.value.trim(),
+                    phone: fields.phone.value.trim(),
                     company: fields.company.value.trim(),
                     companySize: fields.companySize.value,
                     inquiryType: fields.inquiryType.value,
@@ -1072,19 +1087,10 @@
                         return response.json();
                     })
                     .then(() => {
-                        successMessage.classList.add('show');
-                        contactForm.reset();
-
-                        setTimeout(() => {
-                            successMessage.classList.remove('show');
-                        }, 5000);
-
-                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        window.location.href = '/thank-you.html';
                     })
                     .catch(() => {
                         alert('Sorry, something went wrong sending your message. Please email us directly at sales@wana.work.');
-                    })
-                    .finally(() => {
                         submitButton.disabled = false;
                         submitButton.textContent = 'Send Message';
                     });

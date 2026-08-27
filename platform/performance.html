@@ -2307,8 +2307,10 @@
             let target = null;
             if (label.includes('demo')) {
                 target = '/contact.html?inquiry=demo#contact-form';
-            } else if (/start|trial|get started|sign in|sign up|automating/.test(label)) {
+            } else if (/sign in/.test(label)) {
                 target = 'https://app.wana.work';
+            } else if (/start|trial|get started|sign up|automating/.test(label)) {
+                target = '/signup.html';
             }
             if (target) {
                 button.style.cursor = 'pointer';

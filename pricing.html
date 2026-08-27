@@ -1091,7 +1091,7 @@
             </div>
             <div class="nav-actions">
                 <a href="https://app.wana.work" class="btn-signin">Sign In</a>
-                <a href="https://app.wana.work" class="btn-primary">Start Free</a>
+                <a href="/signup.html" class="btn-primary">Start Free</a>
             </div>
         </div>
     </nav>
@@ -1856,8 +1856,10 @@
             let target = null;
             if (label.includes('demo')) {
                 target = '/contact.html?inquiry=demo#contact-form';
-            } else if (/start|trial|get started|sign in|sign up|automating/.test(label)) {
+            } else if (/sign in/.test(label)) {
                 target = 'https://app.wana.work';
+            } else if (/start|trial|get started|sign up|automating/.test(label)) {
+                target = '/signup.html';
             }
             if (target) {
                 button.style.cursor = 'pointer';
