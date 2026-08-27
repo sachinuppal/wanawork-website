@@ -685,7 +685,7 @@
             <h3>Sales Inquiries</h3>
             <p>For enterprise pricing, custom deployments, and product demos.</p>
             <a href="mailto:sales@wana.work" class="contact-email">sales@wana.work</a>
-            <a href="#" class="btn btn-primary">Book a Demo</a>
+            <a href="#contact-form" class="btn btn-primary">Book a Demo</a>
         </div>
         <div class="contact-card">
             <h3>Technical Support</h3>
@@ -702,7 +702,7 @@
     </section>
 
     <!-- Contact Form -->
-    <section class="contact-form-section">
+    <section class="contact-form-section" id="contact-form">
         <h2 class="form-title">Send us a message</h2>
         <p class="form-subtitle">Tell us a bit about your inquiry and we'll get back to you soon.</p>
 
@@ -753,6 +753,7 @@
                 <label for="inquiryType">Inquiry Type</label>
                 <select id="inquiryType" name="inquiryType" required>
                     <option value="">Select inquiry type</option>
+                    <option value="demo">Book a Demo</option>
                     <option value="sales">Sales</option>
                     <option value="support">Support</option>
                     <option value="partnership">Partnership</option>
@@ -962,6 +963,15 @@
         const contactForm = document.getElementById('contactForm');
         const successMessage = document.getElementById('successMessage');
 
+        // Preselect inquiry type from ?inquiry= query param (e.g. Book a Demo CTAs)
+        const inquiryParam = new URLSearchParams(window.location.search).get('inquiry');
+        if (inquiryParam) {
+            const inquirySelect = document.getElementById('inquiryType');
+            if ([...inquirySelect.options].some((o) => o.value === inquiryParam)) {
+                inquirySelect.value = inquiryParam;
+            }
+        }
+
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -1027,19 +1037,57 @@
             }
 
             if (isValid) {
-                // Show success message
-                successMessage.classList.add('show');
+                const submitButton = contactForm.querySelector('.btn-submit');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
 
-                // Reset form
-                contactForm.reset();
+                const payload = {
+                    firstName: fields.firstName.value.trim(),
+                    lastName: fields.lastName.value.trim(),
+                    email: fields.email.value.trim(),
+                    company: fields.company.value.trim(),
+                    companySize: fields.companySize.value,
+                    inquiryType: fields.inquiryType.value,
+                    message: fields.message.value.trim(),
+                    pageUrl: window.location.href,
+                    referrer: document.referrer || 'direct',
+                    submittedAt: new Date().toISOString(),
+                    _subject: 'Wana.Work website inquiry: ' + fields.inquiryType.value + ' — ' + fields.company.value.trim(),
+                    _template: 'table',
+                    _captcha: 'false'
+                };
 
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    successMessage.classList.remove('show');
-                }, 5000);
+                fetch('https://formsubmit.co/ajax/sachin@vriksha.ai', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                })
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error('Request failed with status ' + response.status);
+                        }
+                        return response.json();
+                    })
+                    .then(() => {
+                        successMessage.classList.add('show');
+                        contactForm.reset();
 
-                // Scroll to success message
-                successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        setTimeout(() => {
+                            successMessage.classList.remove('show');
+                        }, 5000);
+
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    })
+                    .catch(() => {
+                        alert('Sorry, something went wrong sending your message. Please email us directly at sales@wana.work.');
+                    })
+                    .finally(() => {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send Message';
+                    });
             }
         });
 

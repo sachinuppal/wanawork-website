@@ -1534,5 +1534,22 @@
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         });
     </script>
+    <script>
+        // Wire CTA buttons to their destinations
+        document.querySelectorAll('button').forEach((button) => {
+            if (button.getAttribute('type') === 'submit' || button.closest('form') || button.onclick) return;
+            const label = button.textContent.trim().toLowerCase();
+            let target = null;
+            if (label.includes('demo')) {
+                target = '/contact.html?inquiry=demo#contact-form';
+            } else if (/start|trial|get started|sign in|sign up|automating/.test(label)) {
+                target = 'https://app.wana.work';
+            }
+            if (target) {
+                button.style.cursor = 'pointer';
+                button.addEventListener('click', () => { window.location.href = target; });
+            }
+        });
+    </script>
 </body>
 </html>

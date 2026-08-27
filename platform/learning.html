@@ -1040,7 +1040,7 @@
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#customers">Customers</a></li>
                 <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact" class="cta">Get Started</a></li>
+                <li><a href="/contact.html#contact-form" class="cta">Get Started</a></li>
             </ul>
         </div>
     </nav>
@@ -1562,7 +1562,7 @@
                     <a href="#twitter">Twitter</a>
                     <a href="#linkedin">LinkedIn</a>
                     <a href="#github">GitHub</a>
-                    <a href="#contact">Contact Us</a>
+                    <a href="/contact.html#contact-form">Contact Us</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -1624,6 +1624,23 @@
                     link.classList.add('active');
                 }
             });
+        });
+    </script>
+    <script>
+        // Wire CTA buttons to their destinations
+        document.querySelectorAll('button').forEach((button) => {
+            if (button.getAttribute('type') === 'submit' || button.closest('form') || button.onclick) return;
+            const label = button.textContent.trim().toLowerCase();
+            let target = null;
+            if (label.includes('demo')) {
+                target = '/contact.html?inquiry=demo#contact-form';
+            } else if (/start|trial|get started|sign in|sign up|automating/.test(label)) {
+                target = 'https://app.wana.work';
+            }
+            if (target) {
+                button.style.cursor = 'pointer';
+                button.addEventListener('click', () => { window.location.href = target; });
+            }
         });
     </script>
 </body>

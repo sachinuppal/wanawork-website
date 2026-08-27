@@ -1694,7 +1694,7 @@
         <div class="enterprise-cta-content">
             <h2>Ready to Transform Your HR?</h2>
             <p>Whether you choose Community, Pro, or Enterprise, Wana.Work gives you the power to manage your most important asset: your people.</p>
-            <button class="enterprise-cta-button" onclick="window.location.href='/contact-sales'">Contact Sales</button>
+            <button class="enterprise-cta-button" onclick="window.location.href='/contact.html?inquiry=sales#contact-form'">Contact Sales</button>
         </div>
     </section>
 
@@ -1847,6 +1847,23 @@
 
         // Initialize ROI
         calculateROI();
+    </script>
+    <script>
+        // Wire CTA buttons to their destinations
+        document.querySelectorAll('button').forEach((button) => {
+            if (button.getAttribute('type') === 'submit' || button.closest('form') || button.onclick) return;
+            const label = button.textContent.trim().toLowerCase();
+            let target = null;
+            if (label.includes('demo')) {
+                target = '/contact.html?inquiry=demo#contact-form';
+            } else if (/start|trial|get started|sign in|sign up|automating/.test(label)) {
+                target = 'https://app.wana.work';
+            }
+            if (target) {
+                button.style.cursor = 'pointer';
+                button.addEventListener('click', () => { window.location.href = target; });
+            }
+        });
     </script>
 </body>
 </html>
